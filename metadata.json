@@ -1,0 +1,7 @@
+{
+  "name": "108 Performance - Elite Athletic Training",
+  "description": "A high-end athletic performance landing page and AI-powered biomechanics lab featuring precision data analysis and elite coaching insights.",
+  "requestFramePermissions": [
+    "camera"
+  ]
+}
