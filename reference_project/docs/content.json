@@ -1,0 +1,242 @@
+{
+  "homepage": {
+    "hero": {
+      "headline": "When You Feel It, You'll Know.",
+      "alternativeHeadline": "Train Different. Play Free.",
+      "subhead": "We build athletes differently. Combining data-driven biomechanics with elite coaching to unlock raw power.",
+      "searchHeader": "How can we help?",
+      "searchPrompts": [
+        "I'm a high school pitcher looking to add velocity",
+        "My son is 14 and wants to hit better",
+        "I'm a coach who wants to learn the 108 method"
+      ],
+      "quickSelect": [
+        { "type": "athlete", "label": "ATHLETE", "sublabel": "Train with 108", "icon": "sports_baseball", "href": "/for-athletes" },
+        { "type": "parent", "label": "PARENT", "sublabel": "Find your kid's path", "icon": "family_restroom", "href": "/for-athletes" },
+        { "type": "coach", "label": "COACH", "sublabel": "Learn the method", "icon": "school", "href": "/for-coaches" }
+      ],
+      "quizFallback": "Not sure? Take the 60-second quiz",
+      "ctas": {
+        "primary": { "label": "Experience 108", "href": "/108-experience" },
+        "secondary": { "label": "Watch Film", "href": "#" }
+      }
+    },
+    "labTested": {
+      "badge": "Verified",
+      "headline": "Lab Tested. Coach Approved.",
+      "body": "We don't guess. We measure. Our methodology combines cutting-edge biomechanical analysis with battle-tested coaching strategies."
+    },
+    "standard": {
+      "header": "The 108 Standard",
+      "subhead": "Precision training designed for the elite.",
+      "link": { "label": "View All Services", "href": "/services" },
+      "cards": [
+        {
+          "number": "01",
+          "icon": "speed",
+          "headline": "Dramatic Results. Fast.",
+          "body": "Accelerate your development cycle. Our proprietary methods strip away inefficiencies to get you game-ready sooner.",
+          "variant": "light"
+        },
+        {
+          "number": "02",
+          "icon": "ecg_heart",
+          "headline": "Play Without Pain.",
+          "body": "Longevity is the ultimate performance metric. We optimize your biomechanics to keep you healthy and dominating.",
+          "variant": "dark"
+        },
+        {
+          "number": "03",
+          "icon": "monitoring",
+          "headline": "Data-Driven Approach.",
+          "body": "Every movement measured, every metric optimized. We turn data into actionable insights for your specific physiology.",
+          "variant": "light"
+        }
+      ]
+    },
+    "precision": {
+      "headline": "Precision Is Not An Accident",
+      "cta": { "label": "Explore The Science", "href": "/the-method" }
+    },
+    "methodology": {
+      "understanding": {
+        "headline": "Understanding before instruction.",
+        "body": "We learn how you think before we look at how you move. The best adjustment is the one you can make on your own."
+      },
+      "humanAthlete": {
+        "headline": "Human. Athlete. Player.",
+        "body": "First your mind. Then your body. Finally your skills. Each layer informs the next.",
+        "layers": [
+          { "number": 1, "title": "The Human", "description": "How you process information. What cues resonate." },
+          { "number": 2, "title": "The Athlete", "description": "Your natural movement patterns. Your physiology." },
+          { "number": 3, "title": "The Player", "description": "The skills that show up on game day." }
+        ]
+      },
+      "visualBreak": "Cues that work on game day.",
+      "yourSystem": {
+        "headline": "Your system. Your cues.",
+        "body": "Personalized prompts that help you find the right pattern when it matters most.",
+        "cta": { "label": "Explore Training", "href": "/108-experience" }
+      }
+    },
+    "sports": {
+      "baseball": {
+        "headline": "Baseball",
+        "body": "Pitching. Hitting. Movement.",
+        "cta": { "label": "Explore Baseball", "href": "/baseball" }
+      },
+      "softball": {
+        "headline": "Softball",
+        "body": "Training built for how women move.",
+        "cta": { "label": "Explore Softball", "href": "/softball" }
+      },
+      "visualBreak": "Youth leagues to big leagues."
+    },
+    "cta": {
+      "headline": "Unlock Your Potential",
+      "body": "Join the elite athletes redefining their limits at 108 Performance. The future of your game starts now.",
+      "button": { "label": "Experience 108", "href": "/108-experience" }
+    }
+  },
+  "services": {
+    "108Experience": {
+      "preheader": "Master Service Offerings Guide",
+      "headline": "Discover before you fix.",
+      "subhead": "2-5 days. Your personal system. Starting at $2,000.",
+      "pricing": {
+        "singleSkill": [
+          { "days": 2, "price": 2000 },
+          { "days": 3, "price": 2500, "recommended": true },
+          { "days": 4, "price": 3000 },
+          { "days": 5, "price": 3500 }
+        ],
+        "twoSkills": [
+          { "days": 2, "price": 2500 },
+          { "days": 3, "price": 3000, "recommended": true },
+          { "days": 4, "price": 3500 },
+          { "days": 5, "price": 4000 }
+        ]
+      }
+    },
+    "triStar": {
+      "headline": "Unlimited training. Knoxville.",
+      "subhead": "Show up. Train. Get better. $499/month.",
+      "pricing": {
+        "monthly": 499,
+        "annual": 5500,
+        "savings": 488
+      },
+      "schedule": "Monday-Thursday. 3:30-8:00 PM."
+    },
+    "virtualExperience": {
+      "headline": "Your coach in your pocket.",
+      "subhead": "Train from anywhere. $550/month.",
+      "pricing": {
+        "monthly": 550,
+        "annual": 6000,
+        "savings": 600
+      }
+    },
+    "virtualPro": {
+      "headline": "Remote daily. In-person quarterly.",
+      "subhead": "Six trips to Knoxville. $1,000/month.",
+      "pricing": {
+        "monthly": 1000,
+        "annual": 10000
+      }
+    },
+    "collegePrep": {
+      "headline": "Get better. Get seen.",
+      "subhead": "Training plus recruiting. $1,250/month.",
+      "pricing": {
+        "monthly": 1250,
+        "annual": 13500,
+        "savings": 1500
+      },
+      "ages": "15-22"
+    },
+    "draftPrep": {
+      "headline": "Every round is money.",
+      "subhead": "Draft positioning. $1,500/month.",
+      "stat": { "value": "$500K+", "caption": "Difference between rounds 5 and 10." },
+      "pricing": {
+        "monthly": 1500,
+        "annual": 15000,
+        "savings": 3000
+      }
+    },
+    "proExperience": {
+      "headline": "Protect your career window.",
+      "subhead": "MiLB and MLB programs.",
+      "tiers": ["MiLB", "MLB"]
+    },
+    "tourExperience": {
+      "headline": "108 in your town.",
+      "subhead": "2-day camps. $500/athlete."
+    },
+    "coachesExperience": {
+      "headline": "Shadow the method.",
+      "subhead": "2-5 days at 108. $500/day."
+    },
+    "coachesMentorship": {
+      "headline": "Keep growing.",
+      "subhead": "Monthly calls. Bridge access. Starting at $297/month.",
+      "pricing": {
+        "originals": { "price": 297, "note": "locked forever", "limit": "First 10 only" },
+        "standard": { "price": 500, "note": "Open enrollment" }
+      }
+    },
+    "poweredBy108": {
+      "headline": "Run on a proven system.",
+      "subhead": "Full facility partnership.",
+      "pricing": {
+        "year1": 20000,
+        "year2Plus": 10000
+      }
+    },
+    "performanceInstitute": {
+      "headline": "Train and learn. Full-time.",
+      "subhead": "Grades 6-12. Baseball and Softball.",
+      "pricing": {
+        "scholarship": 10000,
+        "tiers": [
+          { "name": "PI Starter", "price": 14500 },
+          { "name": "PI Standard", "price": 17000 },
+          { "name": "PI+", "price": 25000 }
+        ]
+      }
+    }
+  },
+  "team": [
+    {
+      "name": "Eugene Bleecker",
+      "title": "Founder & CEO",
+      "bio": "The architect of the 108 methodology. Decades studying movement, developing players, and building a system that produces results no one else can replicate."
+    },
+    {
+      "name": "Will Marshall",
+      "title": "COO & Throwing Director",
+      "bio": "Oversees throwing development and facility operations. His approach to arm health and velocity has helped pitchers at every level add velocity while staying healthy."
+    },
+    {
+      "name": "Nate Headley",
+      "title": "Hitting Coordinator",
+      "bio": "Leads the hitting program. Teaches coaches and athletes how to see swing flaws, communicate adjustments, and build hitters who can make in-game changes."
+    },
+    {
+      "name": "Ryan McMillan (Mac)",
+      "title": "Program Designer",
+      "bio": "Builds the training programs that power 108 athletes. From daily sessions to long-term periodization."
+    },
+    {
+      "name": "Tyler Shorter",
+      "title": "Director of Performance",
+      "bio": "Oversees strength, conditioning, and recovery. The bridge between the weight room and the field."
+    },
+    {
+      "name": "Jamie Bleecker",
+      "title": "Softball Director",
+      "bio": "Team USA. D1 Pac-12 All-American. 4-time All-American pitcher at Fresno State. Brings elite-level expertise to softball training."
+    }
+  ]
+}

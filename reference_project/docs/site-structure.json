@@ -1,0 +1,108 @@
+{
+  "site": {
+    "name": "108 Performance",
+    "tagline": "When You Feel It, You'll Know.",
+    "description": "We build athletes differently. Combining data-driven biomechanics with elite coaching to unlock raw power.",
+    "domain": "108performanceacademy.com",
+    "contact": {
+      "email": "info@108performanceacademy.com",
+      "phone": "865-253-5060",
+      "address": {
+        "name": "108 Tri Star",
+        "street": "6616 Deane Hill Drive",
+        "city": "Knoxville",
+        "state": "TN",
+        "zip": "37919"
+      },
+      "hours": {
+        "monday": "3:30 PM - 9:00 PM",
+        "tuesday": "3:30 PM - 9:00 PM",
+        "wednesday": "3:30 PM - 9:00 PM",
+        "thursday": "3:30 PM - 9:00 PM",
+        "friday": "By appointment",
+        "saturday": "By appointment",
+        "sunday": "By appointment"
+      }
+    },
+    "social": {
+      "instagram": "https://instagram.com/108performance",
+      "youtube": "https://youtube.com/@108performance",
+      "email": "mailto:info@108performanceacademy.com"
+    }
+  },
+  "navigation": {
+    "primary": [
+      { "label": "For Athletes", "href": "/for-athletes" },
+      { "label": "For Coaches", "href": "/for-coaches" },
+      { "label": "The Method", "href": "/the-method" },
+      { "label": "Shop", "href": "/shop" },
+      { "label": "Apply", "href": "/apply", "cta": true }
+    ],
+    "athletesMega": {
+      "startHere": [
+        { "label": "108 Experience", "href": "/108-experience", "description": "The required first step" },
+        { "label": "Tour Experience", "href": "/tour-experience", "description": "108 comes to you" }
+      ],
+      "ongoingTraining": [
+        { "label": "Tri Star", "href": "/tri-star", "description": "Local members" },
+        { "label": "Virtual", "href": "/virtual-experience", "description": "Remote training" },
+        { "label": "Virtual Pro", "href": "/virtual-pro", "description": "Remote + trips" }
+      ],
+      "advanced": [
+        { "label": "College Prep", "href": "/college-prep", "description": "Training + recruiting" },
+        { "label": "Draft Prep", "href": "/draft-prep", "description": "Training + draft strategy" },
+        { "label": "Pro Experience", "href": "/pro-experience", "description": "MiLB / MLB" }
+      ]
+    },
+    "coachesMega": {
+      "learn": [
+        { "label": "Coaches Experience", "href": "/coaches-experience", "description": "Shadow 108 coaches" }
+      ],
+      "implement": [
+        { "label": "Coaches Mentorship", "href": "/coaches-mentorship", "description": "Ongoing access" },
+        { "label": "Host a Tour", "href": "/tour-experience", "description": "108 at your facility" }
+      ],
+      "partner": [
+        { "label": "Powered by 108", "href": "/powered-by-108", "description": "Full facility partnership" }
+      ]
+    },
+    "footer": {
+      "services": [
+        { "label": "Performance Training", "href": "/108-experience" },
+        { "label": "Biomechanics Lab", "href": "/the-method" },
+        { "label": "Remote Coaching", "href": "/virtual-experience" }
+      ],
+      "company": [
+        { "label": "About 108", "href": "/about" },
+        { "label": "Careers", "href": "/internship" },
+        { "label": "Contact", "href": "/contact" }
+      ],
+      "legal": [
+        { "label": "Privacy Policy", "href": "/privacy" },
+        { "label": "Terms of Use", "href": "/terms" }
+      ]
+    }
+  },
+  "pages": [
+    { "slug": "/", "title": "Home", "template": "homepage" },
+    { "slug": "/108-experience", "title": "The 108 Experience", "template": "service" },
+    { "slug": "/tri-star", "title": "Tri Star", "template": "service" },
+    { "slug": "/virtual-experience", "title": "Virtual Experience", "template": "service" },
+    { "slug": "/virtual-pro", "title": "Virtual Pro", "template": "service" },
+    { "slug": "/college-prep", "title": "College Prep", "template": "service" },
+    { "slug": "/draft-prep", "title": "Draft Prep", "template": "service" },
+    { "slug": "/pro-experience", "title": "Pro Experience", "template": "service" },
+    { "slug": "/tour-experience", "title": "Tour Experience", "template": "service" },
+    { "slug": "/coaches-experience", "title": "108 Coaches Experience", "template": "service" },
+    { "slug": "/coaches-mentorship", "title": "Coaches Mentorship", "template": "service" },
+    { "slug": "/powered-by-108", "title": "Powered by 108", "template": "service" },
+    { "slug": "/performance-institute", "title": "Performance Institute", "template": "service" },
+    { "slug": "/softball", "title": "Softball", "template": "sport" },
+    { "slug": "/internship", "title": "Internship", "template": "careers" },
+    { "slug": "/apply", "title": "Apply", "template": "form" },
+    { "slug": "/shop", "title": "Shop", "template": "shop" },
+    { "slug": "/the-method", "title": "The Method", "template": "content" },
+    { "slug": "/about", "title": "About / The Team", "template": "about" },
+    { "slug": "/contact", "title": "Contact", "template": "contact" }
+  ]
+}

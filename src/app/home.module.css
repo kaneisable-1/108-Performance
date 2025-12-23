@@ -1,0 +1,182 @@
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* Nav */
+.nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 100;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1.5rem 2rem;
+    background: rgba(5, 5, 5, 0.8);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: 800;
+    letter-spacing: -0.05em;
+}
+
+.navLinks {
+    display: flex;
+    gap: 2rem;
+}
+
+.navLinks a {
+    font-size: 0.875rem;
+    font-weight: 500;
+    color: var(--c-text-secondary);
+    transition: color 0.2s;
+}
+
+.navLinks a:hover {
+    color: var(--c-text-primary);
+}
+
+.ctaButtonNav {
+    font-size: 0.875rem;
+    font-weight: 700;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    padding: 0.5rem 1.5rem;
+    border-radius: 999px;
+    transition: all 0.3s ease;
+}
+
+.ctaButtonNav:hover {
+    background: white;
+    color: black;
+}
+
+/* Hero */
+.hero {
+    position: relative;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background: radial-gradient(circle at center, #1a1a1a 0%, #000 70%);
+}
+
+.heroContent {
+    max-width: 900px;
+    padding: 0 1rem;
+}
+
+.heroTitle {
+    font-size: 5rem;
+    font-weight: 900;
+    line-height: 0.9;
+    letter-spacing: -0.04em;
+    margin-bottom: 2rem;
+}
+
+.heroHighlight {
+    background: linear-gradient(to right, #fff, #666);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+
+.heroSubtitle {
+    font-size: 1.5rem;
+    font-weight: 300;
+    color: var(--c-text-secondary);
+    margin-bottom: 3rem;
+    line-height: 1.4;
+}
+
+.accentText {
+    color: var(--c-accent-yellow);
+    font-weight: 500;
+}
+
+.buttonGroup {
+    display: flex;
+    gap: 1.5rem;
+    justify-content: center;
+}
+
+.btnPrimary {
+    padding: 1rem 2rem;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 8px;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    font-size: 0.875rem;
+    font-weight: 700;
+    transition: all 0.3s;
+}
+
+.btnPrimary:hover {
+    border-color: white;
+    background: rgba(255, 255, 255, 0.05);
+}
+
+.btnSecondary {
+    padding: 1rem 2rem;
+    background: white;
+    color: black;
+    border-radius: 8px;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    font-size: 0.875rem;
+    font-weight: 700;
+    transition: all 0.3s;
+}
+
+.btnSecondary:hover {
+    background: #ddd;
+}
+
+/* Methodology */
+.methodology {
+    padding: 8rem 0;
+    background: black;
+    border-top: 1px solid var(--c-bg-hover);
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.card {
+    padding: 2.5rem;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
+    transition: border-color 0.3s;
+}
+
+.card:hover {
+    border-color: var(--c-accent-red);
+}
+
+.cardTitle {
+    font-size: 1.5rem;
+    font-weight: 800;
+    margin-bottom: 1rem;
+    text-transform: uppercase;
+    letter-spacing: -0.02em;
+}
+
+.cardText {
+    color: var(--c-text-secondary);
+    line-height: 1.6;
+}
+
+@media (max-width: 768px) {
+    .heroTitle {
+        font-size: 3rem;
+    }
+}

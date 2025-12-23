@@ -1,0 +1,170 @@
+{
+  "colors": {
+    "navy": {
+      "950": "#020617",
+      "900": "#0b1120",
+      "800": "#1e293b",
+      "700": "#334155"
+    },
+    "brand": {
+      "dark": "#0f172a",
+      "blue": "#1e3a8a",
+      "primary": "#2563eb",
+      "accent": "#ef4444"
+    },
+    "neutral": {
+      "offwhite": "#f5f5f7",
+      "white": "#ffffff",
+      "gray": {
+        "100": "#f3f4f6",
+        "200": "#e5e7eb",
+        "400": "#9ca3af",
+        "500": "#6b7280",
+        "600": "#4b5563"
+      }
+    }
+  },
+  "typography": {
+    "fonts": {
+      "sans": {
+        "family": "Inter",
+        "fallback": "sans-serif",
+        "weights": [400, 500, 600, 700, 800, 900],
+        "usage": "Body text, navigation, labels, descriptions"
+      },
+      "display": {
+        "family": "Anton",
+        "fallback": "sans-serif",
+        "weights": [400],
+        "usage": "Headlines, hero text, section titles",
+        "style": "uppercase, tight leading"
+      },
+      "athletic": {
+        "family": "Oswald",
+        "fallback": "sans-serif",
+        "weights": [500, 700],
+        "usage": "Subheaders, labels, badges"
+      }
+    },
+    "scale": {
+      "heroH1": {
+        "size": "text-7xl sm:text-8xl lg:text-[7rem]",
+        "weight": "font-display",
+        "transform": "uppercase",
+        "leading": "leading-[0.9]"
+      },
+      "sectionH2": {
+        "size": "text-5xl md:text-7xl lg:text-8xl",
+        "weight": "font-display",
+        "transform": "uppercase",
+        "leading": "leading-[0.9]"
+      },
+      "cardH4": {
+        "size": "text-3xl",
+        "weight": "font-display",
+        "transform": "uppercase"
+      },
+      "body": {
+        "size": "text-lg",
+        "weight": "font-medium",
+        "leading": "leading-relaxed"
+      },
+      "small": {
+        "size": "text-sm",
+        "weight": "font-medium"
+      },
+      "label": {
+        "size": "text-xs",
+        "weight": "font-bold",
+        "transform": "uppercase tracking-widest"
+      }
+    }
+  },
+  "spacing": {
+    "section": {
+      "standard": "py-24",
+      "large": "py-32",
+      "hero": "pt-20"
+    },
+    "container": {
+      "max": "max-w-7xl",
+      "padding": "px-6"
+    }
+  },
+  "effects": {
+    "transitions": {
+      "standard": "transition-all duration-300",
+      "long": "transition-all duration-500",
+      "transform": "transition-transform duration-300",
+      "colors": "transition-colors"
+    },
+    "shadows": {
+      "card": "shadow-sm hover:shadow-2xl",
+      "dark": "shadow-2xl",
+      "glow": "shadow-[0_0_40px_rgba(37,99,235,0.4)]",
+      "glowHover": "shadow-[0_0_60px_rgba(255,255,255,0.3)]"
+    },
+    "blur": {
+      "header": "backdrop-blur-xl"
+    }
+  },
+  "components": {
+    "buttons": {
+      "primary": {
+        "base": "bg-white text-navy-950 text-sm font-black uppercase tracking-widest px-10 py-4 rounded-none skew-x-[-10deg]",
+        "hover": "hover:bg-gray-200",
+        "shadow": "shadow-[0_0_20px_rgba(255,255,255,0.3)]"
+      },
+      "secondary": {
+        "base": "bg-navy-950 text-white text-xs font-bold uppercase tracking-wider py-3 px-6 rounded-full",
+        "hover": "hover:bg-brand-blue"
+      },
+      "ghost": {
+        "base": "text-white font-bold uppercase tracking-widest px-6 py-4 flex items-center gap-3",
+        "hover": "hover:text-brand-primary"
+      },
+      "glow": {
+        "base": "bg-brand-primary text-white text-lg font-black uppercase tracking-widest px-12 py-5 rounded-full",
+        "hover": "hover:bg-white hover:text-navy-950",
+        "shadow": "shadow-[0_0_40px_rgba(37,99,235,0.4)]"
+      }
+    },
+    "cards": {
+      "light": {
+        "base": "bg-white p-10 rounded-none border border-gray-200",
+        "hover": "hover:shadow-2xl hover:-translate-y-1",
+        "height": "h-[28rem]"
+      },
+      "dark": {
+        "base": "bg-navy-950 text-white p-10 rounded-none",
+        "hover": "hover:shadow-3xl hover:-translate-y-1",
+        "height": "h-[28rem]"
+      }
+    },
+    "header": {
+      "base": "fixed top-0 z-50 w-full backdrop-blur-xl bg-white/80 border-b border-gray-200/50",
+      "height": "h-16"
+    }
+  },
+  "images": {
+    "treatment": {
+      "grayscale": "filter grayscale contrast-125",
+      "opacity": "opacity-25",
+      "blendMode": "mix-blend-mode: luminosity"
+    },
+    "backgrounds": {
+      "hero": "/hero-bg.jpg",
+      "precision": "/precision-bg.jpg",
+      "cues": "/cues-bg.jpg",
+      "baseball": "/baseball-bg.jpg",
+      "softball": "/softball-bg.jpg",
+      "levels": "/levels-bg.jpg"
+    }
+  },
+  "breakpoints": {
+    "sm": "640px",
+    "md": "768px",
+    "lg": "1024px",
+    "xl": "1280px"
+  }
+}
