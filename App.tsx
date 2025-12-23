@@ -8,9 +8,10 @@ import ServicesView from './views/ServicesView';
 import ShopView from './views/ShopView';
 import DashboardView from './views/DashboardView';
 import CollectiveView from './views/CollectiveView';
+import MethodologyView from './views/MethodologyView';
 import BiomechanicsLab from './components/BiomechanicsLab';
 
-export type ViewState = 'home' | 'experience' | 'services' | 'shop' | 'dashboard' | 'collective' | 'lab';
+export type ViewState = 'home' | 'experience' | 'services' | 'shop' | 'dashboard' | 'collective' | 'method' | 'lab';
 
 const App: React.FC = () => {
   const [currentView, setCurrentView] = useState<ViewState>('home');
@@ -27,6 +28,8 @@ const App: React.FC = () => {
         return <DashboardView />;
       case 'collective':
         return <CollectiveView />;
+      case 'method':
+        return <MethodologyView onAction={() => setCurrentView('experience')} />;
       case 'lab':
         return <BiomechanicsLab onClose={() => setCurrentView('home')} />;
       default:

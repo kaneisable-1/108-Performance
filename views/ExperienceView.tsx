@@ -10,108 +10,92 @@ const ExperienceView: React.FC<ExperienceViewProps> = ({ onBack }) => {
 
   return (
     <div className="min-h-screen bg-white">
-      {/* Dynamic Header */}
-      <section className="relative py-24 bg-navy-950 overflow-hidden">
-        <div className="absolute inset-0 opacity-20 grayscale bg-cover bg-center" style={{ backgroundImage: "url('https://picsum.photos/seed/training/1600/900')" }}></div>
+      {/* Header */}
+      <section className="relative py-32 bg-navy-950 text-white overflow-hidden">
+        <div className="absolute inset-0 opacity-10 bg-[url('https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?auto=format&fit=crop&q=80')] bg-cover"></div>
         <div className="max-w-7xl mx-auto px-6 relative z-10 text-center">
-          <h1 className="font-display text-6xl md:text-8xl text-white uppercase leading-none mb-4">
-            The 108<br/><span className="text-brand-primary">Experience</span>
-          </h1>
-          <p className="text-gray-400 font-medium tracking-widest uppercase text-xs">Knoxville Headquarters • Elite Training Diagnostic</p>
+          <h1 className="font-display text-7xl md:text-9xl uppercase mb-4 leading-none tracking-tight">Discover before <br/>you fix.</h1>
+          <p className="text-xl text-gray-400 font-medium max-w-xl mx-auto uppercase tracking-widest">2–5 days. Your personal system. Starting at $2,000.</p>
         </div>
       </section>
 
       <div className="max-w-4xl mx-auto px-6 py-20">
         {step === 'intro' && (
-          <div className="animate-fade-in-up">
-            <h2 className="font-display text-4xl uppercase mb-8">3-5 Days of Total Transformation</h2>
-            <div className="prose prose-lg text-gray-600 mb-12">
-              <p>The 108 Experience is our flagship in-person training diagnostic. It's where the "feel" begins. No guessing, just precision biomechanics and hands-on coaching.</p>
-              
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-8 my-12">
-                <div className="border-l-2 border-brand-primary pl-6">
-                  <h4 className="font-bold text-navy-950 uppercase text-sm mb-2">Deep Diagnostics</h4>
-                  <p className="text-sm">High-speed video capture and motion analysis to identify every leak in your kinetic chain.</p>
-                </div>
-                <div className="border-l-2 border-brand-primary pl-6">
-                  <h4 className="font-bold text-navy-950 uppercase text-sm mb-2">Personalized Cues</h4>
-                  <p className="text-sm">Movements are patterns. We find the specific cues that unlock your raw power safely.</p>
-                </div>
-              </div>
+          <div className="animate-fade-in-up space-y-24">
+            <section className="space-y-6">
+              <h2 className="font-display text-5xl uppercase text-navy-950">This isn't an evaluation.</h2>
+              <p className="text-xl text-gray-500 leading-relaxed font-medium">
+                We learn who you are first—how you think, how you learn, how you coach yourself. The 108 Experience is about uncovering your natural patterns and building a language that belongs to you.
+              </p>
+            </section>
 
-              <div className="bg-offwhite p-8 mb-12">
-                <h4 className="font-display text-2xl uppercase mb-4">Pricing Matrix</h4>
-                <div className="grid grid-cols-3 gap-4 text-center">
-                  <div className="font-bold uppercase text-[10px] text-gray-400">Duration</div>
-                  <div className="font-bold uppercase text-[10px] text-gray-400">1 Skill</div>
-                  <div className="font-bold uppercase text-[10px] text-gray-400">2 Skills</div>
-                  <div className="font-bold">2 Days</div><div className="font-athletic">$2,000</div><div className="font-athletic">$2,500</div>
-                  <div className="font-bold">3 Days</div><div className="font-athletic">$2,500</div><div className="font-athletic">$3,000</div>
-                  <div className="font-bold">5 Days</div><div className="font-athletic">$3,500</div><div className="font-athletic">$4,000</div>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
+              {[
+                { t: 'First, the Human', d: 'Your nervous system is the foundation. What cues resonate with your brain?' },
+                { t: 'Then, the Athlete', d: 'How does your body move? Natural patterns over textbook models.' },
+                { t: 'Finally, the Player', d: 'Connect the dots. Pitch, swing, throw. The skills built on layers beneath.' }
+              ].map(item => (
+                <div key={item.t} className="space-y-4">
+                  <h4 className="font-bold uppercase text-[10px] tracking-[0.3em] text-brand-primary">{item.t}</h4>
+                  <p className="text-sm font-medium text-gray-600 leading-relaxed">{item.d}</p>
+                </div>
+              ))}
+            </div>
+
+            <section className="bg-offwhite p-12 border border-gray-100">
+              <h3 className="font-display text-3xl uppercase mb-8">Leave with a system.</h3>
+              <p className="text-gray-600 font-medium mb-12">Personal cues and prompts that help you find the right pattern on your own. Not our cues—yours.</p>
+              
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
+                <div>
+                  <h4 className="font-bold uppercase text-[10px] tracking-[0.3em] text-gray-400 mb-6">Single Skill</h4>
+                  <div className="space-y-4">
+                    <div className="flex justify-between font-athletic text-lg border-b border-gray-200 pb-2"><span>2 Days</span><span>$2,000</span></div>
+                    <div className="flex justify-between font-athletic text-lg border-b border-gray-200 pb-2 text-brand-primary"><span>3 Days ★</span><span>$2,500</span></div>
+                    <div className="flex justify-between font-athletic text-lg border-b border-gray-200 pb-2"><span>4 Days</span><span>$3,000</span></div>
+                    <div className="flex justify-between font-athletic text-lg pb-2"><span>5 Days</span><span>$3,500</span></div>
+                  </div>
+                </div>
+                <div>
+                  <h4 className="font-bold uppercase text-[10px] tracking-[0.3em] text-gray-400 mb-6">Two Skills</h4>
+                  <div className="space-y-4">
+                    <div className="flex justify-between font-athletic text-lg border-b border-gray-200 pb-2"><span>2 Days</span><span>$2,500</span></div>
+                    <div className="flex justify-between font-athletic text-lg border-b border-gray-200 pb-2 text-brand-primary"><span>3 Days ★</span><span>$3,000</span></div>
+                    <div className="flex justify-between font-athletic text-lg border-b border-gray-200 pb-2"><span>4 Days</span><span>$3,500</span></div>
+                    <div className="flex justify-between font-athletic text-lg pb-2"><span>5 Days</span><span>$4,000</span></div>
+                  </div>
                 </div>
               </div>
-            </div>
+            </section>
+
             <button 
               onClick={() => setStep('apply')}
-              className="w-full bg-navy-950 text-white py-6 font-black uppercase tracking-widest skew-btn hover:bg-brand-primary transition-all duration-300"
+              className="w-full bg-navy-950 text-white py-8 font-black uppercase tracking-[0.4em] skew-btn hover:bg-brand-primary transition-all duration-300 shadow-2xl"
             >
-              <div className="skew-inner">Apply Now</div>
+              <div className="skew-inner">Book Your Experience</div>
             </button>
           </div>
         )}
 
         {step === 'apply' && (
           <div className="animate-fade-in-up">
-            <h2 className="font-display text-4xl uppercase mb-12">Athlete Application</h2>
-            <form className="space-y-8" onSubmit={(e) => { e.preventDefault(); setStep('success'); }}>
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                <div className="space-y-2">
-                  <label className="text-[10px] font-black uppercase text-gray-400 tracking-widest">First Name*</label>
-                  <input type="text" className="w-full border-b border-gray-300 focus:border-brand-primary outline-none py-2" required />
-                </div>
-                <div className="space-y-2">
-                  <label className="text-[10px] font-black uppercase text-gray-400 tracking-widest">Last Name*</label>
-                  <input type="text" className="w-full border-b border-gray-300 focus:border-brand-primary outline-none py-2" required />
-                </div>
+            <h2 className="font-display text-4xl uppercase mb-12">The door is open. Tell us where you are.</h2>
+            <form className="space-y-12" onSubmit={(e) => { e.preventDefault(); setStep('success'); }}>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <input type="text" placeholder="Name" className="w-full border-b-2 border-gray-200 focus:border-navy-950 outline-none py-4 font-bold uppercase tracking-widest text-xs" required />
+                <input type="email" placeholder="Email" className="w-full border-b-2 border-gray-200 focus:border-navy-950 outline-none py-4 font-bold uppercase tracking-widest text-xs" required />
               </div>
-              <div className="space-y-2">
-                <label className="text-[10px] font-black uppercase text-gray-400 tracking-widest">Email Address*</label>
-                <input type="email" className="w-full border-b border-gray-300 focus:border-brand-primary outline-none py-2" required />
-              </div>
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                <div className="space-y-2">
-                  <label className="text-[10px] font-black uppercase text-gray-400 tracking-widest">Sport*</label>
-                  <select className="w-full border-b border-gray-300 focus:border-brand-primary outline-none py-2 bg-transparent">
-                    <option>Baseball</option>
-                    <option>Softball</option>
-                  </select>
-                </div>
-                <div className="space-y-2">
-                  <label className="text-[10px] font-black uppercase text-gray-400 tracking-widest">Primary Skill*</label>
-                  <select className="w-full border-b border-gray-300 focus:border-brand-primary outline-none py-2 bg-transparent">
-                    <option>Hitting</option>
-                    <option>Pitching</option>
-                    <option>Both</option>
-                  </select>
-                </div>
-              </div>
-              <div className="space-y-2">
-                <label className="text-[10px] font-black uppercase text-gray-400 tracking-widest">Current Level*</label>
-                <select className="w-full border-b border-gray-300 focus:border-brand-primary outline-none py-2 bg-transparent">
-                  <option>Youth (12u)</option>
-                  <option>Middle School</option>
-                  <option>High School</option>
-                  <option>College</option>
-                  <option>Pro</option>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <input type="tel" placeholder="Phone" className="w-full border-b-2 border-gray-200 focus:border-navy-950 outline-none py-4 font-bold uppercase tracking-widest text-xs" required />
+                <select className="w-full border-b-2 border-gray-200 focus:border-navy-950 outline-none py-4 font-bold uppercase tracking-widest text-xs bg-transparent">
+                  <option>Baseball</option>
+                  <option>Softball</option>
                 </select>
               </div>
-              <div className="space-y-2">
-                <label className="text-[10px] font-black uppercase text-gray-400 tracking-widest">Training Goals*</label>
-                <textarea className="w-full border-b border-gray-300 focus:border-brand-primary outline-none py-2 min-h-[100px]" required></textarea>
-              </div>
+              <textarea placeholder="Tell us about your current status and goals" className="w-full border-b-2 border-gray-200 focus:border-navy-950 outline-none py-4 font-bold uppercase tracking-widest text-xs min-h-[150px]"></textarea>
               <button 
                 type="submit"
-                className="w-full bg-navy-950 text-white py-6 font-black uppercase tracking-widest skew-btn hover:bg-brand-primary transition-all duration-300"
+                className="w-full bg-navy-950 text-white py-8 font-black uppercase tracking-[0.4em] skew-btn hover:bg-brand-primary transition-all duration-300 shadow-2xl"
               >
                 <div className="skew-inner">Submit Application</div>
               </button>
@@ -120,17 +104,14 @@ const ExperienceView: React.FC<ExperienceViewProps> = ({ onBack }) => {
         )}
 
         {step === 'success' && (
-          <div className="text-center animate-fade-in-up py-12">
-            <div className="w-20 h-20 bg-brand-primary text-white rounded-full flex items-center justify-center mx-auto mb-8 shadow-xl">
-              <span className="material-symbols-outlined text-4xl">check</span>
-            </div>
-            <h2 className="font-display text-5xl uppercase mb-4">Application Received</h2>
-            <p className="text-gray-500 max-w-md mx-auto mb-10">Our coaching staff will review your metrics and goals. Expect a response in the GHL pipeline within 3-5 business days.</p>
+          <div className="text-center animate-fade-in-up py-20">
+            <h2 className="font-display text-7xl uppercase mb-6">Conversation Started.</h2>
+            <p className="text-xl text-gray-500 max-w-md mx-auto mb-12 font-medium">We'll reach out within 48 hours. No pressure. Just a conversation.</p>
             <button 
               onClick={onBack}
-              className="text-navy-950 font-bold uppercase tracking-widest text-xs border-b-2 border-navy-950 pb-1 hover:text-brand-primary hover:border-brand-primary transition-all"
+              className="text-navy-950 font-bold uppercase tracking-widest text-xs border-b-2 border-navy-950 pb-2 hover:text-brand-primary hover:border-brand-primary transition-all"
             >
-              Return to Home
+              Return Home
             </button>
           </div>
         )}
