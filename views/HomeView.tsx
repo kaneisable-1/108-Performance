@@ -1,6 +1,11 @@
 
-import React from 'react';
+import React, { useState } from 'react';
 import Hero from '../components/Hero';
+import LabStats from '../components/LabStats';
+import StandardGrid from '../components/StandardGrid';
+import PrecisionBanner from '../components/PrecisionBanner';
+import CTA from '../components/CTA';
+import WeeklyDoseCarousel, { DoseItem } from '../components/WeeklyDoseCarousel';
 import { ViewState } from '../App';
 
 interface HomeViewProps {
@@ -8,54 +13,146 @@ interface HomeViewProps {
 }
 
 const HomeView: React.FC<HomeViewProps> = ({ onNavigate }) => {
+  const [isPlaying, setIsPlaying] = useState(false);
+
+  const doseItems: DoseItem[] = [
+    {
+      id: '1',
+      title: 'The Kinetic Link: Ground Up Power',
+      thumbnailUrl: 'https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?auto=format&fit=crop&q=80',
+      href: '#',
+      subtitle: 'Technical Breakdown',
+      featured: true
+    },
+    {
+      id: '2',
+      title: 'Softball Pitching: Horizontal Movement Secrets',
+      thumbnailUrl: 'https://images.unsplash.com/photo-1517649763962-0c623066013b?auto=format&fit=crop&q=80',
+      href: '#',
+      subtitle: 'Skill Drill'
+    },
+    {
+      id: '3',
+      title: 'Nervous System Training for Elite Reaction',
+      thumbnailUrl: 'https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&q=80',
+      href: '#',
+      subtitle: 'Human Performance'
+    },
+    {
+      id: '4',
+      title: 'Inside the Lab: 102.4 MPH Exit Velo Study',
+      thumbnailUrl: 'https://images.unsplash.com/photo-1517649763962-0c623066013b?auto=format&fit=crop&q=80',
+      href: '#',
+      subtitle: 'Data Insight'
+    },
+    {
+      id: '5',
+      title: 'Mental Resilience: Staying for the Couch',
+      thumbnailUrl: 'https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&q=80',
+      href: '#',
+      subtitle: 'Culture'
+    },
+    {
+      id: '6',
+      title: 'Biomechanics of the 108 Hitting System',
+      thumbnailUrl: 'https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?auto=format&fit=crop&q=80',
+      href: '#',
+      subtitle: 'The Method',
+      featured: true
+    },
+    {
+      id: '7',
+      title: 'Winter Fly-In Recap: 2025 Elite Class',
+      thumbnailUrl: 'https://images.unsplash.com/photo-1517649763962-0c623066013b?auto=format&fit=crop&q=80',
+      href: '#',
+      subtitle: 'Community'
+    }
+  ];
+
   return (
-    <>
+    <div className="bg-surface-black text-text-white">
       <Hero onExperienceClick={() => onNavigate('experience')} />
       
+      {/* Narrative Carousel: Directly under Hero */}
+      <WeeklyDoseCarousel 
+        items={doseItems}
+        onSelect={(item) => console.log('Selected:', item.title)}
+        onViewAll={() => onNavigate('collective')}
+        className="py-16 border-b border-border-soft"
+      />
+
       {/* The Paradox */}
-      <section className="py-32 bg-white">
-        <div className="max-w-4xl mx-auto px-6 text-center">
-          <h2 className="font-display text-5xl md:text-7xl uppercase text-navy-950 mb-10 leading-[0.9]">
+      <section className="py-40 bg-surface-black border-b border-border-soft">
+        <div className="max-w-4xl mx-auto px-[clamp(16px,5vw,32px)] text-center">
+          <h2 className="font-display text-5xl md:text-7xl uppercase text-white mb-10 leading-[0.9]">
             People come for the work. <br/>
-            <span className="text-gray-400">They stay for something else.</span>
+            <span className="text-text-muted">They stay for something else.</span>
           </h2>
-          <p className="text-xl md:text-2xl text-gray-500 font-medium leading-relaxed">
+          <p className="text-xl md:text-2xl text-text-muted font-medium leading-relaxed">
             Athletes train here for hours. Then they sit on the couch for hours more—watching film, talking, helping each other figure things out. They don't have to be here. They choose to stay.
           </p>
         </div>
       </section>
 
+      <LabStats />
+
       {/* The Work */}
-      <section className="py-32 bg-navy-950 text-white overflow-hidden relative">
-        <div className="absolute top-0 right-0 p-12 font-display text-[20vw] opacity-[0.02] pointer-events-none">WORK</div>
-        <div className="max-w-7xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
-          <div>
+      <section className="py-40 bg-navy-900 text-white overflow-hidden relative">
+        <div className="absolute top-0 right-0 p-12 font-display text-[20vw] opacity-[0.03] pointer-events-none italic tracking-tighter select-none">WORK</div>
+        <div className="max-w-7xl mx-auto px-[clamp(16px,5vw,32px)] grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
+          <div className="animate-fade-in-up">
             <h2 className="font-display text-6xl uppercase mb-8">The work is serious.</h2>
-            <p className="text-lg text-gray-400 leading-relaxed mb-10">
+            <p className="text-lg text-text-muted leading-relaxed mb-10">
               This isn't a club. It's training that produces results. PRs. Velocity. The breakthrough moment when something finally clicks. The couch comes after the PR.
             </p>
             <button 
               onClick={() => onNavigate('method')}
-              className="text-white font-bold uppercase tracking-widest text-xs border-b-2 border-brand-primary pb-2 hover:text-brand-primary transition-all"
+              className="text-white font-bold uppercase tracking-widest text-xs border-b-2 border-white pb-2 hover:opacity-70 transition-all group"
             >
-              See The Method →
+              See The Method <span className="inline-block group-hover:translate-x-1 transition-transform">→</span>
             </button>
           </div>
-          <div className="aspect-video bg-navy-900 border border-white/10 relative group cursor-pointer overflow-hidden">
-             <img src="https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?auto=format&fit=crop&q=80" alt="The Work" className="w-full h-full object-cover grayscale opacity-50 group-hover:opacity-80 group-hover:scale-105 transition-all duration-700" />
-             <div className="absolute inset-0 flex items-center justify-center">
-                <span className="material-symbols-outlined text-6xl text-white opacity-50 group-hover:opacity-100 transition-opacity">play_circle</span>
-             </div>
+          
+          <div className="aspect-video bg-black border border-border-soft relative group shadow-card rounded-card overflow-hidden">
+            {!isPlaying ? (
+              <div 
+                className="absolute inset-0 z-10 cursor-pointer flex items-center justify-center"
+                onClick={() => setIsPlaying(true)}
+              >
+                <img 
+                  src="https://img.youtube.com/vi/msr5l1pstyc/maxresdefault.jpg" 
+                  alt="The Work Video Thumbnail" 
+                  className="w-full h-full object-cover grayscale opacity-30 group-hover:opacity-60 group-hover:scale-105 transition-all duration-700" 
+                />
+                <div className="absolute inset-0 flex items-center justify-center">
+                  <div className="w-20 h-20 bg-white/5 backdrop-blur-md rounded-full flex items-center justify-center border border-white/20 group-hover:scale-110 group-hover:bg-white/20 transition-all duration-500 shadow-bloomFeatured">
+                    <span className="material-symbols-outlined text-6xl text-white opacity-60 group-hover:opacity-100 transition-opacity pl-1">play_arrow</span>
+                  </div>
+                </div>
+              </div>
+            ) : (
+              <iframe 
+                className="w-full h-full relative z-0"
+                src="https://www.youtube.com/embed/msr5l1pstyc?autoplay=1&modestbranding=1&rel=0" 
+                title="108 Performance - The Work" 
+                frameBorder="0" 
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                allowFullScreen
+              ></iframe>
+            )}
           </div>
         </div>
       </section>
 
+      <PrecisionBanner />
+      <StandardGrid />
+
       {/* Human. Athlete. Player. */}
-      <section className="py-32 bg-white">
-        <div className="max-w-7xl mx-auto px-6">
-          <div className="mb-20">
-            <h2 className="font-display text-6xl md:text-8xl uppercase mb-6">Human.<br/>Athlete. Player.</h2>
-            <p className="text-xl text-gray-500 max-w-2xl leading-relaxed">
+      <section className="py-40 bg-surface-black">
+        <div className="max-w-7xl mx-auto px-[clamp(16px,5vw,32px)]">
+          <div className="mb-24">
+            <h2 className="font-display text-6xl md:text-8xl uppercase mb-8 text-white">Human.<br/>Athlete. Player.</h2>
+            <p className="text-xl text-text-muted max-w-2xl leading-relaxed font-medium">
               Most programs start with your sport. We start with you. How do you think? How do you learn? What cues already work? We understand you before we instruct you.
             </p>
           </div>
@@ -65,68 +162,17 @@ const HomeView: React.FC<HomeViewProps> = ({ onNavigate }) => {
               { t: 'The Athlete', d: 'We study your natural patterns—not a textbook model. Physics over tradition.' },
               { t: 'The Player', d: 'Connecting the dots. Skills that show up on game day are built on the layers beneath.' }
             ].map(item => (
-              <div key={item.t} className="border-t-2 border-navy-950 pt-8">
-                <h4 className="font-display text-2xl uppercase mb-4">{item.t}</h4>
-                <p className="text-gray-500 font-medium text-sm leading-relaxed">{item.d}</p>
+              <div key={item.t} className="border-t border-border-soft pt-10 group">
+                <h4 className="font-display text-3xl uppercase mb-6 text-white group-hover:text-text-muted transition-colors">{item.t}</h4>
+                <p className="text-text-muted font-medium text-sm leading-relaxed">{item.d}</p>
               </div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* The Staying */}
-      <section className="relative min-h-[80vh] bg-navy-900 flex items-center text-white overflow-hidden">
-        <div className="absolute inset-0">
-          <img src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&q=80" className="w-full h-full object-cover opacity-20 grayscale" alt="The Staying" />
-          <div className="absolute inset-0 bg-gradient-to-r from-navy-950 via-navy-950/60 to-transparent"></div>
-        </div>
-        <div className="max-w-7xl mx-auto px-6 relative z-10">
-          <div className="max-w-2xl">
-            <h2 className="font-display text-7xl uppercase mb-8">The staying is the proof.</h2>
-            <p className="text-lg text-gray-400 leading-relaxed mb-10">
-              You don't have to leave when you're done. Most people don't. They watch film. They talk. They sit on the couch and argue about last night's game. This is what happened when we built a place where people actually want to be.
-            </p>
-          </div>
-        </div>
-      </section>
-
-      {/* Your Path */}
-      <section className="py-32 bg-offwhite">
-        <div className="max-w-7xl mx-auto px-6">
-          <h2 className="font-display text-6xl uppercase mb-16 text-center">Your path.</h2>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {[
-              { t: 'The 108 Experience', d: 'The beginning. 2-5 days in person.', view: 'experience' as ViewState },
-              { t: 'Ongoing Training', d: 'Local and remote membership options.', view: 'services' as ViewState },
-              { t: 'For Coaches', d: 'The Collective Mentorship pathway.', view: 'collective' as ViewState }
-            ].map(item => (
-              <div 
-                key={item.t} 
-                onClick={() => onNavigate(item.view)}
-                className="bg-white p-12 group cursor-pointer border border-gray-100 hover:border-brand-primary transition-all duration-500 shadow-sm hover:shadow-2xl"
-              >
-                <h4 className="font-display text-3xl uppercase mb-4 text-navy-950 group-hover:text-brand-primary transition-colors">{item.t}</h4>
-                <p className="text-gray-500 font-medium mb-8 text-sm">{item.d}</p>
-                <span className="material-symbols-outlined text-navy-950 group-hover:translate-x-2 transition-transform">arrow_forward</span>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Final CTA */}
-      <section className="py-40 bg-white text-center">
-        <div className="max-w-2xl mx-auto px-6">
-          <h2 className="font-display text-6xl md:text-8xl uppercase mb-12">You have to feel it to believe it.</h2>
-          <button 
-            onClick={() => onNavigate('experience')}
-            className="bg-navy-950 text-white py-6 px-16 font-black uppercase tracking-[0.4em] skew-btn hover:bg-brand-primary transition-all duration-500 shadow-3xl"
-          >
-            <div className="skew-inner">Experience 108</div>
-          </button>
-        </div>
-      </section>
-    </>
+      <CTA onExperienceClick={() => onNavigate('experience')} />
+    </div>
   );
 };
 

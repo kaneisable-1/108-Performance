@@ -15,23 +15,38 @@
             theme: {
                 extend: {
                     colors: {
+                        surface: { black: '#000000' },
+                        text: { white: '#FFFFFF', muted: 'rgba(255,255,255,0.70)' },
+                        border: { soft: 'rgba(255,255,255,0.15)', strong: 'rgba(255,255,255,0.35)' },
+                        glow: { weak: 'rgba(255,255,255,0.04)', medium: 'rgba(255,255,255,0.06)' },
                         navy: {
-                            950: '#020617',
-                            900: '#0b1120',
-                            800: '#1e293b',
-                            700: '#334155',
+                            950: '#000000', // Adjusted to pure black for the premium look
+                            900: '#050505',
+                            800: '#0a0a0a',
+                            700: '#111111',
                         },
                         brand: {
-                            dark: '#0f172a',
+                            dark: '#000000',
                             blue: '#1e3a8a',
-                            primary: '#2563eb',
+                            primary: '#FFFFFF', // Monochrome focus
                         },
-                        offwhite: '#f5f5f7',
+                    },
+                    borderRadius: {
+                        card: '14px',
+                        button: '10px',
+                    },
+                    boxShadow: {
+                        card: '0 12px 36px rgba(0,0,0,0.45)',
+                        bloomHover: '0 24px 80px rgba(255,255,255,0.06), 0 8px 24px rgba(255,255,255,0.04)',
+                        bloomFeatured: '0 12px 48px rgba(255,255,255,0.06)',
                     },
                     fontFamily: {
                         sans: ["Inter", "sans-serif"],
                         display: ["Anton", "sans-serif"],
                         athletic: ["Oswald", "sans-serif"],
+                    },
+                    transitionTimingFunction: {
+                        premium: 'cubic-bezier(0.2, 0.8, 0.2, 1)',
                     },
                 },
             },
@@ -50,6 +65,20 @@
         }
         .skew-btn { transform: skewX(-10deg); }
         .skew-inner { transform: skewX(10deg); }
+        
+        body {
+            background-color: #000000;
+            color: #FFFFFF;
+        }
+
+        /* Snap Carousel Utilities */
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .no-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
     </style>
 <script type="importmap">
 {
@@ -62,7 +91,7 @@
 }
 </script>
 </head>
-<body class="bg-offwhite text-navy-950 font-sans antialiased">
+<body class="bg-surface-black text-text-white font-sans antialiased selection:bg-white selection:text-black">
     <div id="root"></div>
 </body>
 </html>
