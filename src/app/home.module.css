@@ -1,3 +1,5 @@
+/* Existing Styles remain, adding new layout utilities */
+
 /* UI Components */
 .wrapper {
     display: flex;
@@ -166,14 +168,23 @@
 
 @media(min-width: 1024px) {
     .heroTitle {
-        font-size: 7rem;
+        font-size: 6.5rem;
     }
 }
 
 .heroHighlight {
     background: linear-gradient(to right, #fff, #999);
     -webkit-background-clip: text;
+    background-clip: text;
     color: transparent;
+}
+
+.heroSubtitleBig {
+    font-family: var(--font-display);
+    font-size: 2rem;
+    color: var(--c-blue-primary);
+    text-transform: uppercase;
+    margin-bottom: 1rem;
 }
 
 .heroDescription {
@@ -307,39 +318,12 @@
 }
 
 
-/* Section White (Lab Tested) */
+/* Section White */
 .sectionWhite {
     position: relative;
     padding: 8rem 0;
     background: white;
     overflow: hidden;
-}
-
-.bgTextBig {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    font-family: var(--font-display);
-    font-size: 15vw;
-    color: var(--c-navy-950);
-    opacity: 0.03;
-    pointer-events: none;
-    white-space: nowrap;
-}
-
-.iconCircle {
-    width: 4rem;
-    height: 4rem;
-    background: var(--c-navy-950);
-    color: white;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 1.5rem;
-    margin-bottom: 2rem;
-    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
 }
 
 .sectionTitleDark {
@@ -358,10 +342,12 @@
     }
 }
 
-.gradientText {
-    background: linear-gradient(to bottom right, #94a3b8, #475569);
-    -webkit-background-clip: text;
-    color: transparent;
+.textBlue {
+    color: var(--c-blue-primary);
+}
+
+.textRed {
+    color: var(--c-red-accent);
 }
 
 .sectionDesc {
@@ -372,230 +358,56 @@
     line-height: 1.6;
 }
 
-/* Section Grey (Standards) */
-.sectionGrey {
-    background: var(--c-offwhite);
-    padding: 6rem 0;
-    border-top: 1px solid #e2e8f0;
+/* Section Dark (The Work) */
+.sectionDark {
+    background: var(--c-navy-950);
+    color: white;
+    padding: 8rem 0;
 }
 
-.sectionHeaderRow {
+.sectionTitleWhite {
+    font-family: var(--font-display);
+    font-size: 3rem;
+    text-transform: uppercase;
+    color: white;
+    line-height: 0.9;
+    margin-bottom: 2rem;
+}
+
+@media(min-width: 768px) {
+    .sectionTitleWhite {
+        font-size: 4rem;
+    }
+}
+
+.textGrayLight {
+    color: #94a3b8;
+    font-size: 1.125rem;
+    line-height: 1.7;
+    max-width: 600px;
+    margin-bottom: 3rem;
+}
+
+.splitRow {
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
-    margin-bottom: 4rem;
-    gap: 1.5rem;
-}
-
-@media(min-width: 768px) {
-    .sectionHeaderRow {
-        flex-direction: row;
-        align-items: flex-end;
-    }
-}
-
-.sectionSubtitle {
-    font-family: var(--font-display);
-    font-size: 2.5rem;
-    text-transform: uppercase;
-    color: var(--c-navy-950);
-    margin-bottom: 0.5rem;
-}
-
-@media(min-width: 768px) {
-    .sectionSubtitle {
-        font-size: 3rem;
-    }
-}
-
-.sectionSubDesc {
-    font-size: 1.125rem;
-    color: var(--c-text-grey);
-    font-weight: 500;
-}
-
-.viewAllLink {
-    font-weight: 700;
-    text-transform: uppercase;
-    font-size: 0.875rem;
-    letter-spacing: 0.1em;
-    color: var(--c-navy-950);
-    transition: color 0.2s;
-}
-
-.viewAllLink:hover {
-    color: var(--c-blue-primary);
-}
-
-.cardGrid {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 1.5rem;
-}
-
-@media(min-width: 768px) {
-    .cardGrid {
-        grid-template-columns: repeat(2, 1fr);
-    }
+    gap: 4rem;
 }
 
 @media(min-width: 1024px) {
-    .cardGrid {
-        grid-template-columns: repeat(3, 1fr);
+    .splitRow {
+        flex-direction: row;
+        align-items: center;
     }
-}
 
-/* Cards */
-.cardWhite,
-.cardDark {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    padding: 2.5rem;
-    height: 28rem;
-    position: relative;
-    transition: all 0.3s;
-    border: 1px solid #e2e8f0;
-}
+    .splitContent {
+        flex: 1;
+    }
 
-.cardWhite {
-    background: white;
-}
-
-.cardWhite:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
-}
-
-.cardDark {
-    background: var(--c-navy-950);
-    color: white;
-    border: none;
-    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
-}
-
-.cardDark:hover {
-    transform: translateY(-5px);
-}
-
-.cardIconBox,
-.cardIconBoxDark {
-    width: 3.5rem;
-    height: 3.5rem;
-    border-radius: 0.5rem;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 1.5rem;
-    margin-bottom: 2rem;
-}
-
-.cardIconBox {
-    background: rgba(37, 99, 235, 0.1);
-    color: var(--c-blue-primary);
-}
-
-.cardIconBoxDark {
-    background: rgba(255, 255, 255, 0.1);
-    color: white;
-}
-
-.cardTitle,
-.cardTitleWhite {
-    font-family: var(--font-display);
-    font-size: 1.875rem;
-    text-transform: uppercase;
-    margin-bottom: 1rem;
-}
-
-.cardTitle {
-    color: var(--c-navy-950);
-}
-
-.cardTitleWhite {
-    color: white;
-}
-
-.cardBody,
-.cardBodyDark {
-    font-size: 0.875rem;
-    line-height: 1.6;
-    font-weight: 500;
-    margin-bottom: auto;
-}
-
-.cardBody {
-    color: var(--c-text-grey);
-}
-
-.cardBodyDark {
-    color: #94a3b8;
-}
-
-.cardFooter,
-.cardFooterDark {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-end;
-    border-top: 1px solid;
-    padding-top: 1.5rem;
-    margin-top: 1.5rem;
-}
-
-.cardFooter {
-    border-color: #f1f5f9;
-}
-
-.cardFooterDark {
-    border-color: rgba(255, 255, 255, 0.1);
-}
-
-.cardIndex,
-.cardIndexDark {
-    font-size: 0.75rem;
-    font-weight: 900;
-}
-
-.cardIndex {
-    color: #cbd5e1;
-}
-
-.cardIndexDark {
-    color: #64748b;
-}
-
-.cardArrow,
-.cardArrowWhite {
-    font-size: 1.25rem;
-    transition: transform 0.3s;
-}
-
-.cardArrow:hover {
-    transform: translateX(5px);
-}
-
-.cardArrowWhite {
-    color: white;
-}
-
-/* Precision & Footer */
-.precisionBox {
-    border-left: 4px solid var(--c-blue-primary);
-    padding-left: 2rem;
-    margin: 5rem 0;
-}
-
-.precisionTitle {
-    font-family: var(--font-display);
-    font-size: 4rem;
-    text-transform: uppercase;
-    line-height: 0.85;
-    margin-bottom: 2rem;
-}
-
-@media(min-width: 768px) {
-    .precisionTitle {
-        font-size: 6rem;
+    .splitVisual {
+        flex: 1;
+        display: flex;
+        justify-content: center;
     }
 }
 
@@ -607,8 +419,90 @@
     text-transform: uppercase;
     letter-spacing: 0.1em;
     transform: skewX(-10deg);
+    transition: all 0.3s;
 }
 
+.btnWhiteSkew:hover {
+    background: var(--c-red-accent);
+    color: white;
+}
+
+.edgeBox {
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    font-family: var(--font-display);
+    font-size: 4rem;
+    color: #334155;
+    text-transform: uppercase;
+    line-height: 0.8;
+}
+
+/* Section Grey (The Proof) */
+.sectionGrey {
+    background: var(--c-offwhite);
+    padding: 8rem 0;
+    border-top: 1px solid #e2e8f0;
+}
+
+.statsGrid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+    margin-top: 4rem;
+    width: 100%;
+}
+
+@media(min-width: 768px) {
+    .statsGrid {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+.statItem {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 2rem;
+    background: white;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+}
+
+.statNumber {
+    font-family: var(--font-display);
+    font-size: 3rem;
+    color: var(--c-navy-950);
+    line-height: 1;
+    margin-bottom: 0.5rem;
+}
+
+.statLabel {
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    color: var(--c-text-grey);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.iconCircle {
+    width: 4rem;
+    height: 4rem;
+    background: var(--c-navy-950);
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    margin-bottom: 2rem;
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+}
+
+/* Footer */
 .sectionDarkCenter {
     background: var(--c-navy-950);
     color: white;
@@ -627,10 +521,6 @@
     .footerTitle {
         font-size: 6rem;
     }
-}
-
-.textBlue {
-    color: var(--c-blue-primary);
 }
 
 .btnBlueRound {

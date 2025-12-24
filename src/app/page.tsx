@@ -12,15 +12,15 @@ export default function Home() {
             <span className={styles.brandName}>108 Performance</span>
           </div>
           <nav className={styles.navLinks}>
-            <Link href="#">Guide</Link>
-            <Link href="#">Services</Link>
-            <Link href="#">About</Link>
+            <Link href="#">The Method</Link>
+            <Link href="#">The Work</Link>
+            <Link href="#">The Proof</Link>
           </nav>
           <button className={styles.ctaButtonNav}>Experience 108</button>
         </div>
       </header>
 
-      {/* Section 1: Hero */}
+      {/* Hero Section: Option A (The Full Stack) */}
       <section className={styles.hero}>
         <div className={styles.heroBackground}>
           <div className={styles.gradientOverlay}></div>
@@ -29,136 +29,122 @@ export default function Home() {
           <div className={styles.heroTextContent}>
             <div className={styles.eyebrow}>
               <span className={styles.eyebrowLine}></span>
-              <p>Master Service Offerings Guide</p>
+              <p>The 108 Difference</p>
             </div>
             <h1 className={styles.heroTitle}>
-              When you <br />
-              <span className={styles.heroHighlight}>Feel It,</span><br />
-              You'll Know.
+              Training that<br />
+              <span className={styles.heroHighlight}>feels different.</span>
             </h1>
+            <p className={styles.heroSubtitleBig}>
+              Human first. Results always.
+            </p>
             <p className={styles.heroDescription}>
-              We build athletes differently. Combining data-driven biomechanics with elite coaching to unlock raw power.
+              We understand you first. Then we push you further than anyone else will.
             </p>
             <div className={styles.heroButtons}>
               <button className={styles.btnPrimarySkew}>
                 <div className={styles.unskew}>Experience 108</div>
               </button>
               <button className={styles.btnSecondary}>
-                Watch Film <span className={styles.arrowIcon}>→</span>
+                View Programs <span className={styles.arrowIcon}>→</span>
               </button>
             </div>
           </div>
-          {/* Visual Side (Hidden on mobile usually, but we implement for desk) */}
+          {/* Visual: Abstract "Human/Athlete" composition */}
           <div className={styles.heroVisual}>
             <div className={styles.bgText}>108</div>
             <div className={styles.imageCardTop}>
-              {/* Placeholder for Athlete Image */}
-              <div className={styles.imageOverlay}>Drafted</div>
+              {/* Visual Placeholder */}
+              <span className={styles.bigBolt}>⚡</span>
             </div>
             <div className={styles.imageCardBottom}>
-              <span className={styles.bigBolt}>⚡</span>
-              <span className={styles.bigNum}>108</span>
-              <span className={styles.labLabel}>Lab Tested</span>
+              <span className={styles.bigNum}>47</span>
+              <span className={styles.labLabel}>Draft Picks</span>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Section 2: Lab Tested */}
+      {/* Section 2: The Method (Philosophy) */}
       <section className={styles.sectionWhite}>
-        <div className={styles.bgTextBig}>Performance</div>
         <div className={styles.containerCenter}>
-          <div className={styles.iconCircle}>
-            <span>✓</span>
-          </div>
           <h2 className={styles.sectionTitleDark}>
-            Lab Tested.<br />
-            <span className={styles.gradientText}>Coach Approved.</span>
+            Human. Athlete.<br />
+            <span className={styles.textBlue}>Player.</span>
           </h2>
           <p className={styles.sectionDesc}>
-            We don't guess. We measure. Our methodology combines cutting-edge biomechanical analysis with battle-tested coaching strategies.
+            We start with who you are. The warmth without the results is just a nice place to hang out. The results are what earn the right to be warm.
           </p>
         </div>
       </section>
 
-      {/* Section 3: The 108 Standard (Cards) */}
+      {/* Section 3: The Work (The Edge) */}
+      <section className={styles.sectionDark}>
+        <div className={styles.container}>
+          <div className={styles.splitRow}>
+            <div className={styles.splitContent}>
+              <h2 className={styles.sectionTitleWhite}>
+                The work is <span className={styles.textRed}>real.</span>
+              </h2>
+              <p className={styles.textGrayLight}>
+                We're not here to make you comfortable. We're here to make you better. Faster. Stronger. More explosive. The methodology is human-first—the training is relentless.
+                <br /><br />
+                PRs don't come from nice conversations. They come from the work.
+              </p>
+              <button className={styles.btnWhiteSkew}>
+                <div className={styles.unskew}>See the Results</div>
+              </button>
+            </div>
+            {/* Optional Visual for 'Edge' */}
+            <div className={styles.splitVisual}>
+              <div className={styles.edgeBox}>
+                <span>LOG</span>
+                <span>WORK</span>
+                <span>WIN</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Section 4: The Proof (Results) */}
       <section className={styles.sectionGrey}>
-        <div className={styles.container}>
-          <div className={styles.sectionHeaderRow}>
-            <div>
-              <h3 className={styles.sectionSubtitle}>The 108 Standard</h3>
-              <p className={styles.sectionSubDesc}>Precision training designed for the elite.</p>
-            </div>
-            <Link href="#" className={styles.viewAllLink}>
-              View All Services →
-            </Link>
+        <div className={styles.containerCenter}>
+          <div className={styles.iconCircle}>
+            <span>✓</span>
           </div>
+          <h2 className={styles.sectionTitleDark}>It Works.</h2>
+          <p className={styles.sectionDesc}>
+            Velocity gains. Exit velo jumps. Draft picks. D1 commits. The results aren't accidental—they're the product of a system that actually works.
+          </p>
 
-          <div className={styles.cardGrid}>
-            {/* Card 1 */}
-            <div className={styles.cardWhite}>
-              <div className={styles.cardIconBox}>⚡</div>
-              <h4 className={styles.cardTitle}>Dramatic<br />Results. Fast.</h4>
-              <p className={styles.cardBody}>
-                Accelerate your development cycle. Our proprietary methods strip away inefficiencies to get you game-ready sooner.
-              </p>
-              <div className={styles.cardFooter}>
-                <span className={styles.cardIndex}>01</span>
-                <button className={styles.cardArrow}>→</button>
-              </div>
+          <div className={styles.statsGrid}>
+            <div className={styles.statItem}>
+              <span className={styles.statNumber}>500+</span>
+              <span className={styles.statLabel}>Athletes Trained</span>
             </div>
-
-            {/* Card 2 (Dark) */}
-            <div className={styles.cardDark}>
-              <div className={styles.cardIconBoxDark}>♥</div>
-              <h4 className={styles.cardTitleWhite}>Play Without<br />Pain.</h4>
-              <p className={styles.cardBodyDark}>
-                Longevity is the ultimate performance metric. We optimize your biomechanics to keep you healthy and dominating.
-              </p>
-              <div className={styles.cardFooterDark}>
-                <span className={styles.cardIndexDark}>02</span>
-                <button className={styles.cardArrowWhite}>→</button>
-              </div>
+            <div className={styles.statItem}>
+              <span className={styles.statNumber}>47</span>
+              <span className={styles.statLabel}>Draft Picks</span>
             </div>
-
-            {/* Card 3 */}
-            <div className={styles.cardWhite}>
-              <div className={styles.cardIconBox}>📊</div>
-              <h4 className={styles.cardTitle}>Data-Driven<br />Approach.</h4>
-              <p className={styles.cardBody}>
-                Every movement measured, every metric optimized. We turn data into actionable insights for your specific physiology.
-              </p>
-              <div className={styles.cardFooter}>
-                <span className={styles.cardIndex}>03</span>
-                <button className={styles.cardArrow}>→</button>
-              </div>
+            <div className={styles.statItem}>
+              <span className={styles.statNumber}>+4</span>
+              <span className={styles.statLabel}>MPH Avg Gain</span>
+            </div>
+            <div className={styles.statItem}>
+              <span className={styles.statNumber}>12</span>
+              <span className={styles.statLabel}>To MLB</span>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Section 4: Precision */}
-      <section className={styles.hero}>
-        <div className={styles.container}>
-          <div className={styles.precisionBox}>
-            <h2 className={styles.precisionTitle}>
-              Precision<br />
-              <span className={styles.gradientText}>Is Not An</span><br />
-              Accident
-            </h2>
-            <button className={styles.btnWhiteSkew}>
-              <div className={styles.unskew}>Explore The Science</div>
-            </button>
-          </div>
-        </div>
-      </section>
-
-      {/* Footer Simple */}
+      {/* Footer / CTA: Ready to feel it? */}
       <section className={styles.sectionDarkCenter}>
         <h2 className={styles.footerTitle}>
-          Unlock Your <span className={styles.textBlue}>Potential</span>
+          Ready to <span className={styles.textBlue}>feel it?</span>
         </h2>
-        <button className={styles.btnBlueRound}>Experience 108</button>
+        <button className={styles.btnBlueRound}>Start The Pursuit</button>
       </section>
     </div>
   );
