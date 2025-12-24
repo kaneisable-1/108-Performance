@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Inter, Anton, Oswald } from "next/font/google";
+import { Inter, JetBrains_Mono } from "next/font/google";
 import "./globals.css";
 
 const inter = Inter({
@@ -7,15 +7,9 @@ const inter = Inter({
   variable: "--font-sans",
 });
 
-const anton = Anton({
-  weight: "400",
+const mono = JetBrains_Mono({
   subsets: ["latin"],
-  variable: "--font-display",
-});
-
-const oswald = Oswald({
-  subsets: ["latin"],
-  variable: "--font-athletic",
+  variable: "--font-mono",
 });
 
 export const metadata: Metadata = {
@@ -30,7 +24,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${inter.variable} ${anton.variable} ${oswald.variable} antialiased`}>
+      <body className={`${inter.variable} ${mono.variable} antialiased`}>
         <main>{children}</main>
       </body>
     </html>
