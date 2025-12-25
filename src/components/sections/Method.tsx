@@ -24,8 +24,8 @@ export function Method() {
               </AnimatedSection>
 
               <AnimatedSection delay={0.2}>
-                <p className="text-lg text-gray-400 max-w-xl mt-8 leading-relaxed">
-                  A hierarchy that respects the individual before the sport. We learn how you think before we teach you how to move.
+                <p className="text-lg text-gray-400 max-w-xl mt-fib-34 leading-relaxed">
+                  We learn how you think before we look at how you move.
                 </p>
               </AnimatedSection>
             </div>
