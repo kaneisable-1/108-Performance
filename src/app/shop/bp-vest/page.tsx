@@ -429,7 +429,7 @@ export default function BPVestPage() {
                   Order Now — $499
                 </a>
                 <Link
-                  href="/the-method"
+                  href="/#method"
                   className="inline-flex items-center justify-center border border-white/30 text-white px-10 py-5 font-bold uppercase tracking-wider hover:bg-white/10 transition-colors"
                 >
                   View The Method

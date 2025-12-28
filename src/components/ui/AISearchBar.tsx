@@ -105,7 +105,7 @@ const searchableContent = [
     type: 'faq',
     title: 'What makes 108 different?',
     description: 'We don\'t teach a system. We help you find yours. Human → Athlete → Player.',
-    href: '/the-method',
+    href: '/#method',
     keywords: ['different', 'unique', 'special', 'why 108', 'method', 'approach'],
   },
   {
@@ -134,7 +134,7 @@ const searchableContent = [
     type: 'page',
     title: 'The Method',
     description: 'Human. Athlete. Player. We start with how you think, then how you move, then we build the skills.',
-    href: '/the-method',
+    href: '/#method',
     keywords: ['method', 'philosophy', 'approach', 'human athlete player', 'how', 'system'],
   },
   {

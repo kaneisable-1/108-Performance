@@ -47,7 +47,7 @@ export function Footer() {
           <div>
             <ul className="space-y-3 text-sm text-gray-500">
               <li>
-                <Link href="/the-method" className="hover:text-black transition-colors">
+                <Link href="/#method" className="hover:text-black transition-colors">
                   The Method
                 </Link>
               </li>

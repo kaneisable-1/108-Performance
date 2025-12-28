@@ -24,54 +24,92 @@ export function Gateway() {
             </div>
           </AnimatedSection>
 
-          {/* The 108 Experience Card */}
+          {/* Side-by-side Cards: Athletes & Coaches */}
           <AnimatedSection delay={0.1}>
-            <div className="bg-black text-white p-8 md:p-12">
-              <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-8">
-                <div className="flex-1">
-                  <div className="flex items-center gap-4 mb-6">
-                    <span className="text-[10px] uppercase tracking-wider bg-white text-black px-3 py-1 font-semibold">
-                      Required First Step
-                    </span>
-                  </div>
-                  <h3 className="text-3xl md:text-4xl font-black mb-4">
-                    The 108 Experience
-                  </h3>
-                  <p className="text-white/70 mb-6 max-w-md">
-                    2-5 days where we learn your wiring before we touch your mechanics. You leave with YOUR system—cues that click for you, not a template.
-                  </p>
-                  <div className="flex flex-wrap items-center gap-6 text-sm text-white/60">
-                    <span>2–5 Days</span>
-                    <span className="w-1 h-1 bg-white/30 rounded-full" />
-                    <span>In-Person</span>
-                    <span className="w-1 h-1 bg-white/30 rounded-full" />
-                    <span>Knoxville, TN</span>
-                  </div>
+            <div className="grid md:grid-cols-2 gap-6">
+              {/* Athletes Card */}
+              <div className="bg-black text-white p-8 md:p-10">
+                <div className="flex items-center gap-3 mb-6">
+                  <span className="text-[10px] uppercase tracking-wider bg-white text-black px-3 py-1 font-semibold">
+                    For Athletes
+                  </span>
+                  <span className="text-[10px] uppercase tracking-wider text-white/50">
+                    Required First Step
+                  </span>
                 </div>
-
-                <div className="flex flex-col items-start lg:items-end gap-4">
-                  <div className="text-right">
+                <h3 className="text-2xl md:text-3xl font-black mb-4">
+                  The 108 Experience
+                </h3>
+                <p className="text-white/70 mb-6 text-sm">
+                  2-5 days where we learn your wiring before we touch your mechanics. You leave with YOUR system—cues that click for you.
+                </p>
+                <div className="flex flex-wrap items-center gap-4 text-xs text-white/50 mb-8">
+                  <span>2–5 Days</span>
+                  <span className="w-1 h-1 bg-white/30 rounded-full" />
+                  <span>In-Person</span>
+                  <span className="w-1 h-1 bg-white/30 rounded-full" />
+                  <span>Knoxville, TN</span>
+                </div>
+                <div className="flex items-end justify-between">
+                  <div>
                     <p className="text-xs uppercase tracking-wider text-white/50 mb-1">Starting at</p>
-                    <p className="text-4xl md:text-5xl font-black">$2,000</p>
+                    <p className="text-3xl font-black">$2,000</p>
                   </div>
                   <Link
                     href="/programs/experience"
-                    className="bg-white text-black px-8 py-4 font-bold text-sm uppercase tracking-wider hover:bg-gray-100 transition-colors"
+                    className="bg-white text-black px-6 py-3 font-bold text-xs uppercase tracking-wider hover:bg-gray-100 transition-colors"
                   >
-                    Book Your Experience
+                    Book Now
+                  </Link>
+                </div>
+              </div>
+
+              {/* Coaches Card */}
+              <div className="bg-black text-white p-8 md:p-10">
+                <div className="flex items-center gap-3 mb-6">
+                  <span className="text-[10px] uppercase tracking-wider bg-white text-black px-3 py-1 font-semibold">
+                    For Coaches
+                  </span>
+                  <span className="text-[10px] uppercase tracking-wider text-white/50">
+                    Required First Step
+                  </span>
+                </div>
+                <h3 className="text-2xl md:text-3xl font-black mb-4">
+                  Coaches Experience
+                </h3>
+                <p className="text-white/70 mb-6 text-sm">
+                  A day in our lab. See why cookie-cutter doesn't work. Understand the system before you bring it to your athletes.
+                </p>
+                <div className="flex flex-wrap items-center gap-4 text-xs text-white/50 mb-8">
+                  <span>1 Day</span>
+                  <span className="w-1 h-1 bg-white/30 rounded-full" />
+                  <span>In-Person</span>
+                  <span className="w-1 h-1 bg-white/30 rounded-full" />
+                  <span>Knoxville, TN</span>
+                </div>
+                <div className="flex items-end justify-between">
+                  <div>
+                    <p className="text-xs uppercase tracking-wider text-white/50 mb-1">Investment</p>
+                    <p className="text-3xl font-black">$500<span className="text-lg font-normal text-white/50">/day</span></p>
+                  </div>
+                  <Link
+                    href="/programs/coaches-experience"
+                    className="bg-white text-black px-6 py-3 font-bold text-xs uppercase tracking-wider hover:bg-gray-100 transition-colors"
+                  >
+                    Apply Now
                   </Link>
                 </div>
               </div>
             </div>
           </AnimatedSection>
 
-          {/* For Coaches Link */}
+          {/* Can't Travel Note */}
           <AnimatedSection delay={0.2}>
             <div className="mt-8 text-center">
               <p className="text-black/50 text-sm">
-                Are you a coach?{' '}
-                <Link href="/programs/coaches-experience" className="text-black font-semibold hover:underline">
-                  See the Coaches Experience →
+                Can't travel to Knoxville?{' '}
+                <Link href="/programs/tour" className="text-black font-semibold hover:underline">
+                  See our Tour Experience in select cities →
                 </Link>
               </p>
             </div>

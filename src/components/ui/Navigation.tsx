@@ -235,12 +235,18 @@ export function Navigation() {
                         {/* Bottom CTA */}
                         <div className="border-t border-white/10 p-4 flex items-center justify-between bg-white/5">
                           <p className="text-xs text-white/50">Not sure where to start?</p>
-                          <Link
-                            href="/programs"
+                          <button
+                            onClick={() => {
+                              setIsProgramsOpen(false);
+                              const element = document.getElementById('find-your-path');
+                              if (element) {
+                                element.scrollIntoView({ behavior: 'smooth' });
+                              }
+                            }}
                             className="text-xs font-semibold text-white hover:underline"
                           >
-                            View All Programs →
-                          </Link>
+                            Find Your Path →
+                          </button>
                         </div>
                       </div>
                     </motion.div>
@@ -249,7 +255,7 @@ export function Navigation() {
               </div>
 
               <Link
-                href="/the-method"
+                href="/#method"
                 className="text-xs font-medium text-white/70 hover:text-white transition-colors uppercase tracking-wider"
               >
                 The Method
@@ -387,12 +393,17 @@ export function Navigation() {
                 </AnimatePresence>
               </div>
 
-              <Link
-                href="/programs/experience"
+              <button
+                onClick={() => {
+                  const element = document.getElementById('find-your-path');
+                  if (element) {
+                    element.scrollIntoView({ behavior: 'smooth' });
+                  }
+                }}
                 className="bg-white text-black px-5 py-2.5 rounded-full text-xs font-semibold uppercase tracking-wider hover:bg-white/90 transition-colors"
               >
-                Get Started
-              </Link>
+                Find Your Path
+              </button>
             </div>
 
             {/* Mobile Menu Button */}
@@ -478,7 +489,7 @@ export function Navigation() {
               {/* Other Links */}
               <div className="space-y-4 border-t border-white/10 pt-8">
                 <Link
-                  href="/the-method"
+                  href="/#method"
                   onClick={() => setIsMobileMenuOpen(false)}
                   className="block text-lg font-medium text-white"
                 >
@@ -578,13 +589,20 @@ export function Navigation() {
 
               {/* CTA */}
               <div className="mt-8">
-                <Link
-                  href="/programs/experience"
-                  onClick={() => setIsMobileMenuOpen(false)}
+                <button
+                  onClick={() => {
+                    setIsMobileMenuOpen(false);
+                    setTimeout(() => {
+                      const element = document.getElementById('find-your-path');
+                      if (element) {
+                        element.scrollIntoView({ behavior: 'smooth' });
+                      }
+                    }, 300);
+                  }}
                   className="block w-full bg-white text-black px-8 py-4 text-center font-semibold uppercase tracking-wider"
                 >
-                  Get Started
-                </Link>
+                  Find Your Path
+                </button>
               </div>
             </div>
           </motion.div>

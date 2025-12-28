@@ -40,7 +40,7 @@ export const NAV = {
     {
       label: 'Inside',
       dropdown: [
-        { label: 'The Work', href: '/the-method' },
+        { label: 'The Work', href: '/#method' },
         { label: 'The People', href: '/about' },
         { label: 'The Staying', href: '/#staying' },
       ],
@@ -52,7 +52,7 @@ export const NAV = {
         { label: 'Coaches', href: '/coaches' },
       ],
     },
-    { label: 'The Method', href: '/the-method' },
+    { label: 'The Method', href: '/#method' },
   ],
   cta: { label: 'The Door Is Open', href: '/apply' },
 } as const;

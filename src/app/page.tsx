@@ -23,20 +23,22 @@ export default function Home() {
         <AISearchBar />
       </div>
       <main className="pt-[72px] lg:pt-[80px]">
-        {/* 1. Hero */}
+        {/* 1. Hero - Hook */}
         <Hero />
-        {/* 2. Roster Carousel - Scrolling athlete cards */}
-        <RosterCarousel />
-        {/* 3. Find Your Path - Stats + Guided program selector */}
+        {/* 2. The Method - Understand what 108 does */}
+        <Method />
+        {/* 3. The Gateway - Required first step */}
+        <div id="gateway">
+          <Gateway />
+        </div>
+        {/* 4. Find Your Path - Qualify the user */}
         <div id="find-your-path">
           <FindYourPath />
         </div>
-        {/* 4. The Gateway - 108 Experience */}
-        <Gateway />
-        {/* 5. Choose Your Path - Training Options */}
+        {/* 5. Choose Your Path - Options after Experience */}
         <PathOptions />
-        {/* 6. The Method - Human → Athlete → Player */}
-        <Method />
+        {/* 6. Roster Carousel - Social proof with context */}
+        <RosterCarousel />
         {/* 7. App Showcase - 108 Software */}
         <AppShowcase />
         {/* 8. From 108 - Video Content */}
