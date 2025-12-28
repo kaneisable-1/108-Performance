@@ -70,7 +70,7 @@ export function Method() {
   };
 
   return (
-    <section id="method" className="bg-black text-white py-24 lg:py-32">
+    <section id="method" className="bg-black text-white py-24 lg:py-32 section-tint-cool">
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
         {/* Section Header */}
         <AnimatedSection>
@@ -102,7 +102,7 @@ export function Method() {
                     src={phase.image}
                     alt={phase.imageAlt}
                     fill
-                    className="object-cover"
+                    className="object-cover img-108-hero"
                   />
                 </div>
 

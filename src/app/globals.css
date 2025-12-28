@@ -368,3 +368,267 @@ html {
 .animate-spin-slow {
   animation: spin-slow 8s linear infinite;
 }
+
+/* ========================================
+   108 IMAGE TREATMENT SYSTEM
+   Unified color grading for visual consistency
+   ======================================== */
+
+/* Standard 108 image filter - applies to all athlete/testimonial photos */
+.img-108-standard {
+  filter: contrast(1.05) saturate(1.1) brightness(0.98);
+  transition: filter 0.3s ease;
+}
+
+/* Warm variant - slight sepia warmth */
+.img-108-warm {
+  filter: sepia(0.05) saturate(1.1) contrast(1.05);
+  transition: filter 0.3s ease;
+}
+
+/* Cool variant - slight blue shift */
+.img-108-cool {
+  filter: hue-rotate(-5deg) saturate(1.05) contrast(1.05);
+  transition: filter 0.3s ease;
+}
+
+/* High contrast for hero images */
+.img-108-hero {
+  filter: contrast(1.1) saturate(1.15) brightness(0.95);
+  transition: filter 0.3s ease;
+}
+
+/* Hover enhancement - adds pop on interaction */
+.img-108-standard:hover,
+.img-108-warm:hover,
+.img-108-cool:hover {
+  filter: contrast(1.08) saturate(1.2) brightness(1);
+}
+
+/* ========================================
+   IMAGE CONTAINER OVERLAYS
+   Gradient overlays for consistent card treatment
+   ======================================== */
+
+/* Bottom gradient overlay for text on images */
+.img-overlay-bottom {
+  position: relative;
+}
+
+.img-overlay-bottom::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to top,
+    rgba(0, 0, 0, 0.8) 0%,
+    rgba(0, 0, 0, 0.4) 30%,
+    transparent 60%
+  );
+  pointer-events: none;
+}
+
+/* Subtle vignette overlay */
+.img-overlay-vignette {
+  position: relative;
+}
+
+.img-overlay-vignette::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(
+    ellipse at center,
+    transparent 50%,
+    rgba(0, 0, 0, 0.3) 100%
+  );
+  pointer-events: none;
+}
+
+/* Full dark overlay for hover states */
+.img-overlay-dark {
+  position: relative;
+}
+
+.img-overlay-dark::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.4);
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.img-overlay-dark:hover::after {
+  opacity: 1;
+}
+
+/* ========================================
+   APPLE-INSPIRED COLOR SYSTEM
+   Multi-color from imagery, minimal accent
+   ======================================== */
+
+:root {
+  /* Accent Colors - Extracted from athlete imagery */
+  --accent-crimson: #C41E3A;
+  --accent-orange: #FF6B35;
+  --accent-cyan: #00D4FF;
+  --accent-navy: #1A2332;
+
+  /* Primary link/interactive accent - subtle blue like Apple */
+  --accent-link: #2997FF;
+
+  /* Background tints - very subtle color washes */
+  --tint-warm: rgba(255, 107, 53, 0.03);
+  --tint-cool: rgba(0, 212, 255, 0.02);
+  --tint-neutral: rgba(255, 255, 255, 0.02);
+}
+
+/* Link styling - Apple-inspired thin blue */
+a:not([class]) {
+  color: var(--accent-link);
+  text-decoration: none;
+  transition: opacity 0.2s ease;
+}
+
+a:not([class]):hover {
+  opacity: 0.8;
+}
+
+/* ========================================
+   DEPTH & SHADOW SYSTEM
+   Cards float above backgrounds
+   ======================================== */
+
+/* Floating card effect - Apple style */
+.card-float {
+  box-shadow:
+    0 4px 6px -1px rgba(0, 0, 0, 0.1),
+    0 2px 4px -2px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card-float:hover {
+  transform: translateY(-4px);
+  box-shadow:
+    0 20px 25px -5px rgba(0, 0, 0, 0.1),
+    0 8px 10px -6px rgba(0, 0, 0, 0.1);
+}
+
+/* Dark mode floating card */
+.card-float-dark {
+  box-shadow:
+    0 4px 6px -1px rgba(0, 0, 0, 0.5),
+    0 2px 4px -2px rgba(0, 0, 0, 0.5);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card-float-dark:hover {
+  transform: translateY(-4px);
+  box-shadow:
+    0 20px 25px -5px rgba(0, 0, 0, 0.5),
+    0 8px 10px -6px rgba(0, 0, 0, 0.5);
+}
+
+/* ========================================
+   SECTION BACKGROUND TINTS
+   Subtle color washes like Apple product pages
+   ======================================== */
+
+/* Warm tint - for sections with red/orange imagery */
+.section-tint-warm {
+  background: linear-gradient(
+    180deg,
+    rgba(255, 107, 53, 0.02) 0%,
+    transparent 50%,
+    rgba(196, 30, 58, 0.02) 100%
+  );
+}
+
+/* Cool tint - for sections with blue/cyan imagery */
+.section-tint-cool {
+  background: linear-gradient(
+    180deg,
+    rgba(0, 212, 255, 0.02) 0%,
+    transparent 50%,
+    rgba(26, 35, 50, 0.03) 100%
+  );
+}
+
+/* Neutral glow - subtle warmth */
+.section-tint-neutral {
+  background: radial-gradient(
+    ellipse at center top,
+    rgba(255, 255, 255, 0.03) 0%,
+    transparent 70%
+  );
+}
+
+/* ========================================
+   INTERACTIVE ACCENT STATES
+   15% color application on interactions
+   ======================================== */
+
+/* CTA button with accent */
+.btn-accent {
+  background: var(--accent-link);
+  color: white;
+  transition: all 0.2s ease;
+}
+
+.btn-accent:hover {
+  background: #1a82e6;
+  transform: translateY(-1px);
+}
+
+/* Accent border on focus/active */
+.accent-focus:focus-visible {
+  outline: 2px solid var(--accent-link);
+  outline-offset: 2px;
+}
+
+/* Accent underline for links in content */
+.link-accent {
+  color: var(--accent-link);
+  text-decoration: underline;
+  text-decoration-color: transparent;
+  text-underline-offset: 4px;
+  transition: text-decoration-color 0.2s ease;
+}
+
+.link-accent:hover {
+  text-decoration-color: var(--accent-link);
+}
+
+/* Badge/tag with accent */
+.badge-accent {
+  background: rgba(41, 151, 255, 0.1);
+  color: var(--accent-link);
+  border: 1px solid rgba(41, 151, 255, 0.2);
+}
+
+/* ========================================
+   ATHLETE CARD COLOR EXTRACTION EFFECT
+   Let the image color "bleed" subtly
+   ======================================== */
+
+/* Subtle glow behind athlete cards that picks up image color */
+.athlete-card-glow {
+  position: relative;
+}
+
+.athlete-card-glow::before {
+  content: '';
+  position: absolute;
+  inset: -2px;
+  background: inherit;
+  filter: blur(20px) saturate(1.5);
+  opacity: 0;
+  z-index: -1;
+  transition: opacity 0.5s ease;
+}
+
+.athlete-card-glow:hover::before {
+  opacity: 0.3;
+}

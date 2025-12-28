@@ -32,6 +32,11 @@ export interface Testimonial {
   tags: string[];
   credibilityScore: 1 | 2 | 3 | 4 | 5;
   featured: boolean;
+  // Video testimonial fields
+  hasVideo?: boolean;
+  vimeoId?: string;            // Vimeo video ID (e.g., "843441967")
+  videoThumbnail?: string;     // Custom thumbnail path (optional, uses Vimeo auto if not set)
+  videoDuration?: string;      // Duration string (e.g., "2:34")
 }
 
 // ============================================
@@ -134,6 +139,23 @@ export const FEATURED_TESTIMONIALS: Testimonial[] = [
     tags: ['mlb', 'book', 'development', 'dodgers'],
     credibilityScore: 5,
     featured: true,
+  },
+  // Featured Video Testimonial
+  {
+    id: 'mike-paigo-featured',
+    name: 'Mike Paigo',
+    role: '108 Athlete',
+    program: '108 Performance',
+    category: 'player',
+    outcomeCategory: 'skill',
+    quote: 'The 108 program transformed my approach to the game.',
+    tags: ['video', 'player', '108-performance'],
+    credibilityScore: 4,
+    featured: true,
+    hasVideo: true,
+    vimeoId: '1149774225',
+    videoDuration: '2:00',
+    videoThumbnail: 'https://vumbnail.com/1149774225.jpg',
   },
 ];
 
@@ -382,6 +404,169 @@ export const ALL_TESTIMONIALS: Testimonial[] = [
     credibilityScore: 4,
     featured: false,
   },
+  // ============================================
+  // VIDEO TESTIMONIALS
+  // ============================================
+  {
+    id: 'trey-cobb-video',
+    name: 'Trey Cobb',
+    role: '108 Reader',
+    program: 'Old School vs New School Book',
+    category: 'book',
+    outcomeCategory: 'mindset',
+    quote: 'This book changed how I think about the game.',
+    tags: ['video', 'book'],
+    credibilityScore: 4,
+    featured: false,
+    hasVideo: true,
+    vimeoId: '1149774234',
+    videoDuration: '2:00',
+    videoThumbnail: 'https://vumbnail.com/1149774234.jpg',
+  },
+  {
+    id: 'sean-bucanan-video',
+    name: 'Sean Bucanan',
+    role: '108 Athlete',
+    program: '108 Performance',
+    category: 'player',
+    outcomeCategory: 'skill',
+    quote: 'Working with 108 has been a game-changer for my development.',
+    tags: ['video', 'player', '108-performance'],
+    credibilityScore: 4,
+    featured: false,
+    hasVideo: true,
+    vimeoId: '1149774291',
+    videoDuration: '2:00',
+    videoThumbnail: 'https://vumbnail.com/1149774291.jpg',
+  },
+  {
+    id: 'john-sheehan-video',
+    name: 'John Sheehan',
+    role: 'Mentorship Member',
+    program: 'Mentorship Bundle',
+    category: 'coach',
+    outcomeCategory: 'skill',
+    quote: 'The mentorship program gave me tools I use every day with my players.',
+    tags: ['video', 'mentorship', 'coach'],
+    credibilityScore: 4,
+    featured: false,
+    hasVideo: true,
+    vimeoId: '1149774310',
+    videoDuration: '2:00',
+    videoThumbnail: 'https://vumbnail.com/1149774310.jpg',
+  },
+  {
+    id: 'somerville-video',
+    name: 'Somerville',
+    role: 'Mentorship Member',
+    program: 'Mentorship Bundle',
+    category: 'coach',
+    outcomeCategory: 'skill',
+    quote: 'The 108 mentorship is the best investment I\'ve made in my coaching career.',
+    tags: ['video', 'mentorship', 'coach'],
+    credibilityScore: 4,
+    featured: false,
+    hasVideo: true,
+    vimeoId: '1149774269',
+    videoDuration: '2:00',
+    videoThumbnail: 'https://vumbnail.com/1149774269.jpg',
+  },
+  {
+    id: 'ben-skinner-video',
+    name: 'Ben Skinner',
+    role: 'Mentorship Member',
+    program: 'Mentorship Bundle',
+    category: 'coach',
+    outcomeCategory: 'skill',
+    quote: 'The knowledge I gained from 108 mentorship is invaluable.',
+    tags: ['video', 'mentorship', 'coach'],
+    credibilityScore: 4,
+    featured: false,
+    hasVideo: true,
+    vimeoId: '1149774431',
+    videoDuration: '2:00',
+    videoThumbnail: 'https://vumbnail.com/1149774431.jpg',
+  },
+  {
+    id: 'bryan-madsen-video',
+    name: 'Bryan Madsen',
+    role: 'Mentorship Member',
+    program: 'Mentorship Bundle',
+    category: 'coach',
+    outcomeCategory: 'mindset',
+    quote: 'This program changed my entire philosophy on player development.',
+    tags: ['video', 'mentorship', 'coach'],
+    credibilityScore: 4,
+    featured: false,
+    hasVideo: true,
+    vimeoId: '1149774422',
+    videoDuration: '2:00',
+    videoThumbnail: 'https://vumbnail.com/1149774422.jpg',
+  },
+  {
+    id: 'hector-garcia-video',
+    name: 'Hector Garcia',
+    role: 'Mentorship Member',
+    program: 'Mentorship Bundle',
+    category: 'coach',
+    outcomeCategory: 'skill',
+    quote: 'The 108 approach gives you real tools to develop players.',
+    tags: ['video', 'mentorship', 'coach'],
+    credibilityScore: 4,
+    featured: false,
+    hasVideo: true,
+    vimeoId: '1149774345',
+    videoDuration: '2:00',
+    videoThumbnail: 'https://vumbnail.com/1149774345.jpg',
+  },
+  {
+    id: 'hayden-dow-video',
+    name: 'Hayden Dow',
+    role: '108 Athlete',
+    program: '108 Performance',
+    category: 'player',
+    outcomeCategory: 'skill',
+    quote: 'Training at 108 took my game to the next level.',
+    tags: ['video', 'player', '108-performance'],
+    credibilityScore: 4,
+    featured: false,
+    hasVideo: true,
+    vimeoId: '1149774375',
+    videoDuration: '2:00',
+    videoThumbnail: 'https://vumbnail.com/1149774375.jpg',
+  },
+  {
+    id: 'ben-shoettker-video',
+    name: 'Ben Shoettker',
+    role: '108 Athlete',
+    program: '108 Performance',
+    category: 'player',
+    outcomeCategory: 'skill',
+    quote: 'The results speak for themselves with 108.',
+    tags: ['video', 'player', '108-performance'],
+    credibilityScore: 4,
+    featured: false,
+    hasVideo: true,
+    vimeoId: '1149774470',
+    videoDuration: '2:00',
+    videoThumbnail: 'https://vumbnail.com/1149774470.jpg',
+  },
+  {
+    id: 'joe-vondrachek-video',
+    name: 'Joe Vondrachek',
+    role: '108 Athlete',
+    program: '108 Performance',
+    category: 'player',
+    outcomeCategory: 'skill',
+    quote: '108 helped me understand what I was capable of.',
+    tags: ['video', 'player', '108-performance'],
+    credibilityScore: 4,
+    featured: false,
+    hasVideo: true,
+    vimeoId: '1149774331',
+    videoDuration: '2:00',
+    videoThumbnail: 'https://vumbnail.com/1149774331.jpg',
+  },
 ];
 
 // ============================================
@@ -402,4 +587,12 @@ export const getTestimonialsByTag = (tag: string): Testimonial[] => {
 
 export const getHighCredibilityTestimonials = (): Testimonial[] => {
   return ALL_TESTIMONIALS.filter(t => t.credibilityScore >= 4);
+};
+
+export const getVideoTestimonials = (): Testimonial[] => {
+  return ALL_TESTIMONIALS.filter(t => t.hasVideo);
+};
+
+export const getFeaturedVideoTestimonial = (): Testimonial | undefined => {
+  return FEATURED_TESTIMONIALS.find(t => t.hasVideo && t.featured);
 };

@@ -35,7 +35,7 @@ export function RosterCarousel() {
     if (!scrollContainer) return;
 
     let animationId: number;
-    let scrollSpeed = 0.5;
+    let scrollSpeed = 1.5;
 
     const scroll = () => {
       if (!isPaused && scrollContainer) {
@@ -112,7 +112,7 @@ export function RosterCarousel() {
               src={athlete.image}
               alt={`108 Athlete`}
               fill
-              className="object-cover transition-transform duration-500 group-hover:scale-110"
+              className="object-cover transition-transform duration-500 group-hover:scale-110 img-108-standard"
               sizes="(max-width: 768px) 120px, (max-width: 1024px) 150px, 180px"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />

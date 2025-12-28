@@ -39,7 +39,7 @@ export function FAQ() {
   const [openIndex, setOpenIndex] = useState<number | null>(0);
 
   return (
-    <section className="py-24 lg:py-32 bg-gray-50">
+    <section className="py-24 lg:py-32 bg-white">
       <div className="max-w-3xl mx-auto px-6 lg:px-8">
         <AnimatedSection>
           <div className="text-center mb-16">

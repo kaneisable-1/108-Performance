@@ -50,7 +50,7 @@ const levelUpPaths = [
 
 export function PathOptions() {
   return (
-    <section className="py-24 lg:py-32 bg-gray-50">
+    <section className="py-24 lg:py-32 bg-white">
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
         {/* Header */}
         <AnimatedSection>
@@ -76,8 +76,8 @@ export function PathOptions() {
                 href={path.href}
                 className={`group block p-8 transition-all h-full ${
                   path.highlighted
-                    ? 'bg-black text-white hover:shadow-2xl'
-                    : 'bg-white text-black hover:shadow-xl'
+                    ? 'bg-black text-white card-float-dark'
+                    : 'bg-white text-black border border-black/10 card-float'
                 }`}
               >
                 {path.highlighted ? (
@@ -121,7 +121,7 @@ export function PathOptions() {
                 <Link
                   key={path.href}
                   href={path.href}
-                  className="group block p-6 bg-white border border-black/10 hover:border-black/30 hover:shadow-lg transition-all"
+                  className="group block p-6 bg-white border border-black/10 card-float"
                 >
                   <h3 className="text-xl font-black text-black mb-2">
                     {path.name}

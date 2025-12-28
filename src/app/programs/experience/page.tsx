@@ -278,7 +278,7 @@ export default function ExperiencePage() {
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
-                  className="bg-gray-50 p-8 h-full transition-all group-hover:shadow-xl group-hover:bg-white"
+                  className="bg-white border border-black/10 p-8 h-full card-float"
                 >
                   <h3 className="text-2xl font-black mb-3">Tri Star</h3>
                   <p className="text-gray-600 text-sm mb-4">Local unlimited access in Knoxville.</p>
@@ -291,7 +291,7 @@ export default function ExperiencePage() {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ delay: 0.1 }}
-                  className="bg-gray-50 p-8 h-full transition-all group-hover:shadow-xl group-hover:bg-white"
+                  className="bg-white border border-black/10 p-8 h-full card-float"
                 >
                   <h3 className="text-2xl font-black mb-3">Virtual Experience</h3>
                   <p className="text-gray-600 text-sm mb-4">Remote coaching anywhere.</p>
@@ -304,7 +304,7 @@ export default function ExperiencePage() {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ delay: 0.2 }}
-                  className="bg-black text-white p-8 h-full transition-all group-hover:shadow-xl"
+                  className="bg-black text-white p-8 h-full card-float-dark"
                 >
                   <span className="inline-block bg-white text-black text-[10px] uppercase tracking-wider px-3 py-1 mb-4">Best Value</span>
                   <h3 className="text-2xl font-black mb-3">Virtual Pro</h3>

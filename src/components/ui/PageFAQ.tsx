@@ -26,7 +26,7 @@ export function PageFAQ({
   const isDark = variant === 'dark';
 
   return (
-    <section className={`py-24 ${isDark ? 'bg-[#0a0a0a]' : 'bg-gray-50'}`}>
+    <section className={`py-24 ${isDark ? 'bg-[#0a0a0a]' : 'bg-white'}`}>
       <div className="max-w-3xl mx-auto px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 20 }}

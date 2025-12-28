@@ -5,6 +5,12 @@ import { motion, AnimatePresence } from 'framer-motion';
 import Link from 'next/link';
 import { AnimatedSection } from '../ui/AnimatedSection';
 
+const stats = [
+  { value: '26', label: 'MLB Organizations' },
+  { value: '+4 mph', label: 'Avg Velocity Gain' },
+  { value: '38%', label: 'Less Elbow Stress' },
+];
+
 type UserType = 'athlete' | 'coach' | null;
 type LocationType = 'local' | 'non-local' | null;
 type TravelFrequency = 'quarterly' | 'once' | 'cant-travel' | null;
@@ -186,7 +192,29 @@ export function FindYourPath() {
   return (
     <section className="py-24 lg:py-32 bg-black text-white">
       <div className="max-w-3xl mx-auto px-6 lg:px-8">
+        {/* Stats Banner */}
         <AnimatedSection>
+          <div className="grid grid-cols-3 gap-4 md:gap-8 text-center mb-16 pb-16 border-b border-white/10">
+            {stats.map((stat, index) => (
+              <motion.div
+                key={stat.label}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: index * 0.1 }}
+              >
+                <p className="text-2xl md:text-4xl font-black text-white mb-1">
+                  {stat.value}
+                </p>
+                <p className="text-[10px] md:text-xs text-white/50 uppercase tracking-wider">
+                  {stat.label}
+                </p>
+              </motion.div>
+            ))}
+          </div>
+        </AnimatedSection>
+
+        <AnimatedSection delay={0.2}>
           <div className="text-center mb-12">
             <p className="text-xs uppercase tracking-[0.3em] text-white/40 mb-4">
               Find Your Path

@@ -22,7 +22,7 @@ const featuredAthletes = [
 
 export function AthleteShowcase() {
   return (
-    <section className="bg-black py-24 lg:py-32 border-t border-white/10">
+    <section className="bg-black py-24 lg:py-32 border-t border-white/10 section-tint-warm">
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
         {/* Header */}
         <motion.div
@@ -63,13 +63,13 @@ export function AthleteShowcase() {
                 scale: 1.05,
                 transition: { duration: 0.2 }
               }}
-              className="relative aspect-[3/4] rounded-lg overflow-hidden cursor-pointer group"
+              className="relative aspect-[3/4] rounded-lg overflow-hidden cursor-pointer group card-float-dark"
             >
               <Image
                 src={athlete.image}
                 alt={`108 Athlete`}
                 fill
-                className="object-cover transition-transform duration-500 group-hover:scale-110"
+                className="object-cover transition-transform duration-500 group-hover:scale-110 img-108-standard"
                 sizes="(max-width: 768px) 33vw, (max-width: 1024px) 25vw, 16vw"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
