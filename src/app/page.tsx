@@ -9,6 +9,7 @@ import { Method } from '@/components/sections/Method';
 import { AppShowcase } from '@/components/sections/AppShowcase';
 import { From108 } from '@/components/sections/From108';
 import { AthleteShowcase } from '@/components/sections/AthleteShowcase';
+import { Testimonials } from '@/components/sections/Testimonials';
 import { FAQ } from '@/components/sections/FAQ';
 import { CTA } from '@/components/sections/CTA';
 import { Footer } from '@/components/ui/Footer';
@@ -43,7 +44,9 @@ export default function Home() {
         <From108 />
         {/* 9. Athlete Showcase - Social Proof */}
         <AthleteShowcase />
-        {/* 10. FAQ */}
+        {/* 10. Testimonials */}
+        <Testimonials />
+        {/* 11. FAQ */}
         <FAQ />
         {/* 8. Final CTA */}
         <CTA />

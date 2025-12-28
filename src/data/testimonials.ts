@@ -1,0 +1,405 @@
+// 108 Performance — Testimonials Data
+// Categories: MLB/Pro, Coaches, Players, Parents, Book
+
+export type TestimonialCategory =
+  | 'mlb'
+  | 'coach'
+  | 'player'
+  | 'parent'
+  | 'book'
+  | 'industry';
+
+export type OutcomeCategory =
+  | 'mindset'
+  | 'physical'
+  | 'skill'
+  | 'velocity'
+  | 'scholarship'
+  | 'confidence';
+
+export interface Testimonial {
+  id: string;
+  name: string;
+  role: string;
+  organization?: string;
+  program: string;
+  category: TestimonialCategory;
+  outcomeCategory: OutcomeCategory;
+  outcomeMetric?: string;
+  quote: string;
+  supportingQuote?: string;
+  image?: string;
+  tags: string[];
+  credibilityScore: 1 | 2 | 3 | 4 | 5;
+  featured: boolean;
+}
+
+// ============================================
+// FEATURED TESTIMONIALS (Homepage)
+// ============================================
+
+export const FEATURED_TESTIMONIALS: Testimonial[] = [
+  {
+    id: 'trevor-cahill-mlb',
+    name: 'Trevor Cahill',
+    role: 'MLB Pitcher',
+    organization: 'San Francisco Giants',
+    program: '108 Performance',
+    category: 'mlb',
+    outcomeCategory: 'skill',
+    outcomeMetric: 'Arm feeling like a kid again',
+    quote: '108 helped me to understand what I was doing on the mound and how I could improve. Through their vast knowledge and experience... I needed to help get my arm feeling like I was a kid again.',
+    supportingQuote: 'At the same time I was improving the overall stuff of every pitch in my repertoire. Thanks 108!',
+    image: '/testimonials/cahill-testimonial.png',
+    tags: ['mlb', 'pitching', 'pro', 'injury-recovery'],
+    credibilityScore: 5,
+    featured: true,
+  },
+  {
+    id: 'marc-rzepczynski-mlb',
+    name: 'Marc Rzepczynski',
+    role: 'MLB Pitcher',
+    organization: 'Toronto Blue Jays',
+    program: '108 Performance',
+    category: 'mlb',
+    outcomeCategory: 'physical',
+    outcomeMetric: '80 pitches with minimal soreness after 14-year career',
+    quote: 'The 108 guys are awesome. As a veteran of professional baseball for 14 years I developed some bad habits. Will and Eugene realized I had some mechanical flaws and gave me drills to help me fix them.',
+    supportingQuote: 'Overall they have made me enjoy baseball and the art of pitching again which sometimes pitchers forget is important when they are at the top level.',
+    image: '/testimonials/zep-testimonial.png',
+    tags: ['mlb', 'pitching', 'pro', 'injury-recovery', 'longevity'],
+    credibilityScore: 5,
+    featured: true,
+  },
+  {
+    id: 'andy-mckay-mariners',
+    name: 'Andy McKay',
+    role: 'Director of Player Development',
+    organization: 'Seattle Mariners',
+    program: '108 Courses',
+    category: 'coach',
+    outcomeCategory: 'skill',
+    outcomeMetric: 'Major impact on thought process',
+    quote: 'As coaches, we have an obligation to develop ourselves for the benefit of our players. Eugene has created a continuing education program that I would encourage you to take advantage of.',
+    supportingQuote: 'His work at 108 has had a major impact on my thought process with both pitching and hitting.',
+    image: '/testimonials/andy-mckay.png',
+    tags: ['mlb', 'player-development', 'courses', 'mariners'],
+    credibilityScore: 5,
+    featured: true,
+  },
+  {
+    id: 'jerry-weinstein-rockies',
+    name: 'Jerry Weinstein',
+    role: '2018 Tony Gwynn Award Recipient',
+    organization: 'Colorado Rockies',
+    program: 'Mentorship Bundle',
+    category: 'coach',
+    outcomeCategory: 'skill',
+    outcomeMetric: '50 pages of notes from courses',
+    quote: 'Just took both level one courses. Took 50 pages of notes. Read the book & just starting to go through all their mentorship material.',
+    supportingQuote: 'Really sold on these guys. Lots of new tools for your tool kit. Lots of new ways to enhance the development of your players.',
+    image: '/testimonials/jerry-weinstein.png',
+    tags: ['mlb', 'courses', 'mentorship', 'rockies', 'legend'],
+    credibilityScore: 5,
+    featured: true,
+  },
+  {
+    id: 'monte-lee-clemson',
+    name: 'Monte Lee',
+    role: 'Head Baseball Coach',
+    organization: 'Clemson University',
+    program: 'Old School vs New School Book',
+    category: 'book',
+    outcomeCategory: 'skill',
+    outcomeMetric: 'Must read for Baseball coaches',
+    quote: "From new school technology and research, to old school wisdom on how the Baseball swing feels, I haven't found a book that covers both better than Eugene's.",
+    supportingQuote: 'This is a must read for any Baseball coach looking to find information to make their players better.',
+    image: '/testimonials/monte-lee.png',
+    tags: ['college', 'book', 'coach', 'clemson', 'acc'],
+    credibilityScore: 5,
+    featured: true,
+  },
+  {
+    id: 'shaun-larkin-dodgers',
+    name: 'Shaun Larkin',
+    role: 'Coordinator of Skill Development',
+    organization: 'Los Angeles Dodgers',
+    program: 'Old School vs New School Book',
+    category: 'book',
+    outcomeCategory: 'mindset',
+    outcomeMetric: 'Push traditional Baseball development to new heights',
+    quote: "As evidenced by this book, Eugene's passion for player development and pursuit of truth is unparalleled.",
+    supportingQuote: 'His findings and ideas are sure to spark thought, inspire change, and push traditional Baseball development to new heights.',
+    image: '/testimonials/shawn-larkin.png',
+    tags: ['mlb', 'book', 'development', 'dodgers'],
+    credibilityScore: 5,
+    featured: true,
+  },
+];
+
+// ============================================
+// ALL TESTIMONIALS
+// ============================================
+
+export const ALL_TESTIMONIALS: Testimonial[] = [
+  ...FEATURED_TESTIMONIALS,
+  {
+    id: 'trevor-burmeister-coach',
+    name: 'Trevor Burmeister',
+    role: 'MiLB Hitting Coach',
+    organization: 'Colorado Rockies',
+    program: 'Mentorship Bundle',
+    category: 'coach',
+    outcomeCategory: 'mindset',
+    outcomeMetric: 'Game-changer for career',
+    quote: 'I just want the best information. I can say with full confidence that Eugene and his 108 team are the best educational operation I\'ve come across.',
+    supportingQuote: 'Buy the book, take the courses, dive into it all. I can\'t say enough. 108 has been a game-changer for my career.',
+    image: '/testimonials/trevor-burmeister-testimonial.jpeg',
+    tags: ['milb', 'hitting', 'coach', 'mentorship'],
+    credibilityScore: 5,
+    featured: false,
+  },
+  {
+    id: 'matt-swope-maryland',
+    name: 'Matt Swope',
+    role: 'Assistant Baseball Coach',
+    organization: 'University of Maryland',
+    program: 'Mentorship Bundle',
+    category: 'coach',
+    outcomeCategory: 'skill',
+    outcomeMetric: 'Learned more in 1 year than previous 20 years',
+    quote: "108 has changed the way I assess and coach baseball. I've learned more in the last year than I have in my previous 20 years in the game.",
+    supportingQuote: 'He is the first person I call for advice when it comes to assessments and development. His mentorship bundle is great for all coaching levels and an absolute must have!',
+    image: '/testimonials/swope-testimonial.jpeg',
+    tags: ['college', 'coach', 'mentorship', 'hitting'],
+    credibilityScore: 5,
+    featured: false,
+  },
+  {
+    id: 'tyler-white-book',
+    name: 'Tyler White',
+    role: 'Founder',
+    organization: 'Gestalt Performance',
+    program: 'Old School vs New School Book',
+    category: 'book',
+    outcomeCategory: 'mindset',
+    outcomeMetric: 'Refreshing change of pace',
+    quote: 'Eugene is a hybrid of Yosemite Sam and a mad scientist if they both were in love with solving the deepest secrets in Baseball.',
+    supportingQuote: 'This book is a refreshing change of pace for the Baseball Industry. Too many books say the same thing, this one challenges perceived notions in every chapter.',
+    image: '/testimonials/tyler-white-book-quote.png',
+    tags: ['book', 'mindset', 'development'],
+    credibilityScore: 4,
+    featured: false,
+  },
+  {
+    id: 'ken-crenshaw-dbacks',
+    name: 'Ken Crenshaw',
+    role: 'Director of Sports Medicine & Performance',
+    organization: 'Arizona Diamondbacks',
+    program: '108 Performance',
+    category: 'mlb',
+    outcomeCategory: 'mindset',
+    outcomeMetric: 'Push the game to new levels',
+    quote: 'I have always admired the guys at 108 Performance for their never ending desire to learn and share. They are always looking for ways to make baseball players better.',
+    supportingQuote: 'They have dug down some roads that others have not which challenges all of us to question why we do what we do.',
+    image: '/testimonials/ken-crenshaw.png',
+    tags: ['mlb', 'sports-medicine', 'performance', 'diamondbacks'],
+    credibilityScore: 5,
+    featured: false,
+  },
+  {
+    id: 'brady-strohm-teamusa',
+    name: 'Brady Strohm',
+    role: 'Player',
+    organization: 'Team USA',
+    program: '108 Performance Training',
+    category: 'player',
+    outcomeCategory: 'velocity',
+    outcomeMetric: '71-72 mph to 84 mph, injury-free since 2018',
+    quote: "When I had first came in I couldn't even raise my arm and I was topping at 71-72mph. Now 2 years later I'm the number 1 RHP in California of the 2024 class, throwing 84mph as a young 14 year old.",
+    supportingQuote: "I haven't felt one bit of ache, pain, discomfort, soreness since October of 2018. Everything is a process and if you buy in and put in the effort you will see the results you want with 108.",
+    image: '/testimonials/strohm-testimonial.jpeg',
+    tags: ['youth', 'pitching', 'velocity', 'injury-recovery', 'team-usa'],
+    credibilityScore: 5,
+    featured: false,
+  },
+  {
+    id: 'cliff-terracuso-industry',
+    name: 'Cliff Terracuso',
+    role: 'President of Prospect Wire, VP of Baseball Ops',
+    organization: 'DS Sports Ventures',
+    program: '108 Mentorship Program',
+    category: 'industry',
+    outcomeCategory: 'skill',
+    outcomeMetric: 'Foundation for years to come',
+    quote: '108 Performance has created a system that maximizes your ability to move better, create REAL on field results and drastically improve ball metrics.',
+    supportingQuote: 'There is nothing out there that compares to it and they are just getting started! If you are a player or coach trying to take your player development to the next level, the 108 Mentorship Program is a MUST.',
+    image: '/testimonials/terracuso-testimonial.jpeg',
+    tags: ['industry', 'mentorship', 'development'],
+    credibilityScore: 5,
+    featured: false,
+  },
+  {
+    id: 'kevin-davidson-baseballcloud',
+    name: 'Kevin Davidson',
+    role: 'CEO',
+    organization: 'BaseballCloud',
+    program: '108 Courses',
+    category: 'industry',
+    outcomeCategory: 'skill',
+    outcomeMetric: 'Become one of the smartest in the game',
+    quote: "If the 108 Performance courses allow you to absorb 10 percent of Eugene's knowledge, you will immediately become one of the smartest in the game. A MUST!!",
+    image: '/testimonials/kd-courses.png',
+    tags: ['industry', 'courses', 'tech'],
+    credibilityScore: 4,
+    featured: false,
+  },
+  {
+    id: 'tyler-robinson-campbell',
+    name: 'Tyler Robinson',
+    role: 'Assistant Baseball Coach',
+    organization: 'Campbell University',
+    program: '108 Bundle',
+    category: 'coach',
+    outcomeCategory: 'skill',
+    outcomeMetric: 'ELITE ability to simplify complex ideas',
+    quote: '108 Performance is top notch! If you are looking for a full educational system their bundle does an excellent job.',
+    supportingQuote: "Will's ability to take new complex ideas on the pitching delivery and make them seem simple is ELITE! I cannot say enough about how much these guys are doing for the baseball community.",
+    image: '/testimonials/robinson-testimonial.jpeg',
+    tags: ['college', 'coach', 'pitching', 'bundle'],
+    credibilityScore: 4,
+    featured: false,
+  },
+  {
+    id: 'mike-mcrae-vcu',
+    name: 'Mike McRae',
+    role: 'Pitching Coach',
+    organization: 'VCU',
+    program: '108 Mentorship Program',
+    category: 'coach',
+    outcomeCategory: 'mindset',
+    outcomeMetric: 'Rockstars - personal one-on-one time',
+    quote: 'The 108 Mentorship Program is an extremely valuable resource for any coach. The content & passion is evident immediately.',
+    supportingQuote: 'They do a first rate job of making you think about your own teachings and looking through a different lens. They are Rockstars!',
+    image: '/testimonials/mcrae-testimonial.jpeg',
+    tags: ['college', 'coach', 'pitching', 'mentorship'],
+    credibilityScore: 4,
+    featured: false,
+  },
+  {
+    id: 'scott-swanson-fullreps',
+    name: 'Scott Swanson',
+    role: 'Founder / Director of Player Development',
+    organization: 'Full Reps',
+    program: '108 Courses',
+    category: 'coach',
+    outcomeCategory: 'skill',
+    outcomeMetric: 'Simple framework for developing dudes',
+    quote: 'We achieve adeptness by exhibiting a constant willingness to learn. The 108 Performance courses will challenge you to think outside the box.',
+    supportingQuote: 'No one facilitates a love for learning like my good friend BLEECK!',
+    image: '/testimonials/scott-swanson-full-reps.png',
+    tags: ['facility', 'courses', 'development'],
+    credibilityScore: 4,
+    featured: false,
+  },
+  {
+    id: 'fred-corral-missouri',
+    name: 'Fred Corral',
+    role: 'Pitching Coach',
+    organization: 'Missouri',
+    program: '108 Courses',
+    category: 'coach',
+    outcomeCategory: 'mindset',
+    outcomeMetric: 'Worth its weight in gold',
+    quote: '(The 108 courses) are going to be worth its weight in gold. Early Christmas for me as I got to spend the afternoon talking with Eugene.',
+    supportingQuote: 'What a great mind and even greater passion for the game.',
+    image: '/testimonials/fred-corral-courses.png',
+    tags: ['college', 'coach', 'pitching', 'courses', 'sec'],
+    credibilityScore: 4,
+    featured: false,
+  },
+  {
+    id: 'david-langer-uconn',
+    name: 'David Langer',
+    role: '3B',
+    organization: 'University of Connecticut',
+    program: '108 Mentorship',
+    category: 'player',
+    outcomeCategory: 'skill',
+    outcomeMetric: 'Ability to coach myself',
+    quote: 'The 108 Mentorship was an outstanding purchase for me. The concepts and thoughts taught by the 108 staff helped me to understand why these things were happening and what movements in my swing were creating issues.',
+    supportingQuote: 'In other words, 108 gave me the ability to coach myself. I would highly recommend working with 108.',
+    image: '/testimonials/david-langer.png',
+    tags: ['college', 'player', 'hitting', 'mentorship'],
+    credibilityScore: 4,
+    featured: false,
+  },
+  {
+    id: 'dylan-buzbee-erau',
+    name: 'Dylan Buzbee',
+    role: 'Baseball Player',
+    organization: 'Embry-Riddle University',
+    program: '108 Mentorship',
+    category: 'player',
+    outcomeCategory: 'skill',
+    outcomeMetric: 'Paradigm shift in viewing hitting and pitching',
+    quote: 'The 108 mentorship is simply the best resource, or better yet, toolkit that any player or coach can have.',
+    supportingQuote: 'The courses and extensive GIF library included lays the groundwork to create a paradigm shift in the way you view hitting and pitching. It is a deadly combination.',
+    image: '/testimonials/dylan-buzbee.png',
+    tags: ['college', 'player', 'mentorship'],
+    credibilityScore: 4,
+    featured: false,
+  },
+  {
+    id: 'demetre-kokoris-bluejays',
+    name: 'Demetre Kokoris',
+    role: 'MiLB Pitching Coach',
+    organization: 'Toronto Blue Jays',
+    program: '108 Performance',
+    category: 'coach',
+    outcomeCategory: 'mindset',
+    outcomeMetric: 'Refreshingly unique perspective',
+    quote: 'An easy selection for life long learners. Eugene tackles object matter from a refreshingly unique perspective that will undoubtedly challenge your current beliefs.',
+    supportingQuote: 'A highly intelligent resource for baseball coaches.',
+    image: '/testimonials/demetre-kokoris.png',
+    tags: ['milb', 'coach', 'pitching', 'bluejays'],
+    credibilityScore: 4,
+    featured: false,
+  },
+  {
+    id: 'dan-spain-clarke',
+    name: 'Dan Spain',
+    role: 'Head Coach',
+    organization: 'Clarke University',
+    program: '108 Performance',
+    category: 'coach',
+    outcomeCategory: 'mindset',
+    outcomeMetric: 'Most impressive baseball minds',
+    quote: "If you are obsessed with the swing and trying to learn everything you can about understanding the truth about the relationship between movement and performance, this is where it's at.",
+    supportingQuote: 'Eugene and his staff are some of the most impressive baseball minds you will find!',
+    image: '/testimonials/dan-spain.png',
+    tags: ['college', 'coach', 'hitting'],
+    credibilityScore: 4,
+    featured: false,
+  },
+];
+
+// ============================================
+// HELPER FUNCTIONS
+// ============================================
+
+export const getTestimonialsByCategory = (category: TestimonialCategory): Testimonial[] => {
+  return ALL_TESTIMONIALS.filter(t => t.category === category);
+};
+
+export const getFeaturedTestimonials = (): Testimonial[] => {
+  return ALL_TESTIMONIALS.filter(t => t.featured);
+};
+
+export const getTestimonialsByTag = (tag: string): Testimonial[] => {
+  return ALL_TESTIMONIALS.filter(t => t.tags.includes(tag));
+};
+
+export const getHighCredibilityTestimonials = (): Testimonial[] => {
+  return ALL_TESTIMONIALS.filter(t => t.credibilityScore >= 4);
+};
