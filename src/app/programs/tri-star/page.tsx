@@ -4,6 +4,34 @@ import { motion } from 'framer-motion';
 import Link from 'next/link';
 import { Navigation } from '@/components/ui/Navigation';
 import { Footer } from '@/components/ui/Footer';
+import { PageFAQ } from '@/components/ui/PageFAQ';
+
+const triStarFaqs = [
+  {
+    question: 'Can anyone sign up?',
+    answer: 'No. All athletes must complete The 108 Experience first to establish their baseline movement system.',
+  },
+  {
+    question: 'What are the hours?',
+    answer: 'Monday through Thursday, 3:30–8:00 PM.',
+  },
+  {
+    question: 'Is there a limit on sessions?',
+    answer: 'No. Unlimited training for hitting, throwing, and rate of force development (RFD).',
+  },
+  {
+    question: 'Is this group or one-on-one?',
+    answer: "Both. You'll have coach access during sessions and train alongside other athletes. The environment matters.",
+  },
+  {
+    question: 'Can I pause during the season?',
+    answer: 'Yes. We understand in-season demands. Talk to us about your schedule.',
+  },
+  {
+    question: 'Is there a contract?',
+    answer: "Month-to-month. Stay because it's working, not because you signed something.",
+  },
+];
 
 const features = [
   { title: 'Unlimited Access', description: 'No session limits. Train as much as your body allows.' },
@@ -180,6 +208,9 @@ export default function TriStarPage() {
             </div>
           </div>
         </section>
+
+        {/* FAQ */}
+        <PageFAQ faqs={triStarFaqs} title="Questions about Tri Star" />
 
         {/* CTA */}
         <section className="bg-white py-24 border-t border-gray-100">

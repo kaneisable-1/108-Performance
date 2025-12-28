@@ -5,6 +5,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import Link from 'next/link';
 import Image from 'next/image';
 import { Icon108, type Icon108Name } from './Icon108';
+import { useSport } from '@/context/SportContext';
 
 const athletePrograms: Array<{
   name: string;
@@ -14,6 +15,7 @@ const athletePrograms: Array<{
   icon: Icon108Name;
 }> = [
   { name: 'The 108 Experience', href: '/programs/experience', price: 'From $2,000', tag: 'Start Here', icon: 'diamond' },
+  { name: 'Tour Experience', href: '/programs/tour', price: '$500', tag: '2-Day Camp', icon: 'kinetic-chain' },
   { name: 'Tri Star', href: '/programs/tri-star', price: '$499/mo', tag: 'In-Person', icon: 'sequence-bars' },
   { name: 'Virtual Experience', href: '/programs/virtual', price: '$550/mo', tag: 'Remote', icon: 'wave' },
   { name: 'Virtual Pro', href: '/programs/virtual-pro', price: '$1,000/mo', tag: 'Best Value', icon: 'phi-circles' },
@@ -30,15 +32,34 @@ const coachPrograms: Array<{
   icon: Icon108Name;
 }> = [
   { name: 'Coaches Experience', href: '/programs/coaches-experience', price: '$500/day', tag: 'Start Here', icon: 'target' },
-  { name: 'Host a Tour', href: '/programs/host-tour', price: '$500/athlete', tag: 'Step 2', icon: 'kinetic-chain' },
-  { name: 'Coaches Mentorship', href: '/programs/coaches-mentorship', price: '$297/mo', tag: 'Step 3', icon: 'spiral' },
-  { name: 'Powered by 108', href: '/programs/powered-by-108', price: '$20,000 Y1', tag: 'Licensing', icon: 'golden-grid' },
+  { name: 'Tour Experience', href: '/programs/tour', price: '$500/athlete', tag: 'Send Your Team', icon: 'kinetic-chain' },
+  { name: 'Host a Tour', href: '/programs/host-tour', price: '$500/athlete', tag: 'At Your Facility', icon: 'golden-grid' },
+  { name: 'Coaches Mentorship', href: '/programs/coaches-mentorship', price: '$297/mo', tag: 'Ongoing', icon: 'spiral' },
+  { name: 'Powered by 108', href: '/programs/powered-by-108', price: '$20,000 Y1', tag: 'Licensing', icon: 'phi-circles' },
 ];
+
+const shopItems = {
+  training: [
+    { name: '108 BP Vest', href: '/shop/bp-vest', price: '$499', description: 'Train middle-out', featured: true },
+    { name: '108 Digital Experience', href: '/shop/waterbag-training', price: '$50/mo', description: 'App subscription' },
+    { name: 'Starter Pack', href: '/shop/waterbag-training', price: '$65', description: '1 Waterbag' },
+    { name: 'Standard Pack', href: '/shop/waterbag-training', price: '$180', description: 'Waterbag + Waterball + Bulgarian' },
+    { name: 'Pro Pack', href: '/shop/waterbag-training', price: '$450', description: 'Full equipment kit' },
+    { name: 'Team Pack', href: '/shop/waterbag-training', price: '$1,700', description: 'Complete team setup' },
+  ],
+  merch: [
+    { name: 'Apparel', href: 'https://108merch.com/collections/apparel', price: '', description: 'Shirts, hoodies & more', external: true },
+    { name: 'Hats', href: 'https://108merch.com/collections/hats', price: '', description: 'Fitted & snapback', external: true },
+    { name: 'Training Gear', href: 'https://108merch.com/collections/training', price: '', description: 'Equipment & accessories', external: true },
+  ],
+};
 
 export function Navigation() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isProgramsOpen, setIsProgramsOpen] = useState(false);
+  const [isShopOpen, setIsShopOpen] = useState(false);
+  const { sport, setSport, isBaseball, isSoftball } = useSport();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -74,10 +95,24 @@ export function Navigation() {
               </Link>
               {/* Sport Toggle */}
               <div className="hidden sm:flex items-center bg-white/10 rounded-full p-1">
-                <button className="px-4 py-1.5 text-xs font-semibold bg-white text-black rounded-full">
+                <button
+                  onClick={() => setSport('baseball')}
+                  className={`px-4 py-1.5 text-xs font-semibold rounded-full transition-all ${
+                    isBaseball
+                      ? 'bg-white text-black'
+                      : 'text-white/70 hover:text-white'
+                  }`}
+                >
                   Baseball
                 </button>
-                <button className="px-4 py-1.5 text-xs font-medium text-white/70 hover:text-white transition-colors">
+                <button
+                  onClick={() => setSport('softball')}
+                  className={`px-4 py-1.5 text-xs font-semibold rounded-full transition-all ${
+                    isSoftball
+                      ? 'bg-white text-black'
+                      : 'text-white/70 hover:text-white'
+                  }`}
+                >
                   Softball
                 </button>
               </div>
@@ -214,17 +249,144 @@ export function Navigation() {
               </div>
 
               <Link
-                href="#method"
+                href="/the-method"
                 className="text-xs font-medium text-white/70 hover:text-white transition-colors uppercase tracking-wider"
               >
                 The Method
               </Link>
               <Link
-                href="#inside"
+                href="/results"
                 className="text-xs font-medium text-white/70 hover:text-white transition-colors uppercase tracking-wider"
               >
-                Inside 108
+                Results
               </Link>
+              <Link
+                href="/performance-institute"
+                className="text-xs font-medium text-white/70 hover:text-white transition-colors uppercase tracking-wider"
+              >
+                Academy
+              </Link>
+              <Link
+                href="/staff"
+                className="text-xs font-medium text-white/70 hover:text-white transition-colors uppercase tracking-wider"
+              >
+                Staff
+              </Link>
+              <Link
+                href="/nil"
+                className="text-xs font-medium text-white/70 hover:text-white transition-colors uppercase tracking-wider"
+              >
+                NIL
+              </Link>
+              <Link
+                href="/athletes"
+                className="text-xs font-medium text-white/70 hover:text-white transition-colors uppercase tracking-wider"
+              >
+                Athletes
+              </Link>
+
+              {/* Shop Dropdown */}
+              <div
+                className="relative"
+                onMouseEnter={() => setIsShopOpen(true)}
+                onMouseLeave={() => setIsShopOpen(false)}
+              >
+                <Link
+                  href="/shop"
+                  className="text-xs font-medium text-white/70 hover:text-white transition-colors uppercase tracking-wider flex items-center gap-1"
+                >
+                  Shop
+                  <svg
+                    className={`w-3 h-3 transition-transform ${isShopOpen ? 'rotate-180' : ''}`}
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                  </svg>
+                </Link>
+
+                {/* Shop Dropdown Menu */}
+                <AnimatePresence>
+                  {isShopOpen && (
+                    <motion.div
+                      initial={{ opacity: 0, y: 10 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      exit={{ opacity: 0, y: 10 }}
+                      transition={{ duration: 0.2 }}
+                      className="absolute top-full right-0 pt-4"
+                    >
+                      <div className="bg-black border border-white/10 shadow-2xl min-w-[320px]">
+                        {/* Training Programs */}
+                        <div className="p-4 border-b border-white/10">
+                          <p className="text-[10px] uppercase tracking-[0.2em] text-white/40 mb-3">Waterbag Training</p>
+                          <div className="space-y-1">
+                            {shopItems.training.map((item) => (
+                              <Link
+                                key={item.name}
+                                href={item.href}
+                                className="block p-2 hover:bg-white/5 transition-colors group rounded"
+                              >
+                                <div className="flex items-center justify-between">
+                                  <div>
+                                    <p className="text-sm font-medium text-white group-hover:text-white">
+                                      {item.name}
+                                    </p>
+                                    <p className="text-xs text-white/40">{item.description}</p>
+                                  </div>
+                                  {item.price && (
+                                    <span className="text-xs text-white/50">{item.price}</span>
+                                  )}
+                                </div>
+                              </Link>
+                            ))}
+                          </div>
+                        </div>
+
+                        {/* Merch */}
+                        <div className="p-4">
+                          <p className="text-[10px] uppercase tracking-[0.2em] text-white/40 mb-3">Merch</p>
+                          <div className="space-y-1">
+                            {shopItems.merch.map((item) => (
+                              <a
+                                key={item.name}
+                                href={item.href}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="block p-2 hover:bg-white/5 transition-colors group rounded"
+                              >
+                                <div className="flex items-center justify-between">
+                                  <div>
+                                    <p className="text-sm font-medium text-white group-hover:text-white flex items-center gap-1">
+                                      {item.name}
+                                      <svg className="w-3 h-3 text-white/30" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                                      </svg>
+                                    </p>
+                                    <p className="text-xs text-white/40">{item.description}</p>
+                                  </div>
+                                </div>
+                              </a>
+                            ))}
+                          </div>
+                        </div>
+
+                        {/* Bottom CTA */}
+                        <div className="border-t border-white/10 p-3 flex items-center justify-between bg-white/5">
+                          <p className="text-xs text-white/50">Browse all products</p>
+                          <Link
+                            href="/shop"
+                            className="text-xs font-semibold text-white hover:underline"
+                          >
+                            View Shop →
+                          </Link>
+                        </div>
+                      </div>
+                    </motion.div>
+                  )}
+                </AnimatePresence>
+              </div>
+
               <Link
                 href="/programs/experience"
                 className="bg-white text-black px-5 py-2.5 rounded-full text-xs font-semibold uppercase tracking-wider hover:bg-white/90 transition-colors"
@@ -316,19 +478,102 @@ export function Navigation() {
               {/* Other Links */}
               <div className="space-y-4 border-t border-white/10 pt-8">
                 <Link
-                  href="#method"
+                  href="/the-method"
                   onClick={() => setIsMobileMenuOpen(false)}
                   className="block text-lg font-medium text-white"
                 >
                   The Method
                 </Link>
                 <Link
-                  href="#inside"
+                  href="/results"
                   onClick={() => setIsMobileMenuOpen(false)}
                   className="block text-lg font-medium text-white"
                 >
-                  Inside 108
+                  Results
                 </Link>
+                <Link
+                  href="/performance-institute"
+                  onClick={() => setIsMobileMenuOpen(false)}
+                  className="block text-lg font-medium text-white"
+                >
+                  Academy
+                </Link>
+                <Link
+                  href="/staff"
+                  onClick={() => setIsMobileMenuOpen(false)}
+                  className="block text-lg font-medium text-white"
+                >
+                  Staff
+                </Link>
+                <Link
+                  href="/nil"
+                  onClick={() => setIsMobileMenuOpen(false)}
+                  className="block text-lg font-medium text-white"
+                >
+                  NIL Athletes
+                </Link>
+                <Link
+                  href="/athletes"
+                  onClick={() => setIsMobileMenuOpen(false)}
+                  className="block text-lg font-medium text-white"
+                >
+                  Athletes
+                </Link>
+              </div>
+
+              {/* Shop Section */}
+              <div className="border-t border-white/10 pt-8">
+                <p className="text-[10px] uppercase tracking-[0.2em] text-white/40 mb-4">Shop</p>
+
+                {/* Waterbag Training */}
+                <p className="text-xs uppercase tracking-wider text-white/30 mb-2">Waterbag Training</p>
+                <div className="space-y-2 mb-6">
+                  {shopItems.training.map((item) => (
+                    <Link
+                      key={item.name}
+                      href={item.href}
+                      onClick={() => setIsMobileMenuOpen(false)}
+                      className="block p-3 border border-white/10"
+                    >
+                      <div className="flex items-center justify-between">
+                        <div>
+                          <p className="text-sm font-semibold text-white">{item.name}</p>
+                          <p className="text-xs text-white/40">{item.description}</p>
+                        </div>
+                        {item.price && (
+                          <p className="text-xs text-white/50">{item.price}</p>
+                        )}
+                      </div>
+                    </Link>
+                  ))}
+                </div>
+
+                {/* Merch */}
+                <p className="text-xs uppercase tracking-wider text-white/30 mb-2">Merch</p>
+                <div className="space-y-2">
+                  {shopItems.merch.map((item) => (
+                    <a
+                      key={item.name}
+                      href={item.href}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      onClick={() => setIsMobileMenuOpen(false)}
+                      className="block p-3 border border-white/10"
+                    >
+                      <div className="flex items-center justify-between">
+                        <div>
+                          <p className="text-sm font-semibold text-white flex items-center gap-2">
+                            {item.name}
+                            <svg className="w-3 h-3 text-white/30" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                            </svg>
+                          </p>
+                          <p className="text-xs text-white/40">{item.description}</p>
+                        </div>
+                      </div>
+                    </a>
+                  ))}
+                </div>
               </div>
 
               {/* CTA */}

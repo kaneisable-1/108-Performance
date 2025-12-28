@@ -4,6 +4,34 @@ import { motion } from 'framer-motion';
 import Link from 'next/link';
 import { Navigation } from '@/components/ui/Navigation';
 import { Footer } from '@/components/ui/Footer';
+import { PageFAQ } from '@/components/ui/PageFAQ';
+
+const coachesExperienceFaqs = [
+  {
+    question: 'Why is there an application process?',
+    answer: "We're selective. The 108 method isn't right for every coach or facility. This protects both of us.",
+  },
+  {
+    question: 'How long is the Coaches Experience?',
+    answer: '2-5 days depending on your goals and depth of immersion needed.',
+  },
+  {
+    question: 'What happens if we\'re not a good fit?',
+    answer: "No hard feelings. We'll give you honest feedback and may recommend other resources.",
+  },
+  {
+    question: 'Can I bring staff members with me?',
+    answer: 'Yes. Additional staff can join for an additional fee. Often beneficial for implementation.',
+  },
+  {
+    question: 'Do I need to own a facility?',
+    answer: 'No. Individual coaches, college staff, and facility owners all go through this process.',
+  },
+  {
+    question: 'What if I just want to learn, not partner?',
+    answer: "That's fine. Many coaches complete the experience for their own education with no further steps.",
+  },
+];
 
 const included = [
   'Full immersion in the 108 method',
@@ -196,6 +224,9 @@ export default function CoachesExperiencePage() {
             </div>
           </div>
         </section>
+
+        {/* FAQ */}
+        <PageFAQ faqs={coachesExperienceFaqs} title="Questions about Coaches Experience" variant="dark" />
 
         {/* CTA */}
         <section className="bg-black text-white py-24">

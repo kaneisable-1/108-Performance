@@ -2,8 +2,38 @@
 
 import { motion } from 'framer-motion';
 import Link from 'next/link';
+import Image from 'next/image';
 import { Navigation } from '@/components/ui/Navigation';
 import { Footer } from '@/components/ui/Footer';
+import { PageFAQ } from '@/components/ui/PageFAQ';
+import { EquipmentList } from '@/components/ui/ProductPackDisplay';
+
+const collegePrepFaqs = [
+  {
+    question: "What's the difference between College Prep and Draft Prep?",
+    answer: 'College Prep focuses on getting recruited to play college baseball. Draft Prep is for draft-eligible players optimizing their professional draft position.',
+  },
+  {
+    question: 'When should I start College Prep?',
+    answer: 'Ideally sophomore or junior year of high school. Earlier gives us more time to develop your game and build recruiting relationships.',
+  },
+  {
+    question: 'Do you guarantee scholarship offers?',
+    answer: 'No. We guarantee our effort and expertise. Results depend on your development, academics, and fit with programs.',
+  },
+  {
+    question: 'What level schools do your athletes go to?',
+    answer: 'D1, D2, D3, NAIA, and JUCO. We help find the RIGHT fit, not just the highest level.',
+  },
+  {
+    question: 'How involved are parents in this process?',
+    answer: 'Very. Recruiting is a family decision. We keep parents informed and involved at every step.',
+  },
+  {
+    question: 'Do you work with softball players too?',
+    answer: 'Yes. The training and recruiting process applies to both baseball and softball athletes.',
+  },
+];
 
 const trainingFeatures = [
   'Everything in Virtual Pro',
@@ -86,9 +116,14 @@ export default function CollegePrepPage() {
         <section className="bg-gray-100 py-6">
           <div className="max-w-7xl mx-auto px-6 lg:px-8">
             <div className="flex flex-col md:flex-row md:items-center justify-between gap-4">
-              <p className="text-sm text-gray-600">
-                <strong className="text-black">Prerequisite:</strong> Must complete The 108 Experience first. Builds on Virtual Pro.
-              </p>
+              <div>
+                <p className="text-sm text-gray-600">
+                  <strong className="text-black">Builds on Virtual Pro.</strong> Complete 108 Product Pack + Merch Kit included.
+                </p>
+                <p className="text-xs text-gray-500 mt-1">
+                  Start with The 108 Experience or enter directly as a new athlete.
+                </p>
+              </div>
               <Link href="/programs/experience" className="text-sm font-semibold underline hover:no-underline">
                 Learn about The 108 Experience →
               </Link>
@@ -121,7 +156,7 @@ export default function CollegePrepPage() {
               >
                 <h3 className="text-2xl font-black mb-2">Training</h3>
                 <p className="text-gray-500 mb-6">Full Virtual Pro included</p>
-                <ul className="space-y-4">
+                <ul className="space-y-4 mb-8">
                   {trainingFeatures.map((feature) => (
                     <li key={feature} className="flex items-start gap-3">
                       <div className="w-6 h-6 bg-black flex items-center justify-center flex-shrink-0 mt-0.5">
@@ -133,6 +168,16 @@ export default function CollegePrepPage() {
                     </li>
                   ))}
                 </ul>
+
+                {/* Equipment included */}
+                <EquipmentList
+                  packId="completeProductPack"
+                  showMerchKit={true}
+                  showBridgeApp={true}
+                  bridgeAppPricing="included"
+                  variant="light"
+                  title="Equipment Included"
+                />
               </motion.div>
               {/* Recruiting */}
               <motion.div
@@ -239,6 +284,9 @@ export default function CollegePrepPage() {
             </motion.div>
           </div>
         </section>
+
+        {/* FAQ */}
+        <PageFAQ faqs={collegePrepFaqs} title="Questions about College Prep" />
 
         {/* CTA */}
         <section className="bg-white py-24 border-t border-gray-100">

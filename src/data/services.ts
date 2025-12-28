@@ -22,8 +22,12 @@ export const BRAND = {
     weekend: 'Friday–Sunday: By appointment',
   },
   social: {
-    instagram: 'https://instagram.com/108performance',
-    youtube: 'https://youtube.com/@108performance',
+    instagram: 'https://instagram.com/108_performance',
+    twitter: 'https://x.com/108_performance',
+    tiktok: 'https://www.tiktok.com/@108_performance',
+    facebook: 'https://www.facebook.com/108PerformanceAcademy',
+    youtube: 'https://youtube.com/@108_performance',
+    linkedin: 'https://www.linkedin.com/company/108-performance/',
   },
 } as const;
 
@@ -82,17 +86,17 @@ export const EXPERIENCE_108 = {
     {
       phase: 'The Human',
       headline: 'First, the Human.',
-      description: 'How do you process information? What cues already work for you? Your nervous system is the foundation.',
+      description: 'How do you think? How do you learn? What cues already click for you? Your wiring is the foundation—everything builds from there.',
     },
     {
       phase: 'The Athlete',
       headline: 'Then, the Athlete.',
-      description: "How does your body move? We study your natural patterns—not a textbook model. We work with your physiology, not against it.",
+      description: "How does your body actually move? We study YOUR patterns—not a textbook model. We work with your physiology, not against it.",
     },
     {
       phase: 'The Player',
       headline: 'Finally, the Player.',
-      description: 'How do you pitch, swing, throw? Now we connect the dots. The skills that show up on game day are built on the layers beneath.',
+      description: 'How do you pitch, swing, throw when it matters? At 7 o\'clock. Under pressure. The skills that show up on game day are built on the layers beneath.',
     },
   ],
   outcome: 'Leave with a system. Personal cues and prompts that help you find the right pattern on your own. Not our cues—yours.',
@@ -408,15 +412,15 @@ export const STAFF = [
 export const FAQ = [
   {
     question: 'What is the 108 Experience?',
-    answer: "It's 2-5 days where we learn who you are first—how you think, how you learn, how you coach yourself. We discover before we fix. You leave with a personal system: cues and prompts that are yours, not ours.",
+    answer: "2-5 days where we learn your wiring before we touch your mechanics. You leave with YOUR system—cues that click for you, not generic fixes that fade by game day.",
   },
   {
     question: 'Do I have to do the 108 Experience first?',
-    answer: 'Yes. Every athlete starts here. It\'s how we make sure we can actually help you, and it\'s how you\'ll know if this is the right fit.',
+    answer: 'Yes. Every path starts at the same door. We need to understand how you think before we can help you move.',
   },
   {
     question: 'What if I\'m not local to Knoxville?',
-    answer: 'Virtual Experience works for athletes anywhere. Daily programming, video feedback, and direct coach access—all from where you train.',
+    answer: 'Virtual Experience. Daily programming, video feedback, direct coach access—training that transfers from wherever you are.',
   },
   {
     question: 'What ages do you work with?',
@@ -424,7 +428,7 @@ export const FAQ = [
   },
   {
     question: 'What makes 108 different?',
-    answer: "We understand you before we instruct you. Human → Athlete → Player. The best adjustment is the one you can make on your own. And people stay—that's the proof.",
+    answer: "We don't teach a system. We help you find yours. Human → Athlete → Player. The best adjustment is the one you can make at 7 o'clock without a coach whispering in your ear.",
   },
   {
     question: 'Do you work with softball players?',
@@ -432,11 +436,11 @@ export const FAQ = [
   },
   {
     question: 'What is "The Staying"?',
-    answer: "Athletes train for 3-4 hours. Then they sit on the couch for 3 more—watching film, talking, helping each other. They don't have to be here. They choose to stay. The staying is the proof.",
+    answer: "Athletes train for 3-4 hours. Then they sit on the couch for 3 more—watching film, helping each other figure things out. They don't have to be here. They choose to stay. That's the proof.",
   },
   {
     question: 'Can coaches come learn the 108 method?',
-    answer: 'Yes. The Coaches Experience is 2-5 days of full immersion—open to close. Watch. Ask. Learn. See how we develop players firsthand.',
+    answer: 'Yes. Coaches Experience: 2-5 days in the lab. See why cookie-cutter doesn\'t work. Ask anything.',
   },
 ] as const;
 
@@ -494,7 +498,88 @@ export const CTA_COPY = {
   },
 } as const;
 
+// ============================================
+// SHOP / MERCH
+// ============================================
+
+export const SHOP = {
+  storeUrl: 'https://108merch.com',
+  featured: [
+    {
+      id: 'anti-rotation-tee',
+      name: 'Anti Rotation Rotation Club Tee',
+      price: 25,
+      category: 'Apparel',
+      image: '/shop/anti-rotation-tee.png',
+      shopifyUrl: 'https://108merch.com/products/anti-rotation-rotation-club-graphic-t-shirt',
+      tag: 'Best Seller',
+    },
+    {
+      id: 'champion-sweatshirt',
+      name: 'Champion 108 Logo Sweatshirt',
+      price: 40,
+      category: 'Apparel',
+      image: '/shop/champion-sweatshirt.jpg',
+      shopifyUrl: 'https://108merch.com/products/champion-108-logo-sweatshirt',
+      tag: 'Best Seller',
+    },
+    {
+      id: 'camo-hat',
+      name: 'Limited Edition Camo Hat',
+      price: 25,
+      category: 'Hats',
+      image: '/shop/camo-hat.png',
+      shopifyUrl: 'https://108merch.com/collections/hats/products/limited-edition-camo-hat',
+      tag: 'Limited',
+    },
+    {
+      id: 'navy-patch-hat',
+      name: 'Navy 108 Leather Patch Hat',
+      price: 25,
+      category: 'Hats',
+      image: '/shop/navy-patch-hat.png',
+      shopifyUrl: 'https://108merch.com/collections/hats/products/navy-108-leather-patch-hat',
+    },
+    {
+      id: 'anchor-bands',
+      name: '108 Anchor Bands',
+      price: 75,
+      category: 'Training',
+      image: '/shop/anchor-bands.png',
+      shopifyUrl: 'https://108merch.com/products/108-anchor-bands',
+      tag: 'Training Gear',
+    },
+    {
+      id: 'waterbag-programming',
+      name: 'Pro Waterbag Programming',
+      price: 599,
+      category: 'Training',
+      image: '/shop/waterbag-programming.png',
+      shopifyUrl: 'https://108merch.com/products/pro-waterbag-programming-hitting',
+      tag: 'Pro Series',
+    },
+    {
+      id: 'old-school-book',
+      name: 'Old School vs New School',
+      price: 29.99,
+      category: 'Books',
+      image: '/shop/old-school-book.png',
+      shopifyUrl: 'https://108merch.com/products/old-school-vs-new-school',
+      tag: 'Book',
+    },
+    {
+      id: 'mustache-tee',
+      name: '108 Mustache T-Shirt',
+      price: 25,
+      category: 'Apparel',
+      image: '/shop/mustache-tee.png',
+      shopifyUrl: 'https://108merch.com/products/108-mustache-t-shirt',
+    },
+  ],
+} as const;
+
 // Type exports
 export type Staff = typeof STAFF[number];
 export type AthleteService = typeof ATHLETE_SERVICES[keyof typeof ATHLETE_SERVICES];
 export type CoachService = typeof COACH_SERVICES[keyof typeof COACH_SERVICES];
+export type ShopProduct = typeof SHOP.featured[number];

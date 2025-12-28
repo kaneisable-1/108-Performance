@@ -26,18 +26,18 @@ export function Footer() {
           <div>
             <ul className="space-y-3 text-sm text-gray-500">
               <li>
-                <Link href="#inside" className="hover:text-black transition-colors">
-                  Inside
+                <Link href="/programs" className="hover:text-black transition-colors">
+                  Programs
                 </Link>
               </li>
               <li>
-                <Link href="#athletes" className="hover:text-black transition-colors">
+                <Link href="/athletes" className="hover:text-black transition-colors">
                   Athletes
                 </Link>
               </li>
               <li>
-                <Link href="#coaches" className="hover:text-black transition-colors">
-                  Coaches
+                <Link href="/nil" className="hover:text-black transition-colors">
+                  NIL
                 </Link>
               </li>
             </ul>
@@ -47,13 +47,18 @@ export function Footer() {
           <div>
             <ul className="space-y-3 text-sm text-gray-500">
               <li>
-                <Link href="#method" className="hover:text-black transition-colors">
+                <Link href="/the-method" className="hover:text-black transition-colors">
                   The Method
                 </Link>
               </li>
               <li>
-                <Link href="#contact" className="hover:text-black transition-colors">
-                  Contact
+                <Link href="/staff" className="hover:text-black transition-colors">
+                  Staff
+                </Link>
+              </li>
+              <li>
+                <Link href="/careers" className="hover:text-black transition-colors">
+                  Careers
                 </Link>
               </li>
             </ul>
@@ -70,6 +75,26 @@ export function Footer() {
               <li>
                 <a href={BRAND.social.youtube} target="_blank" rel="noopener noreferrer" className="hover:text-black transition-colors">
                   YouTube
+                </a>
+              </li>
+              <li>
+                <a href={BRAND.social.twitter} target="_blank" rel="noopener noreferrer" className="hover:text-black transition-colors">
+                  X / Twitter
+                </a>
+              </li>
+              <li>
+                <a href={BRAND.social.tiktok} target="_blank" rel="noopener noreferrer" className="hover:text-black transition-colors">
+                  TikTok
+                </a>
+              </li>
+              <li>
+                <a href={BRAND.social.facebook} target="_blank" rel="noopener noreferrer" className="hover:text-black transition-colors">
+                  Facebook
+                </a>
+              </li>
+              <li>
+                <a href={BRAND.social.linkedin} target="_blank" rel="noopener noreferrer" className="hover:text-black transition-colors">
+                  LinkedIn
                 </a>
               </li>
               <li>

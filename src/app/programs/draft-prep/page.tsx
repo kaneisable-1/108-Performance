@@ -2,8 +2,38 @@
 
 import { motion } from 'framer-motion';
 import Link from 'next/link';
+import Image from 'next/image';
 import { Navigation } from '@/components/ui/Navigation';
 import { Footer } from '@/components/ui/Footer';
+import { PageFAQ } from '@/components/ui/PageFAQ';
+import { EquipmentList } from '@/components/ui/ProductPackDisplay';
+
+const draftPrepFaqs = [
+  {
+    question: 'How do you actually help someone get drafted higher?',
+    answer: 'We optimize the metrics scouts measure: velo, exit velo, sprint times. Then we package your data professionally and leverage our scout relationships.',
+  },
+  {
+    question: "Do you have relationships with MLB scouts?",
+    answer: 'Yes. We have direct relationships with scouts and front office personnel across multiple organizations.',
+  },
+  {
+    question: 'When should I start Draft Prep?',
+    answer: 'Ideally 12-18 months before your draft year. The more time we have, the more we can optimize.',
+  },
+  {
+    question: 'What if I want to go to college instead?',
+    answer: 'Consider College Prep instead. Draft Prep is specifically for players committed to the professional route.',
+  },
+  {
+    question: "Is this worth it if I'm projected to go late rounds?",
+    answer: "Especially then. Moving up even 5 rounds can mean $100K+ in signing bonus. The ROI is significant.",
+  },
+  {
+    question: 'Do you work with high school players entering the draft?',
+    answer: 'Yes, but only top prospects with legitimate draft consideration. Most high schoolers benefit more from College Prep.',
+  },
+];
 
 const features = [
   { title: 'Everything in Virtual Pro', description: 'Full training program with 6 trips to Knoxville.' },
@@ -145,20 +175,42 @@ export default function DraftPrepPage() {
                 Complete draft preparation.
               </h2>
             </motion.div>
-            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-              {features.map((feature, index) => (
-                <motion.div
-                  key={feature.title}
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: index * 0.1 }}
-                  className="border-l-4 border-white pl-6"
-                >
-                  <h3 className="text-xl font-black mb-2">{feature.title}</h3>
-                  <p className="text-white/60">{feature.description}</p>
-                </motion.div>
-              ))}
+            <div className="grid lg:grid-cols-3 gap-8">
+              <div className="lg:col-span-2">
+                <div className="grid md:grid-cols-2 gap-8">
+                  {features.map((feature, index) => (
+                    <motion.div
+                      key={feature.title}
+                      initial={{ opacity: 0, y: 20 }}
+                      whileInView={{ opacity: 1, y: 0 }}
+                      viewport={{ once: true }}
+                      transition={{ delay: index * 0.1 }}
+                      className="border-l-4 border-white pl-6"
+                    >
+                      <h3 className="text-xl font-black mb-2">{feature.title}</h3>
+                      <p className="text-white/60">{feature.description}</p>
+                    </motion.div>
+                  ))}
+                </div>
+              </div>
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: 0.3 }}
+              >
+                <EquipmentList
+                  packId="completeProductPack"
+                  showMerchKit={true}
+                  showBridgeApp={true}
+                  bridgeAppPricing="included"
+                  variant="dark"
+                  title="Equipment Included"
+                />
+                <p className="text-xs text-white/40 mt-4">
+                  All training delivered through the Bridge Athletic app
+                </p>
+              </motion.div>
             </div>
           </div>
         </section>
@@ -234,6 +286,9 @@ export default function DraftPrepPage() {
             </Link>
           </div>
         </section>
+
+        {/* FAQ */}
+        <PageFAQ faqs={draftPrepFaqs} title="Questions about Draft Prep" />
 
         {/* CTA */}
         <section className="bg-black text-white py-24">

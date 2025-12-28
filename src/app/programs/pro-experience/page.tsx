@@ -1,8 +1,38 @@
 'use client';
 
 import { motion } from 'framer-motion';
+import Image from 'next/image';
 import { Navigation } from '@/components/ui/Navigation';
 import { Footer } from '@/components/ui/Footer';
+import { PageFAQ } from '@/components/ui/PageFAQ';
+import { EquipmentList } from '@/components/ui/ProductPackDisplay';
+
+const proExperienceFaqs = [
+  {
+    question: "Will working with 108 conflict with my organization's program?",
+    answer: 'No. We design everything to complement, never conflict. Your org comes first.',
+  },
+  {
+    question: 'How discreet is this?',
+    answer: "Completely. Many pros work with outside coaches. We don't publicize relationships unless you want us to.",
+  },
+  {
+    question: 'When can I train with you?',
+    answer: 'During offseason windows. We work around your professional schedule entirely.',
+  },
+  {
+    question: 'What makes this different from other pro training?',
+    answer: "Senior staff only. Will Marshall and senior coaches work with you directly. No hand-offs to junior staff.",
+  },
+  {
+    question: 'How do I know if this is right for me?',
+    answer: "Start with a conversation. We'll tell you honestly if we can help.",
+  },
+  {
+    question: 'Do you work with minor leaguers too?',
+    answer: 'Yes. Minor leaguers often benefit most from independent development.',
+  },
+];
 
 const features = [
   { title: 'Senior Staff Only', description: 'Work directly with Will Marshall and senior coaching staff.' },
@@ -109,20 +139,63 @@ export default function ProExperiencePage() {
                 Senior staff. Direct access.
               </h2>
             </motion.div>
-            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-              {features.map((feature, index) => (
-                <motion.div
-                  key={feature.title}
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: index * 0.1 }}
-                  className="bg-white p-8 shadow-lg"
-                >
-                  <h3 className="text-xl font-black mb-3">{feature.title}</h3>
-                  <p className="text-gray-600">{feature.description}</p>
-                </motion.div>
-              ))}
+            <div className="grid lg:grid-cols-3 gap-8">
+              <div className="lg:col-span-2">
+                <div className="grid md:grid-cols-2 gap-6">
+                  {features.map((feature, index) => (
+                    <motion.div
+                      key={feature.title}
+                      initial={{ opacity: 0, y: 20 }}
+                      whileInView={{ opacity: 1, y: 0 }}
+                      viewport={{ once: true }}
+                      transition={{ delay: index * 0.1 }}
+                      className="bg-white p-6 shadow-lg"
+                    >
+                      <h3 className="text-lg font-black mb-2">{feature.title}</h3>
+                      <p className="text-gray-600 text-sm">{feature.description}</p>
+                    </motion.div>
+                  ))}
+                </div>
+              </div>
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: 0.3 }}
+                className="space-y-6"
+              >
+                <EquipmentList
+                  packId="completeProductPack"
+                  showMerchKit={true}
+                  showBridgeApp={true}
+                  bridgeAppPricing="included"
+                  variant="light"
+                  title="Equipment Included"
+                />
+                <div className="bg-black text-white p-6 rounded-xl">
+                  <h4 className="font-bold mb-3">Pro Exclusive</h4>
+                  <ul className="space-y-2 text-sm text-white/80">
+                    <li className="flex items-center gap-2">
+                      <svg className="w-4 h-4 text-green-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3">
+                        <path d="M5 12l5 5L20 7" />
+                      </svg>
+                      Priority access to Will Marshall
+                    </li>
+                    <li className="flex items-center gap-2">
+                      <svg className="w-4 h-4 text-green-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3">
+                        <path d="M5 12l5 5L20 7" />
+                      </svg>
+                      Bi-weekly senior staff Zooms
+                    </li>
+                    <li className="flex items-center gap-2">
+                      <svg className="w-4 h-4 text-green-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3">
+                        <path d="M5 12l5 5L20 7" />
+                      </svg>
+                      Offseason intensive blocks
+                    </li>
+                  </ul>
+                </div>
+              </motion.div>
             </div>
           </div>
         </section>
@@ -171,6 +244,9 @@ export default function ProExperiencePage() {
             </div>
           </div>
         </section>
+
+        {/* FAQ */}
+        <PageFAQ faqs={proExperienceFaqs} title="Questions about Pro Experience" />
 
         {/* CTA */}
         <section className="bg-white py-24 border-t border-gray-100">

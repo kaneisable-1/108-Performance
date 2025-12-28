@@ -4,6 +4,34 @@ import { motion } from 'framer-motion';
 import Link from 'next/link';
 import { Navigation } from '@/components/ui/Navigation';
 import { Footer } from '@/components/ui/Footer';
+import { PageFAQ } from '@/components/ui/PageFAQ';
+
+const coachesMentorshipFaqs = [
+  {
+    question: "How often are the group calls?",
+    answer: 'Monthly, with quarterly deep-dive sessions on specific topics.',
+  },
+  {
+    question: 'Can I ask questions between calls?',
+    answer: 'Yes. Direct messaging to senior staff is included.',
+  },
+  {
+    question: 'Is this enough to implement the full system?',
+    answer: "It's a start. Full implementation typically requires progression to Powered by 108 licensing.",
+  },
+  {
+    question: 'How many coaches are in the program?',
+    answer: 'We keep it small intentionally. Quality of interaction matters more than quantity.',
+  },
+  {
+    question: 'Can I cancel anytime?',
+    answer: 'Yes. Month-to-month. No long-term contracts.',
+  },
+  {
+    question: "What's the difference between this and Powered by 108?",
+    answer: "Mentorship is education and support. Powered by 108 is full licensing rights to run the system commercially.",
+  },
+];
 
 const features = [
   { title: 'Monthly Group Calls', description: 'Regular sessions with Will Marshall and senior staff.' },
@@ -198,6 +226,9 @@ export default function CoachesMentorshipPage() {
             </Link>
           </div>
         </section>
+
+        {/* FAQ */}
+        <PageFAQ faqs={coachesMentorshipFaqs} title="Questions about Coaches Mentorship" />
 
         {/* CTA */}
         <section className="bg-white py-24 border-t border-gray-100">

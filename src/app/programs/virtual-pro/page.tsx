@@ -2,8 +2,38 @@
 
 import { motion } from 'framer-motion';
 import Link from 'next/link';
+import Image from 'next/image';
 import { Navigation } from '@/components/ui/Navigation';
 import { Footer } from '@/components/ui/Footer';
+import { PageFAQ } from '@/components/ui/PageFAQ';
+import { ProductPackDisplay, EquipmentList } from '@/components/ui/ProductPackDisplay';
+
+const virtualProFaqs = [
+  {
+    question: "What's the difference between Virtual and Virtual Pro?",
+    answer: 'Virtual Pro includes six trips to the Knoxville lab per year for hands-on refinement with senior staff.',
+  },
+  {
+    question: 'How long are the in-person trips?',
+    answer: "Most athletes come for 2-3 days per trip. Scheduling is flexible around your calendar.",
+  },
+  {
+    question: 'Is travel included?',
+    answer: "No. The $1,000/mo covers training only. We have hotel partnerships for affordable stays.",
+  },
+  {
+    question: 'Why is this "Best Value"?',
+    answer: 'Remote coaching alone is $550/mo. Adding 6 trips separately would cost significantly more. This bundles everything.',
+  },
+  {
+    question: 'Can I upgrade from Virtual Experience?',
+    answer: 'Yes. Many start with Virtual and upgrade when they want more in-person time.',
+  },
+  {
+    question: "What's the difference from Draft Prep?",
+    answer: 'Virtual Pro is training-focused. Draft Prep adds recruiting services, showcase prep, and agent connections.',
+  },
+];
 
 const virtualFeatures = [
   'Daily personalized programming',
@@ -83,13 +113,18 @@ export default function VirtualProPage() {
           </div>
         </section>
 
-        {/* Prerequisite Banner */}
-        <section className="bg-gray-900 py-6">
+        {/* Entry Path Banner */}
+        <section className="bg-gray-900 py-6 border-b border-white/10">
           <div className="max-w-7xl mx-auto px-6 lg:px-8">
             <div className="flex flex-col md:flex-row md:items-center justify-between gap-4">
-              <p className="text-sm text-white/60">
-                <strong className="text-white">Prerequisite:</strong> Must complete The 108 Experience first.
-              </p>
+              <div>
+                <p className="text-sm text-white/80">
+                  <strong className="text-white">For athletes ages 12-16:</strong> Enter directly — complete product pack included.
+                </p>
+                <p className="text-xs text-white/50 mt-1">
+                  Or upgrade from Virtual Experience after completing The 108 Experience.
+                </p>
+              </div>
               <Link href="/programs/experience" className="text-sm font-semibold text-white underline hover:no-underline">
                 Learn about The 108 Experience →
               </Link>
@@ -160,8 +195,54 @@ export default function VirtualProPage() {
           </div>
         </section>
 
-        {/* The Math */}
+        {/* What You Receive */}
         <section className="bg-gray-50 py-24">
+          <div className="max-w-7xl mx-auto px-6 lg:px-8">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              className="mb-12"
+            >
+              <p className="text-xs uppercase tracking-[0.3em] text-gray-400 mb-4">What You Receive</p>
+              <h2 className="text-4xl md:text-5xl font-black tracking-tight">
+                Complete training toolkit.<br />
+                <span className="text-gray-300">Everything included.</span>
+              </h2>
+              <p className="text-gray-600 mt-4 max-w-2xl">
+                New Virtual Pro athletes receive the complete 108 product pack and merch kit. If you&apos;re upgrading from Virtual Experience, you already have your equipment.
+              </p>
+            </motion.div>
+
+            <ProductPackDisplay
+              packId="completeProductPack"
+              showMerchKit={true}
+              showBridgeApp={true}
+              bridgeAppPricing="included"
+              variant="light"
+            />
+
+            {/* App Preview */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              className="mt-12 text-center"
+            >
+              <p className="text-sm text-gray-400 mb-6">All training delivered through the Bridge Athletic app</p>
+              <Image
+                src="/products/bridge-athletic/three-phones.png"
+                alt="Bridge Athletic App - Your Performance OS"
+                width={800}
+                height={500}
+                className="w-full max-w-2xl mx-auto h-auto"
+              />
+            </motion.div>
+          </div>
+        </section>
+
+        {/* The Math */}
+        <section className="bg-white py-24 border-t border-gray-100">
           <div className="max-w-4xl mx-auto px-6 lg:px-8 text-center">
             <motion.p
               initial={{ opacity: 0 }}
@@ -260,6 +341,9 @@ export default function VirtualProPage() {
             </div>
           </div>
         </section>
+
+        {/* FAQ */}
+        <PageFAQ faqs={virtualProFaqs} title="Questions about Virtual Pro" />
 
         {/* CTA */}
         <section className="bg-black text-white py-24">

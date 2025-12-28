@@ -5,22 +5,56 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { Navigation } from '@/components/ui/Navigation';
 import { Footer } from '@/components/ui/Footer';
+import { PageFAQ } from '@/components/ui/PageFAQ';
+import { WhatYouReceiveSection } from '@/components/ui/ProductPackDisplay';
 
-const included = [
-  'Comprehensive movement assessment',
-  'Video analysis of your current mechanics',
-  'Personalized system development',
-  'Written action plan for continued development',
-  'Direct access to coaching staff during visit',
-  'Facility access throughout your stay',
+const experienceFaqs = [
+  {
+    question: 'Is this just an evaluation?',
+    answer: "No. It's a discovery process where we learn how you think, how you move, and which cues already work for your nervous system.",
+  },
+  {
+    question: 'How long is it?',
+    answer: 'We offer 2, 3, 4, and 5-day options. 3 days is the recommended duration for most athletes.',
+  },
+  {
+    question: 'What will I leave with?',
+    answer: 'A "System of One"—personalized cues and prompts that give you authority to coach yourself through any slump. Plus water bags, BP vest, merch, and app access.',
+  },
+  {
+    question: 'What if we determine I\'m not a good fit?',
+    answer: "We'll tell you honestly and point you in a better direction. We don't train athletes we can't genuinely help.",
+  },
+  {
+    question: 'Can a parent attend?',
+    answer: 'Absolutely. Parents are welcome to observe. Many find it valuable to understand the process.',
+  },
+  {
+    question: 'Where do athletes stay?',
+    answer: 'We have partnerships with nearby hotels and can send recommendations after booking.',
+  },
+  {
+    question: 'How soon can I book?',
+    answer: 'Availability varies. We typically book 2-4 weeks out. Contact us to check current openings.',
+  },
 ];
 
+const included = [
+  'ICP Testing — Understand how your brain learns and processes information',
+  'Full movement assessment — How YOU actually move, not a textbook model',
+  'Sport-specific testing — Pitching, hitting, or throwing analysis',
+  'YOUR system built from scratch — Cues that click for YOUR wiring',
+  'Video library of YOUR drills — Access them anytime in the app',
+  'Direct access to coaching staff — Throughout your entire stay',
+];
+
+
 const timeline = [
-  { day: 'Day 1', focus: 'Assessment', description: 'Deep dive into how you move, think, and compete. We learn your history.' },
-  { day: 'Day 2', focus: 'Discovery', description: 'Testing constraints and finding what unlocks YOUR movement patterns.' },
-  { day: 'Day 3', focus: 'Building', description: 'Constructing the framework of your personal system.' },
-  { day: 'Day 4', focus: 'Refinement', description: 'Fine-tuning and pressure testing what we\'ve built together.' },
-  { day: 'Day 5', focus: 'Integration', description: 'Putting it all together. Your roadmap for continued growth.' },
+  { day: 'Day 1', focus: 'The Human', description: 'How do you think? How do you learn? What cues already click? We learn your wiring first.' },
+  { day: 'Day 2', focus: 'The Athlete', description: 'How does your body actually move? We study YOUR patterns—not a textbook model.' },
+  { day: 'Day 3', focus: 'The Player', description: 'Now we connect the dots. Skills that transfer when it matters.' },
+  { day: 'Day 4', focus: 'Refinement', description: 'Pressure testing. Does it hold at 7 o\'clock?' },
+  { day: 'Day 5', focus: 'Your System', description: 'You leave with cues that are YOURS. Not ours.' },
 ];
 
 export default function ExperiencePage() {
@@ -61,7 +95,7 @@ export default function ExperiencePage() {
                   transition={{ delay: 0.2 }}
                   className="text-lg text-white/60 mb-8 max-w-md"
                 >
-                  This is where every athlete path begins. A mutual evaluation to understand your system and determine fit.
+                  We learn how you think before we touch your mechanics. You leave with YOUR system—cues that click for your brain, not a cookie-cutter template.
                 </motion.p>
                 <motion.div
                   initial={{ opacity: 0, y: 20 }}
@@ -94,18 +128,23 @@ export default function ExperiencePage() {
                   </motion.button>
                 </motion.div>
               </div>
+              {/* Video Explainer */}
               <motion.div
                 initial={{ opacity: 0, x: 40 }}
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ delay: 0.3 }}
-                className="relative h-[500px] hidden lg:block"
+                className="relative"
               >
-                <Image
-                  src="/hero-athlete.jpg"
-                  alt="Athlete at 108 Performance"
-                  fill
-                  className="object-cover grayscale"
-                />
+                <div className="relative aspect-video bg-black border border-white/10">
+                  <iframe
+                    src="https://www.youtube.com/embed/msr5l1pstyc?rel=0&modestbranding=1"
+                    title="The 108 Experience Explained"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowFullScreen
+                    className="absolute inset-0 w-full h-full"
+                  />
+                </div>
+                <p className="text-white/40 text-xs mt-3 text-center">Watch: The 108 Experience Explained</p>
               </motion.div>
             </div>
           </div>
@@ -148,8 +187,19 @@ export default function ExperiencePage() {
           </div>
         </section>
 
+        {/* What You Take Home - Product Pack Display */}
+        <WhatYouReceiveSection
+          packId="completeProductPack"
+          showMerchKit={true}
+          showBridgeApp={true}
+          bridgeAppPricing="first-month-free"
+          variant="light"
+          sectionTitle="What You Take Home"
+          sectionSubtitle="Your complete training toolkit. Everything ships with you when you leave."
+        />
+
         {/* Timeline */}
-        <section className="bg-gray-50 py-24">
+        <section className="bg-white py-24">
           <div className="max-w-7xl mx-auto px-6 lg:px-8">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -194,9 +244,12 @@ export default function ExperiencePage() {
               viewport={{ once: true }}
               className="bg-white text-black p-10"
             >
-              <p className="text-xs uppercase tracking-[0.2em] text-gray-500 mb-4">Important</p>
-              <p className="text-xl md:text-2xl font-medium leading-relaxed">
-                This is a <strong>mutual evaluation</strong>. We're learning your system while you're experiencing ours. Not everyone is the right fit—and that's okay. This process ensures we only work with athletes we can genuinely help.
+              <p className="text-xs uppercase tracking-[0.2em] text-gray-500 mb-4">This Is Not For Everybody</p>
+              <p className="text-xl md:text-2xl font-medium leading-relaxed mb-6">
+                This is a <strong>mutual evaluation</strong>. We're learning your system while you're experiencing ours.
+              </p>
+              <p className="text-lg text-gray-600 leading-relaxed">
+                Not everyone is the right fit—and that's okay. We don't train athletes we can't genuinely help. If it's not the right match, we'll tell you honestly and point you in a better direction.
               </p>
             </motion.div>
           </div>
@@ -262,6 +315,9 @@ export default function ExperiencePage() {
             </div>
           </div>
         </section>
+
+        {/* FAQ */}
+        <PageFAQ faqs={experienceFaqs} title="Questions about The Experience" />
 
         {/* CTA */}
         <section className="bg-[#0d0d0d] py-24">

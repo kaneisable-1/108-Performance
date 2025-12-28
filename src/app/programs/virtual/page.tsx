@@ -2,8 +2,38 @@
 
 import { motion } from 'framer-motion';
 import Link from 'next/link';
+import Image from 'next/image';
 import { Navigation } from '@/components/ui/Navigation';
 import { Footer } from '@/components/ui/Footer';
+import { PageFAQ } from '@/components/ui/PageFAQ';
+import { PrerequisiteBanner } from '@/components/ui/ProductPackDisplay';
+
+const virtualFaqs = [
+  {
+    question: 'How do you coach from a distance?',
+    answer: 'Daily programming, video feedback, and direct coach access via the 108 app. Distance changes nothing.',
+  },
+  {
+    question: 'Does remote training work as well as in-person?',
+    answer: 'Yes. MLB players like Matt Liberatore have seen 4 mph velocity gains in two weeks using our virtual platform.',
+  },
+  {
+    question: 'Do I need special equipment?',
+    answer: 'A phone to record video and the equipment from your 108 Experience (water bags, BP vest). Standard training gear otherwise.',
+  },
+  {
+    question: 'How often do I communicate with my coach?',
+    answer: "As often as needed. Most athletes check in 3-5 times per week. It's ongoing conversation, not scheduled calls.",
+  },
+  {
+    question: 'Can I visit Knoxville occasionally?',
+    answer: 'Yes. Many come quarterly for tune-ups. Consider Virtual Pro if you want regular trips built in.',
+  },
+  {
+    question: 'How is this different from online programs?',
+    answer: 'Those are templates. This is YOUR coach working with YOUR system daily.',
+  },
+];
 
 const features = [
   { title: 'Daily Programming', description: 'Personalized training plans delivered every day based on your system.' },
@@ -70,18 +100,7 @@ export default function VirtualPage() {
         </section>
 
         {/* Prerequisite Banner */}
-        <section className="bg-gray-100 py-6">
-          <div className="max-w-7xl mx-auto px-6 lg:px-8">
-            <div className="flex flex-col md:flex-row md:items-center justify-between gap-4">
-              <p className="text-sm text-gray-600">
-                <strong className="text-black">Prerequisite:</strong> Must complete The 108 Experience first.
-              </p>
-              <Link href="/programs/experience" className="text-sm font-semibold underline hover:no-underline">
-                Learn about The 108 Experience →
-              </Link>
-            </div>
-          </div>
-        </section>
+        <PrerequisiteBanner variant="light" showEquipmentNote={true} />
 
         {/* Features */}
         <section className="bg-white py-24">
@@ -112,6 +131,102 @@ export default function VirtualPage() {
                   <p className="text-gray-600">{feature.description}</p>
                 </motion.div>
               ))}
+            </div>
+          </div>
+        </section>
+
+        {/* Your Digital Tools */}
+        <section className="bg-gray-50 py-24">
+          <div className="max-w-7xl mx-auto px-6 lg:px-8">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              className="mb-12"
+            >
+              <p className="text-xs uppercase tracking-[0.3em] text-gray-400 mb-4">Your Digital Tools</p>
+              <h2 className="text-4xl md:text-5xl font-black tracking-tight">
+                The Performance OS.<br />
+                <span className="text-gray-300">Always with you.</span>
+              </h2>
+            </motion.div>
+            <div className="grid lg:grid-cols-2 gap-12 items-center">
+              <div>
+                <div className="space-y-4">
+                  <motion.div
+                    initial={{ opacity: 0, x: -20 }}
+                    whileInView={{ opacity: 1, x: 0 }}
+                    viewport={{ once: true }}
+                    className="bg-white p-6 rounded-xl shadow-sm border border-gray-100"
+                  >
+                    <div className="flex items-start gap-4">
+                      <div className="w-12 h-12 bg-black rounded-lg flex items-center justify-center flex-shrink-0">
+                        <svg className="w-6 h-6 text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                          <rect x="5" y="2" width="14" height="20" rx="2" />
+                          <path d="M12 18h.01" />
+                        </svg>
+                      </div>
+                      <div>
+                        <h3 className="font-bold text-lg mb-1">Bridge Athletic App</h3>
+                        <p className="text-gray-600 text-sm">Daily programming, video library, and progress tracking. Your personal 108 system in your pocket.</p>
+                        <p className="text-green-600 text-sm font-medium mt-2">Included with program</p>
+                      </div>
+                    </div>
+                  </motion.div>
+                  <motion.div
+                    initial={{ opacity: 0, x: -20 }}
+                    whileInView={{ opacity: 1, x: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ delay: 0.1 }}
+                    className="bg-white p-6 rounded-xl shadow-sm border border-gray-100"
+                  >
+                    <div className="flex items-start gap-4">
+                      <div className="w-12 h-12 bg-black rounded-lg flex items-center justify-center flex-shrink-0">
+                        <svg className="w-6 h-6 text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                          <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" />
+                        </svg>
+                      </div>
+                      <div>
+                        <h3 className="font-bold text-lg mb-1">Private Coach Chat</h3>
+                        <p className="text-gray-600 text-sm">Direct line to your 108 coach. Real responses, real feedback, real connection.</p>
+                      </div>
+                    </div>
+                  </motion.div>
+                  <motion.div
+                    initial={{ opacity: 0, x: -20 }}
+                    whileInView={{ opacity: 1, x: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ delay: 0.2 }}
+                    className="bg-white p-6 rounded-xl shadow-sm border border-gray-100"
+                  >
+                    <div className="flex items-start gap-4">
+                      <div className="w-12 h-12 bg-black rounded-lg flex items-center justify-center flex-shrink-0">
+                        <svg className="w-6 h-6 text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                          <path d="M15 10l5 5-5 5" />
+                          <path d="M4 4v7a4 4 0 0 0 4 4h12" />
+                        </svg>
+                      </div>
+                      <div>
+                        <h3 className="font-bold text-lg mb-1">Group Mentorship Zooms</h3>
+                        <p className="text-gray-600 text-sm">Live sessions with 108 staff and athletes. 2x per month.</p>
+                      </div>
+                    </div>
+                  </motion.div>
+                </div>
+              </div>
+              <motion.div
+                initial={{ opacity: 0, x: 20 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+              >
+                <Image
+                  src="/products/bridge-athletic/three-phones.png"
+                  alt="Bridge Athletic App"
+                  width={600}
+                  height={400}
+                  className="w-full h-auto"
+                />
+              </motion.div>
             </div>
           </div>
         </section>
@@ -199,6 +314,9 @@ export default function VirtualPage() {
             </Link>
           </div>
         </section>
+
+        {/* FAQ */}
+        <PageFAQ faqs={virtualFaqs} title="Questions about Virtual Experience" />
 
         {/* CTA */}
         <section className="bg-white py-24 border-t border-gray-100">

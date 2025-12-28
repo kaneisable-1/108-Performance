@@ -1,9 +1,11 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useEffect, Suspense } from 'react';
+import { useSearchParams } from 'next/navigation';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Navigation } from '@/components/ui/Navigation';
 import { Footer } from '@/components/ui/Footer';
+import { FindYourPath } from '@/components/sections/FindYourPath';
 
 // Athlete Programs Data
 const athleteStep2Programs = [
@@ -91,14 +93,28 @@ const coachPrograms = [
   },
 ];
 
-export default function Programs() {
+function ProgramsContent() {
+  const searchParams = useSearchParams();
   const [activeTab, setActiveTab] = useState<'athletes' | 'coaches'>('athletes');
   const [hoveredStep, setHoveredStep] = useState<number | null>(null);
+
+  // Read query param on mount to set initial tab
+  useEffect(() => {
+    const type = searchParams.get('type');
+    if (type === 'coaches') {
+      setActiveTab('coaches');
+    } else if (type === 'athletes') {
+      setActiveTab('athletes');
+    }
+  }, [searchParams]);
 
   return (
     <>
       <Navigation />
       <main className="pt-20">
+        {/* Find Your Path - Interactive questionnaire */}
+        <FindYourPath />
+
         {/* Binary Split Toggle */}
         <section className="bg-black py-8 sticky top-16 lg:top-20 z-40 border-b border-white/10">
           <div className="max-w-7xl mx-auto px-6 lg:px-8">
@@ -583,5 +599,17 @@ export default function Programs() {
       </main>
       <Footer />
     </>
+  );
+}
+
+export default function Programs() {
+  return (
+    <Suspense fallback={
+      <div className="min-h-screen bg-black flex items-center justify-center">
+        <div className="text-white text-xl">Loading...</div>
+      </div>
+    }>
+      <ProgramsContent />
+    </Suspense>
   );
 }

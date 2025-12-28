@@ -4,6 +4,34 @@ import { motion } from 'framer-motion';
 import Link from 'next/link';
 import { Navigation } from '@/components/ui/Navigation';
 import { Footer } from '@/components/ui/Footer';
+import { PageFAQ } from '@/components/ui/PageFAQ';
+
+const poweredBy108Faqs = [
+  {
+    question: 'Is this a franchise?',
+    answer: "No. It's a licensing partnership. You own your business. We license you the methodology.",
+  },
+  {
+    question: 'What are the ongoing costs?',
+    answer: '$20,000 Year 1 includes setup and training. Renewal fees vary based on partnership level.',
+  },
+  {
+    question: 'Do you limit how many facilities can be Powered by 108?',
+    answer: 'Yes. We protect territories and maintain quality. Not every applicant is accepted.',
+  },
+  {
+    question: 'What support do I get after licensing?',
+    answer: 'Ongoing mentorship access, annual certification, updates to methodology, and marketing support.',
+  },
+  {
+    question: 'Can I lose my license?',
+    answer: 'Yes. If quality standards slip or brand guidelines are violated, we can terminate the partnership.',
+  },
+  {
+    question: 'How long does the full process take?',
+    answer: 'Typically 6-12 months from Coaches Experience to full licensing. We don\'t rush fit evaluation.',
+  },
+];
 
 const included = [
   'Full 108 system licensing rights',
@@ -260,6 +288,9 @@ export default function PoweredBy108Page() {
             </div>
           </div>
         </section>
+
+        {/* FAQ */}
+        <PageFAQ faqs={poweredBy108Faqs} title="Questions about Licensing" />
 
         {/* CTA */}
         <section className="bg-black text-white py-24">
