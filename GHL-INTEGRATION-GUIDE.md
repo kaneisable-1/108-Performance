@@ -16,6 +16,8 @@
 6. [Integration Opportunities](#6-integration-opportunities)
 7. [Recommended GHL Setup](#7-recommended-ghl-setup)
 8. [Implementation Checklist](#8-implementation-checklist)
+9. [Service Questionnaires & Form Fields](#9-service-questionnaires--form-fields)
+10. [CTA & Contact Point Reference](#10-cta--contact-point-reference)
 
 ---
 
@@ -1184,6 +1186,133 @@ Notify: 108 Pro Experience Coordinator
 Action: Route to appropriate pathway pricing
 Flag: Include agent in communications if provided
 ```
+
+---
+
+## 10. CTA & Contact Point Reference
+
+This section documents all CTAs, contact points, and links across the website for GHL automation integration.
+
+---
+
+### 10.1 Email Addresses
+
+| Email | Purpose | Pages Used |
+|-------|---------|------------|
+| `info@108performanceacademy.com` | General contact | Footer, Shop, Waterbag Training |
+| `nil@108performance.com` | NIL program applications | NIL page (`/nil`) |
+| `pro@108performance.com` | Professional athlete inquiries | Ballengee page (`/ballengee`) |
+| `will@108performance.com` | Investor relations | Investors page (`/investors`) |
+
+---
+
+### 10.2 Phone Numbers
+
+| Number | Purpose | Pages Used |
+|--------|---------|------------|
+| `865-253-5060` | Main office | Ballengee page, constants |
+
+---
+
+### 10.3 Social Media Links
+
+| Platform | Handle | URL |
+|----------|--------|-----|
+| Instagram | @108_performance | `https://instagram.com/108_performance` |
+| YouTube | @108_performance | `https://youtube.com/@108_performance` |
+| X/Twitter | @108_performance | `https://x.com/108_performance` |
+| TikTok | @108_performance | `https://www.tiktok.com/@108_performance` |
+| Facebook | 108PerformanceAcademy | `https://www.facebook.com/108PerformanceAcademy` |
+| LinkedIn | 108-performance | `https://www.linkedin.com/company/108-performance/` |
+
+---
+
+### 10.4 External Links
+
+| Destination | URL | Used On |
+|-------------|-----|---------|
+| 108 Merch (Main) | `https://108merch.com` | Navigation, Shop |
+| 108 Merch (Apparel) | `https://108merch.com/collections/apparel` | Navigation |
+| 108 Merch (Hats) | `https://108merch.com/collections/hats` | Navigation |
+| 108 Merch (Training) | `https://108merch.com/collections/training` | Navigation, Shop |
+| BP Vest Product | `https://108merch.com/products/bp-vest` | BP Vest page |
+| Bridge Athletic App | `https://apps.apple.com/app/bridge-athletic` | Shop, Waterbag Training, App Showcase |
+
+---
+
+### 10.5 Page-by-Page CTA Breakdown
+
+#### Homepage (`/`)
+| CTA | Destination | Type |
+|-----|-------------|------|
+| Find Your Path (Nav) | `#find-your-path` | Scroll anchor |
+| Find Your Path (Sticky) | `#find-your-path` | Scroll anchor |
+| Book Your Experience | `/programs/experience` | Internal |
+| See All Athletes | `/athletes` | Internal |
+
+#### Ballengee Partner Page (`/ballengee`)
+| CTA | Destination | Type |
+|-----|-------------|------|
+| Contact Pro Team | `mailto:pro@108performance.com?subject=Ballengee%20Client%20-%20Path%20[X]%20Inquiry` | Email |
+| Call Direct | `tel:+18652535060` | Phone |
+| Schedule Evaluation | `mailto:pro@108performance.com?subject=Ballengee%20108%20Experience%20Inquiry` | Email |
+
+#### NIL Page (`/nil`)
+| CTA | Destination | Type |
+|-----|-------------|------|
+| Apply Now | `mailto:nil@108performance.com?subject=NIL%20Application` | Email |
+| Talk to 108 | `mailto:nil@108performance.com` | Email |
+| See all 64+ athletes | `/athletes` | Internal |
+
+#### Investors Page (`/investors`)
+| CTA | Destination | Type |
+|-----|-------------|------|
+| Contact Will Marshall | `mailto:will@108performance.com` | Email |
+| Request Investor Deck | `#request-deck` | Form anchor |
+
+#### Shop Pages (`/shop`, `/shop/bp-vest`, `/shop/waterbag-training`)
+| CTA | Destination | Type |
+|-----|-------------|------|
+| Order BP Vest | `https://108merch.com/products/bp-vest` | External |
+| Download App | `https://apps.apple.com/app/bridge-athletic` | External |
+| Team Training Inquiry | `mailto:info@108performance.com?subject=Team%20Training%20Inquiry` | Email |
+
+#### Program Pages (All)
+| CTA | Destination | Type |
+|-----|-------------|------|
+| The 108 Experience | `/programs/experience` | Internal |
+| (Various program links) | `/programs/[program]` | Internal |
+
+#### Footer (Global)
+| CTA | Destination | Type |
+|-----|-------------|------|
+| Contact | `mailto:info@108performanceacademy.com` | Email |
+| All social links | See Section 10.3 | External |
+| Privacy | `#privacy` | Anchor (no page) |
+| Terms | `#terms` | Anchor (no page) |
+
+---
+
+### 10.6 GHL Integration Opportunities
+
+**High-Priority Email Capture Points:**
+1. FindYourPath questionnaire completion → Capture recommendation + contact
+2. Ballengee pathway finder completion → Capture pathway + tier + contact
+3. NIL application clicks → Capture before mailto redirect
+4. Investor deck requests → Form submission
+
+**Mailto Replacement Candidates:**
+Replace these mailto links with GHL forms for better lead capture:
+- `info@108performanceacademy.com` → General inquiry form
+- `nil@108performance.com` → NIL application form
+- `pro@108performance.com` → Pro Experience inquiry form
+
+**Click Tracking:**
+Track clicks on:
+- All "Book Experience" CTAs
+- External Shopify links (108merch.com)
+- App Store links (Bridge Athletic)
+- Social media links
 
 ---
 
