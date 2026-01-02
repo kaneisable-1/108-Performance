@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import { Inter, JetBrains_Mono } from "next/font/google";
 import "./globals.css";
+import { Suspense } from "react";
+import ReviewManager from "@/components/ReviewManager";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -26,6 +28,9 @@ export default function RootLayout({
     <html lang="en">
       <body className={`${inter.variable} ${mono.variable} antialiased`}>
         <main>{children}</main>
+        <Suspense fallback={null}>
+          <ReviewManager />
+        </Suspense>
       </body>
     </html>
   );

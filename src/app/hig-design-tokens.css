@@ -1,0 +1,516 @@
+/* =============================================================================
+   APPLE HUMAN INTERFACE GUIDELINES - DESIGN SYSTEM TOKENS
+   ============================================================================= 
+   
+   This file contains design tokens following Apple's Human Interface Guidelines.
+   Use this as an ALTERNATIVE design reference when the current system needs 
+   a different approach. Import this file conditionally or use these tokens
+   as a reference for future design decisions.
+   
+   Reference: https://developer.apple.com/design/human-interface-guidelines/
+   ============================================================================= */
+
+
+/* =============================================================================
+   CORE PRINCIPLES
+   ============================================================================= 
+   
+   1. CLARITY     - Content is legible, icons precise, subtle design
+   2. DEFERENCE   - UI helps understanding without competing with content
+   3. DEPTH       - Visual layers and realistic motion convey hierarchy
+   
+   ============================================================================= */
+
+
+/* =============================================================================
+   TYPOGRAPHY SYSTEM (SF Pro-Inspired)
+   ============================================================================= */
+
+:root {
+    /* --------------------------------------------------------------------------
+     Font Families
+     Apple uses SF Pro Display (20pt+) and SF Pro Text (19pt and below)
+     For web, we use system fonts that match Apple's stack
+     -------------------------------------------------------------------------- */
+    --hig-font-display: "SF Pro Display", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    --hig-font-text: "SF Pro Text", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    --hig-font-mono: "SF Mono", ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+
+    /* --------------------------------------------------------------------------
+     Type Scale (Dynamic Type Support)
+     Following Apple's semantic sizing system
+     -------------------------------------------------------------------------- */
+
+    /* Large Title - Hero headlines */
+    --hig-text-large-title: 34px;
+    --hig-line-large-title: 1.08;
+    --hig-weight-large-title: 700;
+    --hig-tracking-large-title: -0.02em;
+
+    /* Title 1 - Primary section headers */
+    --hig-text-title1: 28px;
+    --hig-line-title1: 1.14;
+    --hig-weight-title1: 600;
+    --hig-tracking-title1: -0.01em;
+
+    /* Title 2 - Secondary headers */
+    --hig-text-title2: 22px;
+    --hig-line-title2: 1.18;
+    --hig-weight-title2: 600;
+    --hig-tracking-title2: 0;
+
+    /* Title 3 - Tertiary headers */
+    --hig-text-title3: 20px;
+    --hig-line-title3: 1.22;
+    --hig-weight-title3: 600;
+    --hig-tracking-title3: 0;
+
+    /* Headline - Emphasized body text */
+    --hig-text-headline: 17px;
+    --hig-line-headline: 1.29;
+    --hig-weight-headline: 600;
+    --hig-tracking-headline: 0;
+
+    /* Body - Primary content */
+    --hig-text-body: 17px;
+    --hig-line-body: 1.47;
+    --hig-weight-body: 400;
+    --hig-tracking-body: 0;
+
+    /* Callout - Supporting content */
+    --hig-text-callout: 16px;
+    --hig-line-callout: 1.31;
+    --hig-weight-callout: 400;
+    --hig-tracking-callout: 0;
+
+    /* Subheadline - Secondary content */
+    --hig-text-subhead: 15px;
+    --hig-line-subhead: 1.33;
+    --hig-weight-subhead: 400;
+    --hig-tracking-subhead: 0;
+
+    /* Footnote - Tertiary content */
+    --hig-text-footnote: 13px;
+    --hig-line-footnote: 1.38;
+    --hig-weight-footnote: 400;
+    --hig-tracking-footnote: 0;
+
+    /* Caption 1 - Labels */
+    --hig-text-caption1: 12px;
+    --hig-line-caption1: 1.33;
+    --hig-weight-caption1: 400;
+    --hig-tracking-caption1: 0;
+
+    /* Caption 2 - Smallest labels */
+    --hig-text-caption2: 11px;
+    --hig-line-caption2: 1.18;
+    --hig-weight-caption2: 400;
+    --hig-tracking-caption2: 0;
+
+    /* Font Weights - Avoid ultralight/thin for accessibility */
+    --hig-weight-regular: 400;
+    --hig-weight-medium: 500;
+    --hig-weight-semibold: 600;
+    --hig-weight-bold: 700;
+
+
+    /* ==========================================================================
+     SPACING SYSTEM (8-Point Grid)
+     ========================================================================== */
+
+    /* Base unit - All spacing should be multiples of 8 */
+    --hig-space-unit: 8px;
+
+    /* Semantic spacing tokens */
+    --hig-space-xxs: 4px;
+    /* 0.5x - Tight inline spacing */
+    --hig-space-xs: 8px;
+    /* 1x - Minimum padding */
+    --hig-space-sm: 12px;
+    /* 1.5x - Compact elements */
+    --hig-space-md: 16px;
+    /* 2x - Default component padding */
+    --hig-space-lg: 24px;
+    /* 3x - Section gaps */
+    --hig-space-xl: 32px;
+    /* 4x - Major sections */
+    --hig-space-xxl: 48px;
+    /* 6x - Page-level spacing */
+    --hig-space-xxxl: 64px;
+    /* 8x - Hero/major divisions */
+
+    /* Touch/Click Targets - Minimum 44x44pt for accessibility */
+    --hig-min-touch-target: 44px;
+    --hig-tap-area-padding: 8px;
+    /* Minimum padding around interactive elements */
+
+    /* Container widths */
+    --hig-container-sm: 640px;
+    --hig-container-md: 768px;
+    --hig-container-lg: 1024px;
+    --hig-container-xl: 1280px;
+    --hig-container-max: 1440px;
+
+
+    /* ==========================================================================
+     COLOR SYSTEM (Dark Mode Default - Matches Current 108 Design)
+     ========================================================================== 
+     
+     Apple HIG Color Principles:
+     - Use color to communicate, not decorate
+     - Key color = interactive elements (consistently)
+     - Don't use same color to mean different things
+     - Ensure sufficient contrast (WCAG AA minimum)
+     - Colors should adapt to light/dark modes
+     
+     ========================================================================== */
+
+    /* --------------------------------------------------------------------------
+     System Background Colors (Dark)
+     -------------------------------------------------------------------------- */
+    --hig-bg-primary: #000000;
+    /* Main background */
+    --hig-bg-secondary: #1C1C1E;
+    /* Elevated surfaces */
+    --hig-bg-tertiary: #2C2C2E;
+    /* Cards, modals */
+    --hig-bg-grouped: #0A0A0A;
+    /* Grouped content bg */
+
+    /* --------------------------------------------------------------------------
+     System Foreground Colors
+     -------------------------------------------------------------------------- */
+    --hig-fill-primary: rgba(255, 255, 255, 1);
+    /* 100% - Primary text */
+    --hig-fill-secondary: rgba(255, 255, 255, 0.6);
+    /* 60% - Secondary text */
+    --hig-fill-tertiary: rgba(255, 255, 255, 0.3);
+    /* 30% - Placeholder, disabled */
+    --hig-fill-quaternary: rgba(255, 255, 255, 0.18);
+    /* 18% - Subtle fills */
+
+    /* --------------------------------------------------------------------------
+     Separator Colors
+     -------------------------------------------------------------------------- */
+    --hig-separator: rgba(255, 255, 255, 0.15);
+    --hig-separator-opaque: #38383A;
+
+    /* --------------------------------------------------------------------------
+     System Colors (Semantic - Adapt in light mode)
+     -------------------------------------------------------------------------- */
+    --hig-color-blue: #0A84FF;
+    /* Links, interactive */
+    --hig-color-green: #30D158;
+    /* Success, positive */
+    --hig-color-indigo: #5E5CE6;
+    /* Secondary actions */
+    --hig-color-orange: #FF9F0A;
+    /* Warnings */
+    --hig-color-pink: #FF375F;
+    /* Destructive */
+    --hig-color-purple: #BF5AF2;
+    /* Special/premium */
+    --hig-color-red: #FF453A;
+    /* Errors, destructive */
+    --hig-color-teal: #64D2FF;
+    /* Informational */
+    --hig-color-yellow: #FFD60A;
+    /* Caution, highlight */
+
+    /* --------------------------------------------------------------------------
+     Brand Accent (108 Performance)
+     Use sparingly - Apple recommends one key color for interactivity
+     -------------------------------------------------------------------------- */
+    --hig-accent-primary: #FFFFFF;
+    /* Main interactive color (B&W theme) */
+    --hig-accent-secondary: #888888;
+    /* Secondary interactive */
+
+    /* 108's volt accent for media/special highlights ONLY */
+    --hig-accent-volt: #CCFF00;
+
+
+    /* ==========================================================================
+     MOTION & ANIMATION
+     ========================================================================== 
+     
+     Apple HIG Motion Principles:
+     - Motion should be purposeful, not gratuitous
+     - Animations should be brief and precise
+     - Respect user's "reduce motion" preference
+     - Use easing for natural, realistic motion
+     
+     ========================================================================== */
+
+    /* --------------------------------------------------------------------------
+     Durations (Brief and Precise)
+     -------------------------------------------------------------------------- */
+    --hig-duration-instant: 50ms;
+    /* Immediate feedback (button press) */
+    --hig-duration-fast: 150ms;
+    /* Quick transitions (hover states) */
+    --hig-duration-normal: 250ms;
+    /* Standard transitions */
+    --hig-duration-slow: 350ms;
+    /* Emphasis (modals, menus) */
+    --hig-duration-slower: 500ms;
+    /* Complex animations */
+
+    /* --------------------------------------------------------------------------
+     Easing Functions (Realistic Motion)
+     -------------------------------------------------------------------------- */
+    --hig-ease-default: cubic-bezier(0.25, 0.1, 0.25, 1);
+    /* Standard */
+    --hig-ease-in: cubic-bezier(0.42, 0, 1, 1);
+    /* Accelerate */
+    --hig-ease-out: cubic-bezier(0, 0, 0.58, 1);
+    /* Decelerate */
+    --hig-ease-in-out: cubic-bezier(0.42, 0, 0.58, 1);
+    /* Smooth */
+    --hig-ease-spring: cubic-bezier(0.34, 1.56, 0.64, 1);
+    /* Playful bounce */
+    --hig-ease-snappy: cubic-bezier(0.2, 0.8, 0.2, 1);
+    /* Apple-like snappy */
+
+
+    /* ==========================================================================
+     RADII & CORNERS
+     ========================================================================== */
+    --hig-radius-none: 0;
+    --hig-radius-sm: 4px;
+    /* Subtle rounding */
+    --hig-radius-md: 8px;
+    /* Cards, inputs */
+    --hig-radius-lg: 12px;
+    /* Modals, popovers */
+    --hig-radius-xl: 16px;
+    /* Large cards */
+    --hig-radius-full: 9999px;
+    /* Pills, avatars */
+
+    /* Continuous corners (Apple's squircle approach) */
+    /* Note: Use border-radius with smooth-corners polyfill for true squircles */
+
+
+    /* ==========================================================================
+     EFFECTS
+     ========================================================================== */
+
+    /* --------------------------------------------------------------------------
+     Shadows (Subtle, purposeful depth)
+     -------------------------------------------------------------------------- */
+    --hig-shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.12);
+    --hig-shadow-md: 0 4px 6px rgba(0, 0, 0, 0.1);
+    --hig-shadow-lg: 0 10px 20px rgba(0, 0, 0, 0.15);
+    --hig-shadow-xl: 0 25px 50px rgba(0, 0, 0, 0.25);
+
+    /* Elevated surface (cards, modals in dark mode) */
+    --hig-shadow-elevated: 0 0 0 1px rgba(255, 255, 255, 0.1);
+
+    /* --------------------------------------------------------------------------
+     Blur Effects (Materials)
+     -------------------------------------------------------------------------- */
+    --hig-blur-sm: blur(10px);
+    --hig-blur-md: blur(20px);
+    --hig-blur-lg: blur(40px);
+    --hig-blur-material: blur(30px) saturate(180%);
+    /* Frosted glass effect */
+
+
+    /* ==========================================================================
+     OPACITY
+     ========================================================================== */
+    --hig-opacity-disabled: 0.38;
+    --hig-opacity-hover: 0.8;
+    --hig-opacity-pressed: 0.6;
+}
+
+
+/* =============================================================================
+   ACCESSIBILITY - REDUCED MOTION
+   ============================================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+    :root {
+        --hig-duration-instant: 0ms;
+        --hig-duration-fast: 0ms;
+        --hig-duration-normal: 0ms;
+        --hig-duration-slow: 0ms;
+        --hig-duration-slower: 0ms;
+    }
+}
+
+
+/* =============================================================================
+   LIGHT MODE OVERRIDES (Optional - If needed in future)
+   ============================================================================= */
+
+@media (prefers-color-scheme: light) {
+    :root {
+        /* Background Colors */
+        --hig-bg-primary: #FFFFFF;
+        --hig-bg-secondary: #F2F2F7;
+        --hig-bg-tertiary: #FFFFFF;
+        --hig-bg-grouped: #F2F2F7;
+
+        /* Foreground Colors */
+        --hig-fill-primary: rgba(0, 0, 0, 1);
+        --hig-fill-secondary: rgba(0, 0, 0, 0.6);
+        --hig-fill-tertiary: rgba(0, 0, 0, 0.3);
+        --hig-fill-quaternary: rgba(0, 0, 0, 0.18);
+
+        /* Separators */
+        --hig-separator: rgba(0, 0, 0, 0.15);
+        --hig-separator-opaque: #C6C6C8;
+
+        /* System Colors (Light variants) */
+        --hig-color-blue: #007AFF;
+        --hig-color-green: #28CD41;
+        --hig-color-indigo: #5856D6;
+        --hig-color-orange: #FF9500;
+        --hig-color-pink: #FF2D55;
+        --hig-color-purple: #AF52DE;
+        --hig-color-red: #FF3B30;
+        --hig-color-teal: #5AC8FA;
+        --hig-color-yellow: #FFCC00;
+
+        /* Brand accent for light mode */
+        --hig-accent-primary: #000000;
+        --hig-accent-secondary: #666666;
+
+        /* Shadows for light mode */
+        --hig-shadow-elevated: 0 0 0 0.5px rgba(0, 0, 0, 0.1);
+    }
+}
+
+
+/* =============================================================================
+   UTILITY CLASSES (Optional - Use as needed)
+   ============================================================================= */
+
+/* Typography Utilities */
+.hig-large-title {
+    font-family: var(--hig-font-display);
+    font-size: var(--hig-text-large-title);
+    line-height: var(--hig-line-large-title);
+    font-weight: var(--hig-weight-large-title);
+    letter-spacing: var(--hig-tracking-large-title);
+}
+
+.hig-title1 {
+    font-family: var(--hig-font-display);
+    font-size: var(--hig-text-title1);
+    line-height: var(--hig-line-title1);
+    font-weight: var(--hig-weight-title1);
+    letter-spacing: var(--hig-tracking-title1);
+}
+
+.hig-title2 {
+    font-family: var(--hig-font-display);
+    font-size: var(--hig-text-title2);
+    line-height: var(--hig-line-title2);
+    font-weight: var(--hig-weight-title2);
+}
+
+.hig-title3 {
+    font-family: var(--hig-font-display);
+    font-size: var(--hig-text-title3);
+    line-height: var(--hig-line-title3);
+    font-weight: var(--hig-weight-title3);
+}
+
+.hig-headline {
+    font-family: var(--hig-font-text);
+    font-size: var(--hig-text-headline);
+    line-height: var(--hig-line-headline);
+    font-weight: var(--hig-weight-headline);
+}
+
+.hig-body {
+    font-family: var(--hig-font-text);
+    font-size: var(--hig-text-body);
+    line-height: var(--hig-line-body);
+    font-weight: var(--hig-weight-body);
+}
+
+.hig-callout {
+    font-family: var(--hig-font-text);
+    font-size: var(--hig-text-callout);
+    line-height: var(--hig-line-callout);
+    font-weight: var(--hig-weight-callout);
+}
+
+.hig-subhead {
+    font-family: var(--hig-font-text);
+    font-size: var(--hig-text-subhead);
+    line-height: var(--hig-line-subhead);
+    font-weight: var(--hig-weight-subhead);
+}
+
+.hig-footnote {
+    font-family: var(--hig-font-text);
+    font-size: var(--hig-text-footnote);
+    line-height: var(--hig-line-footnote);
+    font-weight: var(--hig-weight-footnote);
+}
+
+.hig-caption1 {
+    font-family: var(--hig-font-text);
+    font-size: var(--hig-text-caption1);
+    line-height: var(--hig-line-caption1);
+    font-weight: var(--hig-weight-caption1);
+}
+
+.hig-caption2 {
+    font-family: var(--hig-font-text);
+    font-size: var(--hig-text-caption2);
+    line-height: var(--hig-line-caption2);
+    font-weight: var(--hig-weight-caption2);
+}
+
+
+/* =============================================================================
+   COMPONENT PATTERNS (Reference Implementations)
+   ============================================================================= */
+
+/* Button with proper touch target */
+.hig-button {
+    min-height: var(--hig-min-touch-target);
+    min-width: var(--hig-min-touch-target);
+    padding: var(--hig-space-sm) var(--hig-space-md);
+    border-radius: var(--hig-radius-md);
+    font-family: var(--hig-font-text);
+    font-size: var(--hig-text-body);
+    font-weight: var(--hig-weight-semibold);
+    transition: all var(--hig-duration-fast) var(--hig-ease-snappy);
+}
+
+.hig-button:hover {
+    opacity: var(--hig-opacity-hover);
+}
+
+.hig-button:active {
+    opacity: var(--hig-opacity-pressed);
+    transform: scale(0.98);
+}
+
+.hig-button:disabled {
+    opacity: var(--hig-opacity-disabled);
+    cursor: not-allowed;
+}
+
+/* Card with Apple-style elevation */
+.hig-card {
+    background: var(--hig-bg-secondary);
+    border-radius: var(--hig-radius-lg);
+    padding: var(--hig-space-md);
+    box-shadow: var(--hig-shadow-elevated);
+}
+
+/* Glass/Material surface */
+.hig-glass {
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: var(--hig-blur-material);
+    -webkit-backdrop-filter: var(--hig-blur-material);
+    border: 1px solid var(--hig-separator);
+}

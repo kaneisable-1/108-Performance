@@ -1,5 +1,61 @@
 import Link from "next/link";
 import styles from "./home.module.css";
+import WeeklyDoseCarousel, { DoseItem } from "@/components/WeeklyDoseCarousel";
+
+// Seed data: 7 items with hotlinked thumbnails
+const carouselItems: DoseItem[] = [
+  {
+    id: '1',
+    title: 'The Science of Spin Rate',
+    thumbnailUrl: 'https://images.unsplash.com/photo-1508344928928-7165b0a59b46?w=640&q=80',
+    href: '/videos/spin-rate',
+    subtitle: '8:24',
+    featured: true,
+  },
+  {
+    id: '2',
+    title: 'Pitching Mechanics Breakdown',
+    thumbnailUrl: 'https://images.unsplash.com/photo-1578432014316-48b448d79d57?w=640&q=80',
+    href: '/videos/pitching-mechanics',
+    subtitle: '12:15',
+  },
+  {
+    id: '3',
+    title: 'Weekly Velocity Update',
+    thumbnailUrl: 'https://images.unsplash.com/photo-1529900748604-07564a03e7a6?w=640&q=80',
+    href: '/videos/velocity-update',
+    subtitle: '5:42',
+  },
+  {
+    id: '4',
+    title: 'Movement Training Deep Dive',
+    thumbnailUrl: 'https://images.unsplash.com/photo-1461896836934-e83a2b8d?w=640&q=80',
+    href: '/videos/movement-training',
+    subtitle: '15:30',
+  },
+  {
+    id: '5',
+    title: 'Athlete Spotlight: Road to the Show',
+    thumbnailUrl: 'https://images.unsplash.com/photo-1517649763962-0c623066013b?w=640&q=80',
+    href: '/videos/athlete-spotlight',
+    subtitle: '10:08',
+    featured: true,
+  },
+  {
+    id: '6',
+    title: 'Data-Driven Training Results',
+    thumbnailUrl: 'https://images.unsplash.com/photo-1526232761682-d26e03ac148e?w=640&q=80',
+    href: '/videos/data-driven',
+    subtitle: '7:55',
+  },
+  {
+    id: '7',
+    title: 'Recovery & Performance',
+    thumbnailUrl: 'https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?w=640&q=80',
+    href: '/videos/recovery',
+    subtitle: '9:12',
+  },
+];
 
 export default function Home() {
   return (
@@ -11,11 +67,12 @@ export default function Home() {
             <span className={styles.brandName}>108</span>
           </Link>
           <nav className={styles.navLinks}>
-            <Link href="#">The Method</Link>
-            <Link href="#">Programs</Link>
-            <Link href="#">Results</Link>
+            <Link href="/108-experience">For Athletes</Link>
+            <Link href="/coaches-experience">For Coaches</Link>
+            <Link href="/the-method">The Method</Link>
+            <Link href="/shop">Shop</Link>
           </nav>
-          <button className={styles.ctaButtonNav}>Experience 108</button>
+          <Link href="/apply" className={styles.ctaButtonNav}>Experience 108</Link>
         </div>
       </header>
 
@@ -23,16 +80,46 @@ export default function Home() {
       <section className={styles.hero}>
         <div className={styles.heroContent}>
           <h1 className={styles.heroTitle}>
-            Results you have to feel to believe.
+            When You Feel It, You&apos;ll Know.
           </h1>
           <p className={styles.heroSubhead}>
-            Built for how you move.
+            We build athletes differently. Combining data-driven biomechanics with elite coaching to unlock raw power.
           </p>
           <div className={styles.heroButtons}>
-            <button className={styles.btnPrimary}>Experience 108</button>
-            <button className={styles.btnSecondary}>
-              Watch the Method <span>→</span>
-            </button>
+            <Link href="/apply" className={styles.btnPrimary}>Experience 108</Link>
+            <Link href="/the-method" className={styles.btnSecondary}>
+              Watch Film <span>→</span>
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* Narrative Carousel: Living content under hero, above services */}
+      <WeeklyDoseCarousel
+        items={carouselItems}
+        onSelect={(item) => { window.location.href = item.href; }}
+        onViewAll={() => { window.location.href = '/videos'; }}
+      />
+
+      {/* Section: The Truth */}
+      <section className={styles.sectionDark}>
+        <div className={styles.container}>
+          <div className={styles.truthContent}>
+            <h2 className={styles.sectionTitleWhite}>
+              Lab Tested. Coach Approved.
+            </h2>
+            <div className={styles.truthBody}>
+              <p>
+                We don&apos;t guess. We measure. Our methodology combines cutting-edge
+                biomechanical analysis with battle-tested coaching strategies.
+              </p>
+              <p className={styles.truthHighlight}>
+                Precision is not an accident.
+              </p>
+            </div>
+            <Link href="/the-method" className={styles.textLink}>
+              Learn the Method →
+            </Link>
           </div>
         </div>
       </section>
@@ -41,51 +128,53 @@ export default function Home() {
       <section className={styles.sectionWhite}>
         <div className={styles.container}>
           <div className={styles.sectionHeader}>
-            <span className={styles.eyebrow}>The Method</span>
-            <h2 className={styles.sectionTitle}>Training that transfers.</h2>
+            <span className={styles.eyebrow}>The 108 Methodology</span>
+            <h2 className={styles.sectionTitle}>Understanding before instruction.</h2>
             <p className={styles.sectionDesc}>
-              If it doesn't work at 7pm, it doesn't matter. We build athletes for the game, not the cage.
+              We learn how you think before we look at how you move.
+              The best adjustment is the one you can make on your own.
             </p>
           </div>
 
           <div className={styles.methodGrid}>
             <div className={styles.methodCard}>
               <span className={styles.methodNumber}>01</span>
-              <h3 className={styles.methodTitle}>Movement First</h3>
+              <h3 className={styles.methodTitle}>Dramatic Results. Fast.</h3>
               <p className={styles.methodBody}>
-                We don't fit you into a system. We study how you move, then build from there.
+                Accelerate your development cycle. Our proprietary methods strip away inefficiencies to get you game-ready sooner.
               </p>
             </div>
             <div className={styles.methodCard}>
               <span className={styles.methodNumber}>02</span>
-              <h3 className={styles.methodTitle}>Transfer at 7</h3>
+              <h3 className={styles.methodTitle}>Play Without Pain.</h3>
               <p className={styles.methodBody}>
-                Training is pointless if it doesn't show up in the game. Everything we do is designed for performance when it counts.
+                Longevity is the ultimate performance metric. We optimize your biomechanics to keep you healthy and dominating.
               </p>
             </div>
             <div className={styles.methodCard}>
               <span className={styles.methodNumber}>03</span>
-              <h3 className={styles.methodTitle}>Data Serves You</h3>
+              <h3 className={styles.methodTitle}>Data-Driven Approach.</h3>
               <p className={styles.methodBody}>
-                Movement creates data—not the other way around. We measure to understand, not to dictate.
+                Every movement measured, every metric optimized. We turn data into actionable insights for your specific physiology.
               </p>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Section: The Feel */}
+      {/* Section: The Unlock */}
       <section className={styles.sectionDark}>
         <div className={styles.container}>
           <div className={styles.splitRow}>
             <div className={styles.splitContent}>
-              <span className={styles.eyebrowLight}>The Feel</span>
               <h2 className={styles.sectionTitleWhite}>
-                Know your heartbeat before we know your swing.
+                Your system. Your cues.
               </h2>
               <p className={styles.textGray}>
-                World-class training starts with understanding you—the human, not just the athlete.
-                That's what makes the results stick. That's what makes you want to come back.
+                Personalized prompts that help you find the right pattern when it matters most.
+              </p>
+              <p className={styles.textGray}>
+                Cues that work on game day.
               </p>
             </div>
             <div className={styles.splitVisual}>
@@ -98,12 +187,15 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Section: The Proof */}
+      {/* Section: The Results */}
       <section className={styles.sectionBlack}>
         <div className={styles.container}>
           <div className={styles.sectionHeader}>
-            <span className={styles.eyebrowLight}>The Proof</span>
             <h2 className={styles.sectionTitleWhite}>It works.</h2>
+            <p className={styles.textGray} style={{ maxWidth: '600px', margin: '0 auto' }}>
+              The velocity comes. The exit velo jumps. The performance unlocks. Not because
+              you trained harder—because you're finally moving right.
+            </p>
           </div>
           <div className={styles.statsGrid}>
             <div className={styles.statItem}>
@@ -116,41 +208,60 @@ export default function Home() {
             </div>
             <div className={styles.statItem}>
               <span className={styles.statNumber}>+4 MPH</span>
-              <span className={styles.statLabel}>Avg Velo Gain</span>
+              <span className={styles.statLabel}>Average Velo Gain</span>
             </div>
             <div className={styles.statItem}>
-              <span className={styles.statNumber}>12</span>
-              <span className={styles.statLabel}>To the Show</span>
+              <span className={styles.statNumber}>12 → MLB</span>
+              <span className={styles.statLabel}>The Range</span>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Section: Programs */}
+      {/* Section: The Staying */}
+      <section className={styles.sectionDark}>
+        <div className={styles.container}>
+          <div className={styles.stayingContent}>
+            <h2 className={styles.sectionTitleWhite}>They come back.</h2>
+            <p className={styles.textGray}>
+              Athletes train for hours. Then they stay for hours more—watching film,
+              talking, figuring things out. They don't have to be here. They choose to stay.
+            </p>
+            <p className={styles.highlightText}>
+              That's not a feature. That's proof it works.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* Section: Your Path */}
       <section className={styles.sectionWhite}>
         <div className={styles.container}>
           <div className={styles.sectionHeader}>
-            <span className={styles.eyebrow}>Programs</span>
-            <h2 className={styles.sectionTitle}>Train your way.</h2>
+            <span className={styles.eyebrow}>Find Your Path</span>
+            <h2 className={styles.sectionTitle}>Everyone starts somewhere.</h2>
             <p className={styles.sectionDesc}>
-              In-person at the lab. Remote from anywhere. Same coaching. Same results.
+              The 108 Experience is where it begins. Everything builds from there.
             </p>
           </div>
-          <div className={styles.programGrid}>
-            <div className={styles.programCard}>
-              <h3 className={styles.programTitle}>108 Experience</h3>
-              <p className={styles.programBody}>Full immersion at the lab. Assessment, training, and ongoing development.</p>
-              <Link href="#" className={styles.programLink}>Learn more →</Link>
+          <div className={styles.pathGrid}>
+            <div className={styles.pathCard}>
+              <h3 className={styles.pathTitle}>Train with 108</h3>
+              <p className={styles.pathBody}>
+                In Knoxville. On tour. Remotely. Wherever you are.
+              </p>
+              <Link href="/108-experience" className={styles.programLink}>
+                Find Your Program →
+              </Link>
             </div>
-            <div className={styles.programCard}>
-              <h3 className={styles.programTitle}>Virtual Training</h3>
-              <p className={styles.programBody}>Remote coaching with video analysis. World-class methods, wherever you are.</p>
-              <Link href="#" className={styles.programLink}>Learn more →</Link>
-            </div>
-            <div className={styles.programCard}>
-              <h3 className={styles.programTitle}>The Lab Tour</h3>
-              <p className={styles.programBody}>See the facility. Meet the coaches. Experience 108 before you commit.</p>
-              <Link href="#" className={styles.programLink}>Learn more →</Link>
+            <div className={styles.pathCard}>
+              <h3 className={styles.pathTitle}>Learn the method</h3>
+              <p className={styles.pathBody}>
+                Shadow us. Join the mentorship. Partner with us.
+              </p>
+              <Link href="/coaches-experience" className={styles.programLink}>
+                For Coaches →
+              </Link>
             </div>
           </div>
         </div>
@@ -159,8 +270,9 @@ export default function Home() {
       {/* Footer CTA */}
       <section className={styles.footerCTA}>
         <div className={styles.container}>
-          <h2 className={styles.footerTitle}>Ready to feel the difference?</h2>
-          <button className={styles.btnPrimary}>Start The Pursuit</button>
+          <h2 className={styles.footerTitle}>Unlock Your Potential</h2>
+          <p className={styles.footerTagline}>Join the elite athletes redefining their limits at 108 Performance. The future of your game starts now.</p>
+          <Link href="/apply" className={styles.btnPrimary}>Experience 108</Link>
         </div>
       </section>
 
@@ -168,18 +280,41 @@ export default function Home() {
       <footer className={styles.footer}>
         <div className={styles.container}>
           <div className={styles.footerGrid}>
-            <div>
+            <div className={styles.footerBrand}>
               <span className={styles.brandName}>108</span>
-              <p className={styles.footerText}>The search for truth.</p>
+              <p className={styles.footerText}>Results you have to feel to believe.</p>
             </div>
-            <div className={styles.footerLinks}>
-              <Link href="#">The Method</Link>
-              <Link href="#">Programs</Link>
-              <Link href="#">Results</Link>
-              <Link href="#">Contact</Link>
+            <div className={styles.footerSection}>
+              <h4 className={styles.footerHeading}>Training</h4>
+              <div className={styles.footerLinks}>
+                <Link href="/108-experience">Programs</Link>
+                <Link href="/virtual-experience">Remote</Link>
+                <Link href="/coaches-experience">For Coaches</Link>
+              </div>
+            </div>
+            <div className={styles.footerSection}>
+              <h4 className={styles.footerHeading}>Company</h4>
+              <div className={styles.footerLinks}>
+                <Link href="/about">About</Link>
+                <Link href="/contact">Contact</Link>
+              </div>
+            </div>
+            <div className={styles.footerSection}>
+              <h4 className={styles.footerHeading}>Connect</h4>
+              <div className={styles.footerLinks}>
+                <a href="https://instagram.com" target="_blank" rel="noopener noreferrer">Instagram</a>
+                <a href="https://youtube.com" target="_blank" rel="noopener noreferrer">YouTube</a>
+                <a href="mailto:info@108performanceacademy.com">Email</a>
+              </div>
             </div>
           </div>
-          <p className={styles.copyright}>© 2025 108 Performance. All rights reserved.</p>
+          <div className={styles.footerBottom}>
+            <p className={styles.copyright}>© 2025 108 Performance</p>
+            <div className={styles.legalLinks}>
+              <Link href="/privacy">Privacy</Link>
+              <Link href="/terms">Terms</Link>
+            </div>
+          </div>
         </div>
       </footer>
     </div>

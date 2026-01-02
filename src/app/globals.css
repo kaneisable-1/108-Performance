@@ -1,3 +1,6 @@
+/* Apple HIG Design Tokens */
+@import './hig-design-tokens.css';
+
 /* Fonts */
 :root {
   --font-sans: "Inter", -apple-system, sans-serif;
