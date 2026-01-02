@@ -290,6 +290,12 @@ export function Navigation() {
               >
                 Athletes
               </Link>
+              <Link
+                href="/diagnostic"
+                className="text-xs font-medium text-white/70 hover:text-white transition-colors uppercase tracking-wider"
+              >
+                Diagnostic
+              </Link>
 
               {/* Shop Dropdown */}
               <div
@@ -529,6 +535,13 @@ export function Navigation() {
                   className="block text-lg font-medium text-white"
                 >
                   Athletes
+                </Link>
+                <Link
+                  href="/diagnostic"
+                  onClick={() => setIsMobileMenuOpen(false)}
+                  className="block text-lg font-medium text-white"
+                >
+                  Recruiting Diagnostic
                 </Link>
               </div>
 

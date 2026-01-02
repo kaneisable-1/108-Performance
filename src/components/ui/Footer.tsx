@@ -1,12 +1,52 @@
+'use client';
+
 import Link from 'next/link';
 import Image from 'next/image';
 import { BRAND } from '@/data/services';
 
 export function Footer() {
+  const handleFindYourPath = () => {
+    const element = document.getElementById('find-your-path');
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
   return (
-    <footer className="bg-white text-black py-16 px-6 border-t border-gray-100">
+    <footer className="bg-white text-black">
+      {/* Conversion Banner */}
+      <div className="bg-black text-white py-16 px-6">
+        <div className="max-w-4xl mx-auto text-center">
+          <p className="text-xs uppercase tracking-[0.3em] text-white/50 mb-4">
+            Ready to Start?
+          </p>
+          <h2 className="text-3xl md:text-4xl font-black mb-6">
+            Your path starts with one decision.
+          </h2>
+          <p className="text-white/60 mb-8 max-w-xl mx-auto">
+            Whether you're an athlete looking to train, a parent researching options, or a coach wanting to learn—we have a path for you.
+          </p>
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+            <button
+              onClick={handleFindYourPath}
+              className="px-8 py-4 border border-white/30 text-white text-sm font-bold uppercase tracking-wider hover:bg-white/10 transition-colors"
+            >
+              Find Your Path
+            </button>
+            <Link
+              href="/programs/experience"
+              className="bg-white text-black px-8 py-4 text-sm font-bold uppercase tracking-wider hover:bg-gray-100 transition-colors"
+            >
+              Book Your Experience
+            </Link>
+          </div>
+        </div>
+      </div>
+
+      {/* Main Footer */}
+      <div className="py-16 px-6 border-t border-gray-100">
       <div className="max-w-7xl mx-auto">
-        {/* Main Footer */}
+        {/* Main Footer Content */}
         <div className="grid md:grid-cols-4 gap-12 mb-16">
           {/* Brand */}
           <div>
@@ -120,6 +160,7 @@ export function Footer() {
             </Link>
           </div>
         </div>
+      </div>
       </div>
     </footer>
   );

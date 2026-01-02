@@ -1,5 +1,5 @@
 import { Navigation } from '@/components/ui/Navigation';
-import { AISearchBar } from '@/components/ui/AISearchBar';
+import { IntentCommandBar } from '@/components/ui/IntentCommandBar';
 import { Hero } from '@/components/sections/Hero';
 import { RosterCarousel } from '@/components/sections/RosterCarousel';
 import { FindYourPath } from '@/components/sections/FindYourPath';
@@ -18,27 +18,27 @@ export default function Home() {
   return (
     <>
       <Navigation />
-      {/* AI Search Bar - Fixed below header */}
+      {/* AI Intent Command Bar - Fixed below header */}
       <div className="fixed top-16 lg:top-20 left-0 right-0 z-40 border-b border-black/10">
-        <AISearchBar />
+        <IntentCommandBar />
       </div>
       <main className="pt-[72px] lg:pt-[80px]">
         {/* 1. Hero - Hook */}
         <Hero />
-        {/* 2. The Method - Understand what 108 does */}
-        <Method />
-        {/* 3. The Gateway - Required first step */}
-        <div id="gateway">
-          <Gateway />
-        </div>
-        {/* 4. Find Your Path - Qualify the user */}
+        {/* 2. Roster Carousel - Social proof */}
+        <RosterCarousel />
+        {/* 3. Find Your Path - Qualify the user */}
         <div id="find-your-path">
           <FindYourPath />
         </div>
-        {/* 5. Choose Your Path - Options after Experience */}
+        {/* 4. The Method - Human, Athlete, Player */}
+        <Method />
+        {/* 5. The Gateway - Required first step */}
+        <div id="gateway">
+          <Gateway />
+        </div>
+        {/* 6. Choose Your Path - Options after Experience */}
         <PathOptions />
-        {/* 6. Roster Carousel - Social proof with context */}
-        <RosterCarousel />
         {/* 7. App Showcase - 108 Software */}
         <AppShowcase />
         {/* 8. From 108 - Video Content */}

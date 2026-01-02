@@ -28,7 +28,7 @@ export function Gateway() {
           <AnimatedSection delay={0.1}>
             <div className="grid md:grid-cols-2 gap-6">
               {/* Athletes Card */}
-              <div className="bg-black text-white p-8 md:p-10">
+              <div className="bg-black text-white p-8 md:p-10 card-float-dark">
                 <div className="flex items-center gap-3 mb-6">
                   <span className="text-[10px] uppercase tracking-wider bg-white text-black px-3 py-1 font-semibold">
                     For Athletes
@@ -65,7 +65,7 @@ export function Gateway() {
               </div>
 
               {/* Coaches Card */}
-              <div className="bg-black text-white p-8 md:p-10">
+              <div className="bg-black text-white p-8 md:p-10 card-float-dark">
                 <div className="flex items-center gap-3 mb-6">
                   <span className="text-[10px] uppercase tracking-wider bg-white text-black px-3 py-1 font-semibold">
                     For Coaches

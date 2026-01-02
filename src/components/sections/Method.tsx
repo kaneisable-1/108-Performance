@@ -45,7 +45,6 @@ const phases = [
     ],
     icon: HumanIcon,
     image: '/method-human.jpg',
-    color: '#CCFF00',
   },
   {
     id: 'athlete',
@@ -61,7 +60,6 @@ const phases = [
     ],
     icon: AthleteIcon,
     image: '/method-athlete.jpg',
-    color: '#00D4FF',
   },
   {
     id: 'player',
@@ -77,7 +75,6 @@ const phases = [
     ],
     icon: PlayerIcon,
     image: '/method-player.jpg',
-    color: '#FF6B00',
   },
 ];
 
@@ -124,8 +121,7 @@ export function Method() {
                   >
                     {/* Glow Effect */}
                     <motion.div
-                      className="absolute inset-0 rounded-full blur-xl opacity-0 group-hover:opacity-30 transition-opacity duration-500"
-                      style={{ backgroundColor: phase.color }}
+                      className="absolute inset-0 rounded-full blur-xl opacity-0 group-hover:opacity-20 transition-opacity duration-500 bg-white"
                     />
 
                     {/* Icon Container */}
@@ -149,12 +145,11 @@ export function Method() {
 
                     {/* Number Badge */}
                     <div
-                      className="absolute -top-2 -right-2 w-8 h-8 rounded-full flex items-center justify-center text-xs font-bold transition-all duration-300"
-                      style={{
-                        backgroundColor: activePhase === phase.id || hoveredPhase === phase.id ? phase.color : 'transparent',
-                        color: activePhase === phase.id || hoveredPhase === phase.id ? 'black' : 'rgba(255,255,255,0.3)',
-                        border: `1px solid ${activePhase === phase.id || hoveredPhase === phase.id ? phase.color : 'rgba(255,255,255,0.2)'}`,
-                      }}
+                      className={`absolute -top-2 -right-2 w-8 h-8 rounded-full flex items-center justify-center text-xs font-bold transition-all duration-300 border ${
+                        activePhase === phase.id || hoveredPhase === phase.id
+                          ? 'bg-white text-black border-white'
+                          : 'bg-transparent text-white/30 border-white/20'
+                      }`}
                     >
                       {phase.number}
                     </div>
@@ -181,11 +176,8 @@ export function Method() {
             <AnimatedSection key={phase.id} delay={0.1 * index}>
               <motion.div
                 className={`relative rounded-2xl overflow-hidden cursor-pointer group ${
-                  activePhase === phase.id ? 'ring-2' : ''
+                  activePhase === phase.id ? 'ring-2 ring-white' : ''
                 }`}
-                style={{
-                  '--tw-ring-color': phase.color,
-                } as React.CSSProperties}
                 onClick={() => setActivePhase(activePhase === phase.id ? null : phase.id)}
                 onMouseEnter={() => setHoveredPhase(phase.id)}
                 onMouseLeave={() => setHoveredPhase(null)}
@@ -206,10 +198,7 @@ export function Method() {
                 <div className="relative p-6 lg:p-8 min-h-[320px] flex flex-col justify-end">
                   {/* Number + Icon */}
                   <div className="flex items-center gap-3 mb-4">
-                    <div
-                      className="w-10 h-10 rounded-full flex items-center justify-center text-sm font-bold"
-                      style={{ backgroundColor: phase.color, color: 'black' }}
-                    >
+                    <div className="w-10 h-10 rounded-full flex items-center justify-center text-sm font-bold bg-white text-black">
                       {phase.number}
                     </div>
                     <div className="w-8 h-8 text-white/60">
@@ -223,10 +212,7 @@ export function Method() {
                   </h3>
 
                   {/* Tagline */}
-                  <p
-                    className="text-sm font-medium mb-3"
-                    style={{ color: phase.color }}
-                  >
+                  <p className="text-sm font-medium mb-3 text-white/70">
                     {phase.tagline}
                   </p>
 
@@ -255,10 +241,7 @@ export function Method() {
                                 transition={{ delay: 0.1 + i * 0.05 }}
                                 className="flex items-center gap-2 text-white/50 text-sm"
                               >
-                                <span
-                                  className="w-1.5 h-1.5 rounded-full flex-shrink-0"
-                                  style={{ backgroundColor: phase.color }}
-                                />
+                                <span className="w-1.5 h-1.5 rounded-full flex-shrink-0 bg-white/50" />
                                 {detail}
                               </motion.li>
                             ))}
@@ -286,11 +269,7 @@ export function Method() {
 
                 {/* Hover Border Effect */}
                 <motion.div
-                  className="absolute inset-0 rounded-2xl pointer-events-none opacity-0 group-hover:opacity-100 transition-opacity duration-300"
-                  style={{
-                    border: `1px solid ${phase.color}`,
-                    boxShadow: `inset 0 0 20px ${phase.color}20`
-                  }}
+                  className="absolute inset-0 rounded-2xl pointer-events-none opacity-0 group-hover:opacity-100 transition-opacity duration-300 border border-white/30"
                 />
               </motion.div>
             </AnimatedSection>
@@ -305,7 +284,7 @@ export function Method() {
             </p>
             <a
               href="/programs/experience"
-              className="inline-flex items-center gap-3 bg-white text-black px-8 py-4 font-bold text-sm uppercase tracking-wider hover:bg-[#CCFF00] transition-colors rounded-full"
+              className="inline-flex items-center gap-3 bg-white text-black px-8 py-4 font-bold text-sm uppercase tracking-wider hover:bg-gray-100 transition-colors rounded-full"
             >
               Experience the Method
               <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
