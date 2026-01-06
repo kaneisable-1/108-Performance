@@ -37,9 +37,8 @@ export default function Apply() {
                 <div className={styles.container}>
                     <div className={styles.sectionHeader}>
                         <h2 className={styles.sectionTitle}>Start Your Application</h2>
-                        <p className={styles.sectionDesc}>
-                            Application form coming soon. For now, reach out directly to get started.
-                        </p>
+                        <iframe src="https://api.leadconnectorhq.com/widget/survey/MM8Rx7Ss2BbFJvY82zca" style="border:none;width:100%;" scrolling="no" id="MM8Rx7Ss2BbFJvY82zca" title="survey"></iframe>
+                        <script src="https://link.msgsndr.com/js/form_embed.js"></script>
                     </div>
 
                     <div className={styles.pathGrid} style={{ marginTop: '3rem' }}>
