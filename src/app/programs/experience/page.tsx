@@ -150,6 +150,28 @@ export default function ExperiencePage() {
           </div>
         </section>
 
+        {/* GHL FORM */}
+        <section className="bg-white py-24">
+          <div className="max-w-7xl mx-auto px-6 lg:px-8">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              className="text-center mb-16"
+            >
+              <p className="text-xs uppercase tracking-[0.3em] text-gray-400 mb-4">APPLY Now!</p>
+              <h2 className="text-4xl md:text-5xl font-black tracking-tight">
+                Book Your Experience
+              </h2>
+            </motion.div>
+            <div className="space-y-6">
+              <iframe src="https://api.leadconnectorhq.com/widget/survey/MM8Rx7Ss2BbFJvY82zca" style="border:none;width:100%;" scrolling="no" id="MM8Rx7Ss2BbFJvY82zca" title="survey"></iframe>
+<script src="https://link.msgsndr.com/js/form_embed.js"></script>
+            </div>
+          </div>
+        </section>
+
+        
         {/* What's Included */}
         <section className="bg-white py-24">
           <div className="max-w-7xl mx-auto px-6 lg:px-8">
