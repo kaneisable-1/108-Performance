@@ -393,4 +393,3 @@ export default function ExperiencePage() {
     </>
   );
 }
-<script src="https://link.msgsndr.com/js/form_embed.js"></script>
