@@ -7,6 +7,7 @@ import { Navigation } from '@/components/ui/Navigation';
 import { Footer } from '@/components/ui/Footer';
 import { PageFAQ } from '@/components/ui/PageFAQ';
 import { WhatYouReceiveSection } from '@/components/ui/ProductPackDisplay';
+import Script from "next/script";
 
 const experienceFaqs = [
   {
@@ -165,8 +166,19 @@ export default function ExperiencePage() {
               </h2>
             </motion.div>
             <div className="space-y-6">
-              <iframe src="https://api.leadconnectorhq.com/widget/survey/MM8Rx7Ss2BbFJvY82zca" style="border:none;width:100%;" scrolling="no" id="MM8Rx7Ss2BbFJvY82zca" title="survey"></iframe>
-            </div>
+      <iframe
+        src="https://api.leadconnectorhq.com/widget/survey/MM8Rx7Ss2BbFJvY82zca"
+        style={{ border: "none", width: "100%" }}
+        scrolling="no"
+        id="MM8Rx7Ss2BbFJvY82zca"
+        title="survey"
+      ></iframe>
+
+      <Script
+        src="https://link.msgsndr.com/js/form_embed.js"
+        strategy="afterInteractive"
+      />
+    </div>
           </div>
         </section>
 
