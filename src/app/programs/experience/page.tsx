@@ -155,7 +155,7 @@ export default function ExperiencePage() {
                     <p className="text-4xl font-black">$2,000</p>
                   </div>
                   <Link
-                    href="https://app.gohighlevel.com/v2/location/zQuOy1YlNDKsrGoNRWVr/survey-builder-v2/MM8Rx7Ss2BbFJvY82zca"
+                    href="https://api.leadconnectorhq.com/widget/survey/MM8Rx7Ss2BbFJvY82zca"
                     target="_blank"
                     rel="noopener noreferrer"
                   >
@@ -209,7 +209,7 @@ export default function ExperiencePage() {
                 <strong>Book Your Experience</strong>
               </p>
               <Link
-                href="https://app.gohighlevel.com/v2/location/zQuOy1YlNDKsrGoNRWVr/survey-builder-v2/MM8Rx7Ss2BbFJvY82zca"
+                href="https://api.leadconnectorhq.com/widget/survey/MM8Rx7Ss2BbFJvY82zca"
                 target="_blank"
                 rel="noopener noreferrer"
               >
@@ -459,7 +459,7 @@ export default function ExperiencePage() {
               transition={{ delay: 0.1 }}
             >
               <Link
-                href="https://app.gohighlevel.com/v2/location/zQuOy1YlNDKsrGoNRWVr/survey-builder-v2/MM8Rx7Ss2BbFJvY82zca"
+                href="https://api.leadconnectorhq.com/widget/survey/MM8Rx7Ss2BbFJvY82zca"
                 target="_blank"
                 rel="noopener noreferrer"
               >
