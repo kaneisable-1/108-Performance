@@ -154,13 +154,19 @@ export default function ExperiencePage() {
                     </p>
                     <p className="text-4xl font-black">$2,000</p>
                   </div>
-                  <motion.button
-                    whileHover={{ y: 2 }}
-                    whileTap={{ y: 4 }}
-                    className="bg-white text-black px-8 py-6 font-bold uppercase tracking-wider hover:bg-white/90 transition-colors"
+                  <Link
+                    href="https://app.gohighlevel.com/v2/location/zQuOy1YlNDKsrGoNRWVr/survey-builder-v2/MM8Rx7Ss2BbFJvY82zca"
+                    target="_blank"
+                    rel="noopener noreferrer"
                   >
-                    Book Your Experience
-                  </motion.button>
+                    <motion.button
+                      whileHover={{ y: 2 }}
+                      whileTap={{ y: 4 }}
+                      className="bg-white text-black px-8 py-6 font-bold uppercase tracking-wider hover:bg-white/90 transition-colors"
+                    >
+                      Book Your Experience
+                    </motion.button>
+                  </Link>
                 </motion.div>
               </div>
               {/* Video Explainer */}
@@ -194,9 +200,9 @@ export default function ExperiencePage() {
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              className="bg-white text-black p-10"
+              className="bg-black text-white p-6"
             >
-              <p className="text-xs uppercase tracking-[0.2em] text-gray-500 mb-4">
+              <p className="text-xs uppercase tracking-[0.2em] text-white-500 mb-4">
                 APPLY Now!
               </p>
               <p className="text-xl md:text-2xl font-medium leading-relaxed mb-6">
@@ -452,13 +458,19 @@ export default function ExperiencePage() {
               viewport={{ once: true }}
               transition={{ delay: 0.1 }}
             >
-              <motion.button
-                whileHover={{ y: 2 }}
-                whileTap={{ y: 4 }}
-                className="bg-white text-black px-10 py-5 font-bold uppercase tracking-wider shadow-[0_4px_20px_rgba(255,255,255,0.2)] hover:shadow-[0_2px_10px_rgba(255,255,255,0.3)] transition-shadow"
+              <Link
+                href="https://app.gohighlevel.com/v2/location/zQuOy1YlNDKsrGoNRWVr/survey-builder-v2/MM8Rx7Ss2BbFJvY82zca"
+                target="_blank"
+                rel="noopener noreferrer"
               >
-                Book Your 108 Experience
-              </motion.button>
+                <motion.button
+                  whileHover={{ y: 2 }}
+                  whileTap={{ y: 4 }}
+                  className="bg-white text-black px-10 py-5 font-bold uppercase tracking-wider shadow-[0_4px_20px_rgba(255,255,255,0.2)] hover:shadow-[0_2px_10px_rgba(255,255,255,0.3)] transition-shadow"
+                >
+                  Book Your 108 Experience
+                </motion.button>
+              </Link>
             </motion.div>
             <motion.p
               initial={{ opacity: 0 }}
