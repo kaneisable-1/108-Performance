@@ -84,13 +84,15 @@ export default function TriStarPage() {
                   <p className="text-6xl font-black">$499</p>
                   <p className="text-gray-500">/month</p>
                 </div>
-                <motion.button
-                  whileHover={{ y: 2 }}
-                  whileTap={{ y: 4 }}
-                  className="bg-black text-white px-8 py-5 font-bold uppercase tracking-wider hover:bg-gray-900 transition-colors"
-                >
-                  Start Tri Star
-                </motion.button>
+                <Link href="https://api.leadconnectorhq.com/widget/survey/MM8Rx7Ss2BbFJvY82zca" target="_blank" rel="noopener noreferrer">
+                  <motion.button
+                    whileHover={{ y: 2 }}
+                    whileTap={{ y: 4 }}
+                    className="bg-black text-white px-8 py-5 font-bold uppercase tracking-wider hover:bg-gray-900 transition-colors"
+                  >
+                    Start Tri Star
+                  </motion.button>
+                </Link>
               </motion.div>
             </div>
           </div>
