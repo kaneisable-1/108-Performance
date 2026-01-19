@@ -98,13 +98,15 @@ export default function DraftPrepPage() {
                   <p className="text-white/50">/month</p>
                   <p className="text-xs text-white/40 mt-1">Includes Virtual Pro base</p>
                 </div>
-                <motion.button
-                  whileHover={{ y: 2 }}
-                  whileTap={{ y: 4 }}
-                  className="bg-white text-black px-8 py-5 font-bold uppercase tracking-wider hover:bg-white/90 transition-colors"
-                >
-                  Start Draft Prep
-                </motion.button>
+                <Link href="https://api.leadconnectorhq.com/widget/survey/MM8Rx7Ss2BbFJvY82zca" target="_blank" rel="noopener noreferrer">
+                  <motion.button
+                    whileHover={{ y: 2 }}
+                    whileTap={{ y: 4 }}
+                    className="bg-white text-black px-8 py-5 font-bold uppercase tracking-wider hover:bg-white/90 transition-colors"
+                  >
+                    Start Draft Prep
+                  </motion.button>
+                </Link>
               </motion.div>
             </div>
           </div>
