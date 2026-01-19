@@ -87,7 +87,7 @@ export default function VirtualPage() {
                   <p className="text-6xl font-black">$550</p>
                   <p className="text-gray-500">/month</p>
                 </div>
-                <Link href="https://api.leadconnectorhq.com/widget/survey/MM8Rx7Ss2BbFJvY82zca?notrack=true" target="_blank" rel="noopener noreferrer">
+                <Link href="https://api.leadconnectorhq.com/widget/survey/MM8Rx7Ss2BbFJvY82zca" target="_blank" rel="noopener noreferrer">
                   <motion.button
                     whileHover={{ y: 2 }}
                     whileTap={{ y: 4 }}
