@@ -101,13 +101,15 @@ export default function VirtualProPage() {
                   <p className="text-6xl font-black">$1,000</p>
                   <p className="text-white/50">/month</p>
                 </div>
-                <motion.button
-                  whileHover={{ y: 2 }}
-                  whileTap={{ y: 4 }}
-                  className="bg-white text-black px-8 py-5 font-bold uppercase tracking-wider hover:bg-white/90 transition-colors"
-                >
-                  Start Virtual Pro
-                </motion.button>
+                <Link href="https://api.leadconnectorhq.com/widget/survey/MM8Rx7Ss2BbFJvY82zca" target="_blank" rel="noopener noreferrer">
+                  <motion.button
+                    whileHover={{ y: 2 }}
+                    whileTap={{ y: 4 }}
+                    className="bg-white text-black px-8 py-5 font-bold uppercase tracking-wider hover:bg-white/90 transition-colors"
+                  >
+                    Start Virtual Pro
+                  </motion.button>
+                </Link>
               </motion.div>
             </div>
           </div>
