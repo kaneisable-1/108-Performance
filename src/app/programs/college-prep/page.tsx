@@ -100,13 +100,15 @@ export default function CollegePrepPage() {
                   <p className="text-gray-500">/month</p>
                   <p className="text-xs text-gray-400 mt-1">Includes Virtual Pro base</p>
                 </div>
-                <motion.button
-                  whileHover={{ y: 2 }}
-                  whileTap={{ y: 4 }}
-                  className="bg-black text-white px-8 py-5 font-bold uppercase tracking-wider hover:bg-gray-900 transition-colors"
-                >
-                  Start College Prep
-                </motion.button>
+                <Link href="https://api.leadconnectorhq.com/widget/survey/MM8Rx7Ss2BbFJvY82zca" target="_blank" rel="noopener noreferrer">
+                  <motion.button
+                    whileHover={{ y: 2 }}
+                    whileTap={{ y: 4 }}
+                    className="bg-black text-white px-8 py-5 font-bold uppercase tracking-wider hover:bg-gray-900 transition-colors"
+                  >
+                    Start College Prep
+                  </motion.button>
+                </Link>
               </motion.div>
             </div>
           </div>
