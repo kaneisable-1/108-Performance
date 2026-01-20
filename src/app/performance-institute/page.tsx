@@ -621,7 +621,7 @@ export default function PerformanceInstitute() {
                     Start your enrollment process today
                   </p>
                   <a
-                    href="https://forms.gle/placeholder" // Replace with actual form URL
+                    href="https://link.apisystem.tech/widget/survey/IM1SrUiFoY28dz7N1Ih1"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="inline-flex items-center gap-2 bg-white text-black px-6 py-3 font-semibold rounded-full hover:bg-white/90 transition-colors"
