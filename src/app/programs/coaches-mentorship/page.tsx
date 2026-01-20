@@ -91,13 +91,15 @@ export default function CoachesMentorshipPage() {
                   <p className="text-6xl font-black">$297</p>
                   <p className="text-gray-500">/month</p>
                 </div>
-                <motion.button
-                  whileHover={{ y: 2 }}
-                  whileTap={{ y: 4 }}
-                  className="bg-black text-white px-8 py-5 font-bold uppercase tracking-wider hover:bg-gray-900 transition-colors"
-                >
-                  Join Mentorship
-                </motion.button>
+                <Link href="https://link.apisystem.tech/widget/survey/rRS8SHjyfeyS7I78qIoZ" target="_blank" rel="noopener noreferrer">
+                  <motion.button
+                    whileHover={{ y: 2 }}
+                    whileTap={{ y: 4 }}
+                    className="bg-black text-white px-8 py-5 font-bold uppercase tracking-wider hover:bg-gray-900 transition-colors"
+                  >
+                    Join Mentorship
+                  </motion.button>
+                </Link>
               </motion.div>
             </div>
           </div>
