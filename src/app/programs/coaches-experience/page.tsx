@@ -113,13 +113,15 @@ export default function CoachesExperiencePage() {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.5 }}
               >
-                <motion.button
-                  whileHover={{ y: 2 }}
-                  whileTap={{ y: 4 }}
-                  className="bg-white text-black px-10 py-5 text-sm font-bold uppercase tracking-wider shadow-[0_4px_20px_rgba(255,255,255,0.2)] hover:shadow-[0_2px_10px_rgba(255,255,255,0.3)] transition-shadow"
-                >
-                  Apply Now
-                </motion.button>
+                <Link href="https://link.apisystem.tech/widget/survey/rRS8SHjyfeyS7I78qIoZ" target="_blank" rel="noopener noreferrer">
+                  <motion.button
+                    whileHover={{ y: 2 }}
+                    whileTap={{ y: 4 }}
+                    className="bg-white text-black px-10 py-5 text-sm font-bold uppercase tracking-wider shadow-[0_4px_20px_rgba(255,255,255,0.2)] hover:shadow-[0_2px_10px_rgba(255,255,255,0.3)] transition-shadow"
+                  >
+                    Apply Now
+                  </motion.button>
+                </Link>
               </motion.div>
             </div>
           </div>
@@ -248,13 +250,15 @@ export default function CoachesExperiencePage() {
             >
               Apply for the Coaches Experience to start the partnership process.
             </motion.p>
-            <motion.button
-              whileHover={{ y: 2 }}
-              whileTap={{ y: 4 }}
-              className="bg-white text-black px-8 py-4 font-bold uppercase tracking-wider"
-            >
-              Apply Now
-            </motion.button>
+            <Link href="https://link.apisystem.tech/widget/survey/rRS8SHjyfeyS7I78qIoZ" target="_blank" rel="noopener noreferrer">
+              <motion.button
+                whileHover={{ y: 2 }}
+                whileTap={{ y: 4 }}
+                className="bg-white text-black px-8 py-4 font-bold uppercase tracking-wider"
+              >
+                Apply Now
+              </motion.button>
+            </Link>
           </div>
         </section>
       </main>
