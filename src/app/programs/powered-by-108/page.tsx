@@ -104,13 +104,15 @@ export default function PoweredBy108Page() {
                   <p className="text-7xl font-black">$20,000</p>
                   <p className="text-white/50">Year 1 Licensing Fee</p>
                 </div>
-                <motion.button
-                  whileHover={{ y: 2 }}
-                  whileTap={{ y: 4 }}
-                  className="bg-white text-black px-8 py-5 font-bold uppercase tracking-wider hover:bg-white/90 transition-colors"
-                >
-                  Apply for Licensing
-                </motion.button>
+                <Link href="https://link.apisystem.tech/widget/survey/rRS8SHjyfeyS7I78qIoZ" target="_blank" rel="noopener noreferrer">
+                  <motion.button
+                    whileHover={{ y: 2 }}
+                    whileTap={{ y: 4 }}
+                    className="bg-white text-black px-8 py-5 font-bold uppercase tracking-wider hover:bg-white/90 transition-colors"
+                  >
+                    Apply for Licensing
+                  </motion.button>
+                </Link>
               </motion.div>
             </div>
           </div>
