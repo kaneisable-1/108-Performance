@@ -165,7 +165,9 @@ export default function NILPage() {
               </p>
               <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
                 <a
-                  href="#apply"
+                  href="https://link.apisystem.tech/widget/survey/A72avXsWJGo8o2ETgsXS"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="inline-flex items-center gap-2 bg-white text-black px-8 py-4 font-bold rounded-full hover:bg-white/90 transition-colors"
                 >
                   Apply Now
@@ -477,7 +479,9 @@ export default function NILPage() {
               </p>
               <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
                 <a
-                  href="mailto:nil@108performance.com?subject=NIL Application"
+                  href="https://link.apisystem.tech/widget/survey/A72avXsWJGo8o2ETgsXS"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="inline-flex items-center gap-2 bg-white text-black px-8 py-4 font-bold rounded-full hover:bg-white/90 transition-colors"
                 >
                   Apply Now
