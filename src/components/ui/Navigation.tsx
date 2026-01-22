@@ -603,19 +603,15 @@ export function Navigation() {
               {/* CTA */}
               <div className="mt-8">
                 <button
-                  onClick={() => {
-                    setIsMobileMenuOpen(false);
-                    setTimeout(() => {
-                      const element = document.getElementById('find-your-path');
-                      if (element) {
-                        element.scrollIntoView({ behavior: 'smooth' });
-                      }
-                    }, 300);
-                  }}
-                  className="block w-full bg-white text-black px-8 py-4 text-center font-semibold uppercase tracking-wider"
-                >
-                  Find Your Path
-                </button>
+  onClick={() => {
+    setIsMobileMenuOpen(false);
+    window.location.href =
+      "https://link.apisystem.tech/widget/survey/9n6r0LInGOdtUgls6PBA";
+  }}
+  className="block w-full bg-white text-black px-8 py-4 text-center font-semibold uppercase tracking-wider"
+>
+  Find Your Path
+</button>
               </div>
             </div>
           </motion.div>
