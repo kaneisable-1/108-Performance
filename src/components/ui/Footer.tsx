@@ -27,12 +27,14 @@ export function Footer() {
             Whether you're an athlete looking to train, a parent researching options, or a coach wanting to learn—we have a path for you.
           </p>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-            <button
-              onClick={handleFindYourPath}
-              className="px-8 py-4 border border-white/30 text-white text-sm font-bold uppercase tracking-wider hover:bg-white/10 transition-colors"
-            >
-              Find Your Path
-            </button>
+            
+<Link href="https://link.apisystem.tech/widget/survey/9n6r0LInGOdtUgls6PBA">
+  <button
+    className="px-8 py-4 border border-white/30 text-white text-sm font-bold uppercase tracking-wider hover:bg-white/10 transition-colors"
+  >
+    Find Your Path
+  </button>
+</Link>
             <Link
               href="/programs/experience"
               className="bg-white text-black px-8 py-4 text-sm font-bold uppercase tracking-wider hover:bg-gray-100 transition-colors"
@@ -41,7 +43,7 @@ export function Footer() {
             </Link>
           </div>
         </div>
-      </div>
+      </div>Ï
 
       {/* Main Footer */}
       <div className="py-16 px-6 border-t border-gray-100">
