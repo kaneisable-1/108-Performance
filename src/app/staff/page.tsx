@@ -410,7 +410,7 @@ export default function StaffPage() {
                   </svg>
                 </a>
                 <a
-                  href="mailto:info@108performance.com"
+                  href="https://link.apisystem.tech/widget/survey/9n6r0LInGOdtUgls6PBA" target="_blank" rel="noopener noreferrer"
                   className="inline-flex items-center gap-2 text-white/70 hover:text-white transition-colors font-medium"
                 >
                   Contact Us
