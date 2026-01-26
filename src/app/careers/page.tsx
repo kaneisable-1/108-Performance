@@ -4,6 +4,7 @@ import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Navigation } from '@/components/ui/Navigation';
 import { Footer } from '@/components/ui/Footer';
+import Script from 'next/script';
 
 const steps = [
   { id: 1, title: 'Contact', description: 'Basic information' },
@@ -93,10 +94,21 @@ export default function CareersPage() {
         </section>
 
         {/* Application */}
-        <section className="py-16">
-        <iframe src="https://link.apisystem.tech/widget/survey/KgHi7oYZH43591lN4tH4" style="border:none;width:100%;" scrolling="no" id="KgHi7oYZH43591lN4tH4" title="survey"></iframe>
-<script src="https://link.msgsndr.com/js/form_embed.js"></script>
-        </section>
+       <section className="py-16">
+  <iframe
+    src="https://link.apisystem.tech/widget/survey/KgHi7oYZH43591lN4tH4"
+    style={{ border: 'none', width: '100%' }}
+    scrolling="no"
+    id="KgHi7oYZH43591lN4tH4"
+    title="survey"Ï
+  />
+
+  <Script
+    src="https://link.msgsndr.com/js/form_embed.js"
+    strategy="afterInteractive"
+  />
+</section>
+
       </main>
       <Footer />
     </>
