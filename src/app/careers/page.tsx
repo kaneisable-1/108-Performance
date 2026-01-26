@@ -100,7 +100,7 @@ export default function CareersPage() {
     style={{ border: 'none', width: '100%' }}
     scrolling="no"
     id="KgHi7oYZH43591lN4tH4"
-    title="survey"Ï
+    title="survey"
   />
 
   <Script
