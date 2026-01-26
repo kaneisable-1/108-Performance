@@ -350,13 +350,19 @@ export default function TourExperiencePage() {
                       <span className={`text-sm ${tour.spotsLeft <= 5 ? 'text-red-400' : 'text-white/50'}`}>
                         {tour.spotsLeft} spots left
                       </span>
-                      <motion.button
-                        whileHover={{ y: 2 }}
-                        whileTap={{ y: 4 }}
-                        className="bg-white text-black px-6 py-3 font-bold text-sm uppercase tracking-wider"
-                      >
-                        Register
-                      </motion.button>
+                      <Link
+  href="https://api.leadconnectorhq.com/widget/groups/regional-events"
+  target="_blank"
+  rel="noopener noreferrer"
+>
+  <motion.button
+    whileHover={{ y: 2 }}
+    whileTap={{ y: 4 }}
+    className="bg-white text-black px-6 py-3 font-bold text-sm uppercase tracking-wider"
+  >
+    Register
+  </motion.button>
+</Link>
                     </div>
                   </motion.div>
                 ))}
