@@ -100,9 +100,7 @@ export function Footer() {
       </a>
     </li>
   </ul>
-            <p className="text-xs text-gray-500">
-              Knoxville, TN
-            </p>
+           
           </div>
 
           {/* Links Column 1 */}
