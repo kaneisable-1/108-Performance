@@ -36,11 +36,14 @@ export function Footer() {
   </button>
 </Link>
             <Link
-              href="/programs/experience"
-              className="bg-white text-black px-8 py-4 text-sm font-bold uppercase tracking-wider hover:bg-gray-100 transition-colors"
-            >
-              Book Your Experience
-            </Link>
+  href="https://api.leadconnectorhq.com/widget/groups/sales-qualification"
+  target="_blank"
+  rel="noopener noreferrer"
+  className="bg-white text-black px-8 py-4 text-sm font-bold uppercase tracking-wider hover:bg-gray-100 transition-colors"
+>
+  Book Your Free Session
+</Link>
+
           </div>
         </div>
       </div>Ï
