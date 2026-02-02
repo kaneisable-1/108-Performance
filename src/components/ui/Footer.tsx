@@ -59,6 +59,47 @@ export function Footer() {
               height={40}
               className="h-8 w-auto mb-3"
             />
+            <ul className="space-y-3 text-sm text-gray-500">
+    {/* Location */}
+    <li className="flex items-start gap-3">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+        <path d="M12 21s-6-5.33-6-10a6 6 0 0 1 12 0c0 4.67-6 10-6 10z" />
+        <circle cx="12" cy="11" r="2" />
+      </svg>
+      <span>
+        108 Performance<br />
+        6616 Deane Hill Dr<br />
+        Knoxville, TN 37919
+      </span>
+    </li>
+
+    {/* Phone */}
+    <li className="flex items-center gap-3">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+        <path d="M22 16.92v3a2 2 0 0 1-2.18 2A19.8 19.8 0 0 1 3.11 5.18 2 2 0 0 1 5 3h3a2 2 0 0 1 2 1.72c.12.81.3 1.6.54 2.36a2 2 0 0 1-.45 2.11L9.03 10.97a16 16 0 0 0 6 6l1.78-1.06a2 2 0 0 1 2.11-.45c.76.24 1.55.42 2.36.54A2 2 0 0 1 22 16.92z" />
+      </svg>
+      <a
+        href="tel:+18652323773"
+        className="hover:text-black transition-colors"
+      >
+        +1 (865) 232-3773
+      </a>
+    </li>
+
+    {/* Email */}
+    <li className="flex items-center gap-3">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+        <path d="M4 4h16v16H4z" />
+        <path d="m22 6-10 7L2 6" />
+      </svg>
+      <a
+        href="mailto:108@108performanceacademy.com"
+        className="hover:text-black transition-colors"
+      >
+        108@108performanceacademy.com
+      </a>
+    </li>
+  </ul>
             <p className="text-xs text-gray-500">
               Knoxville, TN
             </p>
