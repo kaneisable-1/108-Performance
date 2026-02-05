@@ -101,7 +101,7 @@ export default function TriStarPage() {
                 className="flex flex-col sm:flex-row items-start gap-6"
               >
                 <div>
-                  <p className="text-6xl font-black">Purchase Now: </p>
+                  <p className="text-gray-500">Purchase Now: </p>
                 </div>
                 <Link href="https://link.fastpaydirect.com/payment-link/696fe49d50e4b620d5b3f376" target="_blank" rel="noopener noreferrer">
                   <motion.button
