@@ -108,6 +108,34 @@ export default function DraftPrepPage() {
                   </motion.button>
                 </Link>
               </motion.div>
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.3 }}
+                className="flex flex-col sm:flex-row items-start gap-6"
+              >
+                <div>
+                  <p className="text-xs uppercase tracking-[0.3em] text-gray-400 mt-6">Purchase Now: </p>
+                </div>
+                <Link href="https://link.fastpaydirect.com/payment-link/696fec7253f21b368efc6378" target="_blank" rel="noopener noreferrer">
+                  <motion.button
+                    whileHover={{ y: 2 }}
+                    whileTap={{ y: 4 }}
+                    className="bg-black text-white px-8 py-5 font-bold uppercase tracking-wider hover:bg-gray-900 transition-colors"
+                  >
+                    $1500/month
+                  </motion.button>
+                </Link>
+                <Link href="https://link.fastpaydirect.com/payment-link/696fec9a53f21ba01cfc640a" target="_blank" rel="noopener noreferrer">
+                  <motion.button
+                    whileHover={{ y: 2 }}
+                    whileTap={{ y: 4 }}
+                    className="bg-black text-white px-8 py-5 font-bold uppercase tracking-wider hover:bg-gray-900 transition-colors"
+                  >
+                    $15,000/year
+                  </motion.button>
+                </Link>
+              </motion.div>
             </div>
           </div>
         </section>
