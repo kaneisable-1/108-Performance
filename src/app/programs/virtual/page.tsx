@@ -115,13 +115,13 @@ export default function VirtualPage() {
                     $550/month
                   </motion.button>
                 </Link>
-                <Link href="https://link.fastpaydirect.com/payment-link/696fde427dba83522fba1ad3" target="_blank" rel="noopener noreferrer">
+                <Link href="https://link.fastpaydirect.com/payment-link/696fe4beac4fd05296c55000" target="_blank" rel="noopener noreferrer">
                   <motion.button
                     whileHover={{ y: 2 }}
                     whileTap={{ y: 4 }}
                     className="bg-black text-white px-8 py-5 font-bold uppercase tracking-wider hover:bg-gray-900 transition-colors"
                   >
-                    $5500/year
+                    $6000/year
                   </motion.button>
                 </Link>
               </motion.div>
