@@ -114,6 +114,34 @@ export default function PoweredBy108Page() {
                   </motion.button>
                 </Link>
               </motion.div>
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.3 }}
+                className="flex flex-col sm:flex-row items-start gap-6"
+              >
+                <div>
+                  <p className="text-xs uppercase tracking-[0.3em] text-gray-400 mt-6">Purchase Now: </p>
+                </div>
+                <Link href="https://link.fastpaydirect.com/payment-link/696febdd53f21b21fbfc61b7" target="_blank" rel="noopener noreferrer">
+                  <motion.button
+                    whileHover={{ y: 2 }}
+                    whileTap={{ y: 4 }}
+                    className="bg-black text-white px-8 py-5 font-bold uppercase tracking-wider hover:bg-gray-900 transition-colors"
+                  >
+                    $20,000 for Year 1
+                  </motion.button>
+                </Link>
+                <Link href="https://link.fastpaydirect.com/payment-link/696febfd7dba832d3eba315e" target="_blank" rel="noopener noreferrer">
+                  <motion.button
+                    whileHover={{ y: 2 }}
+                    whileTap={{ y: 4 }}
+                    className="bg-black text-white px-8 py-5 font-bold uppercase tracking-wider hover:bg-gray-900 transition-colors"
+                  >
+                    Renew Here
+                  </motion.button>
+                </Link>
+              </motion.div>
             </div>
           </div>
         </section>
