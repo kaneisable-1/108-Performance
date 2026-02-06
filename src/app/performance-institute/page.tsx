@@ -53,7 +53,7 @@ const pricingTiers = [
     name: 'PI Starter',
     price: 14500,
     originalPrice: 24500,
-    link:'https://link.fastpaydirect.com/payment-link/696febbdac4fd07f0ec55d34'
+    link:'https://link.fastpaydirect.com/payment-link/696febbdac4fd07f0ec55d34',
     features: [
       'Daily training sessions',
       'Mini Master Classes',
@@ -66,7 +66,7 @@ const pricingTiers = [
     name: 'PI Standard',
     price: 17000,
     originalPrice: 27000,
-    link:'https://link.fastpaydirect.com/payment-link/696feb947dba8394b0ba3007'
+    link:'https://link.fastpaydirect.com/payment-link/696feb947dba8394b0ba3007',
     features: [
       'Daily training sessions',
       'Full Master Classes',
@@ -80,7 +80,7 @@ const pricingTiers = [
     name: 'PI+',
     price: 25000,
     originalPrice: 35000,
-    link:'https://link.fastpaydirect.com/payment-link/696feba753f21b0bf4fc60ea'
+    link:'https://link.fastpaydirect.com/payment-link/696feba753f21b0bf4fc60ea',
     recommended: true,
     features: [
       'ASU Prep Global Education',
