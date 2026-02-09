@@ -3,6 +3,7 @@
 import Link from 'next/link';
 import Image from 'next/image';
 import { BRAND } from '@/data/services';
+import Script from "next/script";
 
 export function Footer() {
   const handleFindYourPath = () => {
@@ -206,6 +207,12 @@ export function Footer() {
         </div>
       </div>
       </div>
+      <Script
+        src="https://widgets.leadconnectorhq.com/loader.js"
+        strategy="afterInteractive"
+        data-resources-url="https://widgets.leadconnectorhq.com/chat-widget/loader.js"
+        data-widget-id="697a80ef0a40ea301bf71a6d"
+      />
     </footer>
   );
 }
